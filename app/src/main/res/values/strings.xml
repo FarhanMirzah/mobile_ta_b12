@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mobile TA B12</string>
+    <string name="username">Username</string>
+    <string name="pengelolaan_mahasiswa_bimbingan">PENGELOLAAN MAHASISWA BIMBINGAN</string>
+    <string name="sistem_informasi">SISTEM INFORMASI</string>
+    <string name="universitas_andalas">UNIVERSITAS ANDALAS</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="logo">logo</string>
 </resources>
