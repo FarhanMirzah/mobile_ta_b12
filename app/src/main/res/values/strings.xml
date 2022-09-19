@@ -7,10 +7,13 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="logo">logo</string>
+
     <string name="nama_dosen">Nama Dosen</string>
     <string name="list_mahasiswa_bimbingan">List Mahasiswa Bimbingan</string>
     <string name="nama_mahasiswa">Nama Mahasiswa</string>
     <string name="nim_mahasiswa">NIM Mahasiswa</string>
     <string name="butuh_persetujuan">Butuh Persetujuan</string>
     <string name="jadwal_seminar_dan_sidang">Jadwal Seminar dan Sidang</string>
+
+    <string name="list_mahasiswa">List Mahasiswa</string>
 </resources>
