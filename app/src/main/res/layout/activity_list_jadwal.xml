@@ -88,9 +88,9 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/layoutSidang"
-        app:layout_constraintEnd_toEndOf="@+id/layoutSidang"
+        app:layout_constraintEnd_toEndOf="@+id/tanggalSeminar"
         app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="@+id/layoutSidang"
+        app:layout_constraintStart_toStartOf="@+id/tanggalSeminar"
         app:layout_constraintTop_toTopOf="@+id/layoutSidang"
         app:layout_constraintVertical_bias="0.517" />
 
@@ -111,11 +111,11 @@
         android:layout_width="29dp"
         android:layout_height="31dp"
         app:layout_constraintBottom_toBottomOf="@+id/tanggalSidang"
-        app:layout_constraintEnd_toStartOf="@+id/tanggalSidang"
-        app:layout_constraintHorizontal_bias="0.876"
-        app:layout_constraintStart_toStartOf="@+id/layoutSidang"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/tanggalSidang"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_date_range_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
