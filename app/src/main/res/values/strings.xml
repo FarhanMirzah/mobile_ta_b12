@@ -7,10 +7,58 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="logo">logo</string>
+    
     <string name="list_jadwal_seminar_dan_sidang">List Jadwal Seminar dan Sidang</string>
     <string name="orange_adalah_jadwal_seminar_dan_hijau_adalah_jadwal_sidang">Orange adalah Jadwal Seminar dan Hijau adalah jadwal Sidang</string>
     <string name="_4_7_2022">4/7/2022</string>
     <string name="_5_7_2022">5/7/2022</string>
 
+    <string name="arrow_back">Arrow Back</string>
+    <string name="dropdown">Dropdown</string>
 
+    <string name="nama_dosen">Nama Dosen</string>
+    <string name="list_mahasiswa_bimbingan">List Mahasiswa Bimbingan</string>
+    <string name="nama_mahasiswa">Nama Mahasiswa</string>
+    <string name="nim_mahasiswa">NIM Mahasiswa</string>
+    <string name="butuh_persetujuan">Butuh Persetujuan</string>
+    <string name="jadwal_seminar_dan_sidang">Jadwal Seminar dan Sidang</string>
+
+    <string name="list_mahasiswa">List Mahasiswa</string>
+
+    <string name="request">Request</string>
+    <string name="request_detail">Mahasiswa ini mengajukan permintaan bimbingan Tugas Akhir</string>
+    <string name="time_since">ago</string>
+
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+
+    <string name="detail_tugas_akhir_mahasiswa">Detail Tugas Akhir Mahasiswa</string>
+    <string name="nama_mahasiswa_detail_ta">Nama:</string>
+    <string name="judul">Judul:</string>
+    <string name="tanggal_mulai">Tanggal Mulai:</string>
+    <string name="pembimbing">Pembimbing:</string>
+    <string name="abstrak">Abstrak:</string>
+
+    <string name="nama_husnil_kamil_mt">Nama : Husnil Kamil, MT</string>
+    <string name="nip_198201182008121002">NIP : 198201182008121002</string>
+    <string name="jabatan_lektor">Jabatan : Lektor</string>
+    <string name="email_iniemaildosen_gmail_com">Email : iniemaildosen@gmail.com</string>
+    <string name="no_telp_081234567890">No. Telp : 081234567890</string>
+    <string name="status_aktif">Status : Aktif</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logo_back">logo back</string>
+    <string name="masukkan_nama_anda">Masukkan Nama Anda</string>
+    <string name="masukkan_nip_anda">Masukkan Nip Anda</string>
+    <string name="masukkan_jabatan_anda">Masukkan Jabatan Anda</string>
+    <string name="masukkan_email_anda">Masukkan Email Anda</string>
+    <string name="masukkan_notelp_anda">Masukkan No.Telp Anda</string>
+    <string name="masukkan_status_anda">Masukkan Status Anda</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">Cancel</string>
+    <string name="masukkan_password_lama">Masukkan Password Lama</string>
+    <string name="konfirmasi_password_baru">Konfirmasi Password Baru</string>
+    <string name="masukkan_password_baru">Masukkan Password Baru</string>
+    <string name="ceklis">Ceklis</string>
 </resources>

@@ -17,10 +17,28 @@
             android:name=".ListJadwalActivity"
             android:exported="true" />
         <activity
+            android:name=".DetailTugasAkhirActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PersetujuanTugasAkhirActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ButuhPersetujuanActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ListMahasiswaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GantiPasswordActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
