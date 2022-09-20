@@ -7,6 +7,11 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="logo">logo</string>
+    
+    <string name="list_jadwal_seminar_dan_sidang">List Jadwal Seminar dan Sidang</string>
+    <string name="orange_adalah_jadwal_seminar_dan_hijau_adalah_jadwal_sidang">Orange adalah Jadwal Seminar dan Hijau adalah jadwal Sidang</string>
+    <string name="_4_7_2022">4/7/2022</string>
+    <string name="_5_7_2022">5/7/2022</string>
 
     <string name="arrow_back">Arrow Back</string>
     <string name="dropdown">Dropdown</string>
@@ -56,6 +61,4 @@
     <string name="konfirmasi_password_baru">Konfirmasi Password Baru</string>
     <string name="masukkan_password_baru">Masukkan Password Baru</string>
     <string name="ceklis">Ceklis</string>
-
-
 </resources>
