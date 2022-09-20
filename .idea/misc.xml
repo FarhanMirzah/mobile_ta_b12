@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/ic_baseline_error_outline_24.xml" value="0.2725" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/ic_baseline_filter_list_24.xml" value="0.2725" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2725" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/rectangle.xml" value="0.2725" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/shape_rectangle.xml" value="0.2725" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_butuh_persetujuan.xml" value="0.33" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_tugas_akhir.xml" value="0.25" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_mahasiswa.xml" value="0.33" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_login.xml" value="0.24592391304347827" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_persetujuan_tugas_akhir.xml" value="0.33" />

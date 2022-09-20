@@ -8,6 +8,9 @@
     <string name="login">LOGIN</string>
     <string name="logo">logo</string>
 
+    <string name="arrow_back">Arrow Back</string>
+    <string name="dropdown">Dropdown</string>
+
     <string name="nama_dosen">Nama Dosen</string>
     <string name="list_mahasiswa_bimbingan">List Mahasiswa Bimbingan</string>
     <string name="nama_mahasiswa">Nama Mahasiswa</string>
@@ -23,4 +26,11 @@
 
     <string name="accept">Accept</string>
     <string name="reject">Reject</string>
+
+    <string name="detail_tugas_akhir_mahasiswa">Detail Tugas Akhir Mahasiswa</string>
+    <string name="nama_mahasiswa_detail_ta">Nama:</string>
+    <string name="judul">Judul:</string>
+    <string name="tanggal_mulai">Tanggal Mulai:</string>
+    <string name="pembimbing">Pembimbing:</string>
+    <string name="abstrak">Abstrak:</string>
 </resources>
