@@ -7,6 +7,33 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="logo">logo</string>
+
+    <string name="arrow_back">Arrow Back</string>
+    <string name="dropdown">Dropdown</string>
+
+    <string name="nama_dosen">Nama Dosen</string>
+    <string name="list_mahasiswa_bimbingan">List Mahasiswa Bimbingan</string>
+    <string name="nama_mahasiswa">Nama Mahasiswa</string>
+    <string name="nim_mahasiswa">NIM Mahasiswa</string>
+    <string name="butuh_persetujuan">Butuh Persetujuan</string>
+    <string name="jadwal_seminar_dan_sidang">Jadwal Seminar dan Sidang</string>
+
+    <string name="list_mahasiswa">List Mahasiswa</string>
+
+    <string name="request">Request</string>
+    <string name="request_detail">Mahasiswa ini mengajukan permintaan bimbingan Tugas Akhir</string>
+    <string name="time_since">ago</string>
+
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+
+    <string name="detail_tugas_akhir_mahasiswa">Detail Tugas Akhir Mahasiswa</string>
+    <string name="nama_mahasiswa_detail_ta">Nama:</string>
+    <string name="judul">Judul:</string>
+    <string name="tanggal_mulai">Tanggal Mulai:</string>
+    <string name="pembimbing">Pembimbing:</string>
+    <string name="abstrak">Abstrak:</string>
+
     <string name="nama_husnil_kamil_mt">Nama : Husnil Kamil, MT</string>
     <string name="nip_198201182008121002">NIP : 198201182008121002</string>
     <string name="jabatan_lektor">Jabatan : Lektor</string>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListMahasiswaActivity">
+
+    <TextView
+        android:id="@+id/rectangleDosen"
+        android:layout_width="366dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/namaDosen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/nama_dosen"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/imageDosen"
+        app:layout_constraintStart_toEndOf="@+id/imageDosen"
+        app:layout_constraintTop_toTopOf="@+id/imageDosen" />
+
+    <ImageView
+        android:id="@+id/imageDosen"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleDosen"
+        app:layout_constraintStart_toStartOf="@+id/rectangleDosen"
+        app:layout_constraintTop_toTopOf="@+id/rectangleDosen"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/buttonProfilDosen"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageDosen"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleDosen"
+        app:layout_constraintTop_toTopOf="@+id/imageDosen"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <TextView
+        android:id="@+id/listMahasiswaBimbingan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/list_mahasiswa_bimbingan"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/rectangleDosen"
+        app:layout_constraintTop_toBottomOf="@+id/rectangleDosen" />
+
+    <TextView
+        android:id="@+id/rectangleMahasiswa"
+        android:layout_width="366dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/light_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listMahasiswaBimbingan" />
+
+    <TextView
+        android:id="@+id/namaMahasiswa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/nama_mahasiswa"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/imageMahasiswa"
+        app:layout_constraintTop_toTopOf="@+id/imageMahasiswa" />
+
+    <TextView
+        android:id="@+id/nimMahasiswa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nim_mahasiswa"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/imageMahasiswa"
+        app:layout_constraintStart_toStartOf="@+id/namaMahasiswa" />
+
+    <ImageView
+        android:id="@+id/imageMahasiswa"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa"
+        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa"
+        app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/buttonDetailTA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageMahasiswa"
+        app:layout_constraintEnd_toEndOf="@+id/rectangleMahasiswa"
+        app:layout_constraintTop_toTopOf="@+id/imageMahasiswa"
+        app:srcCompat="@drawable/ic_baseline_send_24" />
+
+    <Button
+        android:id="@+id/buttonButuhPersetujuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="@string/butuh_persetujuan"
+        app:layout_constraintBottom_toTopOf="@+id/buttonJadwal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonJadwal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="@string/jadwal_seminar_dan_sidang"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
