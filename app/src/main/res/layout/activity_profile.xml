@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+
+    <ImageView
+        android:id="@+id/logo_back"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="73dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_tombol_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/gambar_user"
+        android:layout_width="130dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="121dp"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/foto_pakhusnil" />
+
+    <Button
+        android:id="@+id/button_ubah_profile"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:text="@string/edit_profile"
+        android:textColor="@color/black"
+
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/gambar_user"
+        app:layout_constraintStart_toStartOf="@+id/gambar_user"
+        app:layout_constraintTop_toBottomOf="@+id/gambar_user" />
+
+    <TextView
+        android:id="@+id/nama_user"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/nama_husnil_kamil_mt"
+        android:textColor="@color/black"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_ubah_profile" />
+
+    <TextView
+        android:id="@+id/nip_user"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/nip_198201182008121002"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/nama_user"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/nama_user"
+        app:layout_constraintTop_toBottomOf="@+id/nama_user" />
+
+    <TextView
+        android:id="@+id/jabatan_user"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/jabatan_lektor"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/nip_user"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/nip_user"
+        app:layout_constraintTop_toBottomOf="@+id/nip_user" />
+
+    />
+
+    <TextView
+        android:id="@+id/email_user"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/email_iniemaildosen_gmail_com"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/jabatan_user"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/jabatan_user"
+        app:layout_constraintTop_toBottomOf="@+id/jabatan_user" />
+
+    <TextView
+        android:id="@+id/nope_user"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/no_telp_081234567890"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/email_user"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/email_user"
+        app:layout_constraintTop_toBottomOf="@+id/email_user" />
+
+    <TextView
+        android:id="@+id/status_user"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/status_aktif"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/nope_user"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/nope_user"
+        app:layout_constraintTop_toBottomOf="@+id/nope_user" />
+
+    <Button
+        android:id="@+id/ganti_password"
+        android:layout_width="154dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:fontFamily="casual"
+        android:text="@string/ganti_password"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="268dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:fontFamily="casual"
+        android:text="@string/logout"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

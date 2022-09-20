@@ -7,4 +7,28 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="logo">logo</string>
+    <string name="nama_husnil_kamil_mt">Nama : Husnil Kamil, MT</string>
+    <string name="nip_198201182008121002">NIP : 198201182008121002</string>
+    <string name="jabatan_lektor">Jabatan : Lektor</string>
+    <string name="email_iniemaildosen_gmail_com">Email : iniemaildosen@gmail.com</string>
+    <string name="no_telp_081234567890">No. Telp : 081234567890</string>
+    <string name="status_aktif">Status : Aktif</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logo_back">logo back</string>
+    <string name="masukkan_nama_anda">Masukkan Nama Anda</string>
+    <string name="masukkan_nip_anda">Masukkan Nip Anda</string>
+    <string name="masukkan_jabatan_anda">Masukkan Jabatan Anda</string>
+    <string name="masukkan_email_anda">Masukkan Email Anda</string>
+    <string name="masukkan_notelp_anda">Masukkan No.Telp Anda</string>
+    <string name="masukkan_status_anda">Masukkan Status Anda</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">Cancel</string>
+    <string name="masukkan_password_lama">Masukkan Password Lama</string>
+    <string name="konfirmasi_password_baru">Konfirmasi Password Baru</string>
+    <string name="masukkan_password_baru">Masukkan Password Baru</string>
+    <string name="ceklis">Ceklis</string>
+
+
 </resources>
