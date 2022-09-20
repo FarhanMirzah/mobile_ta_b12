@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listjadwal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListJadwalActivity">
+
+    <EditText
+        android:id="@+id/judulAtas"
+        android:layout_width="373dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/list_jadwal_seminar_dan_sidang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Keterangan"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/orange_adalah_jadwal_seminar_dan_hijau_adalah_jadwal_sidang"
+        app:layout_constraintEnd_toEndOf="@+id/judulAtas"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toStartOf="@+id/judulAtas"
+        app:layout_constraintTop_toBottomOf="@+id/judulAtas" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/judulAtas"
+        app:layout_constraintStart_toStartOf="@+id/judulAtas"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/layOutSeminar"
+        android:layout_width="367dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/judulAtas"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/judulAtas"
+        app:layout_constraintTop_toBottomOf="@+id/Keterangan"
+        app:layout_constraintVertical_bias="0.045"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tanggalSeminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_4_7_2022"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/layOutSeminar"
+        app:layout_constraintEnd_toEndOf="@+id/layOutSeminar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layOutSeminar" />
+
+    <TextView
+        android:id="@+id/layoutSidang"
+        android:layout_width="367dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/tosca"
+        app:layout_constraintEnd_toEndOf="@+id/layOutSeminar"
+        app:layout_constraintStart_toStartOf="@+id/layOutSeminar"
+        app:layout_constraintTop_toBottomOf="@+id/layOutSeminar"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tanggalSidang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_5_7_2022"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutSidang"
+        app:layout_constraintEnd_toEndOf="@+id/layoutSidang"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="@+id/layoutSidang"
+        app:layout_constraintTop_toTopOf="@+id/layoutSidang"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tanggalSeminar"
+        app:layout_constraintEnd_toStartOf="@+id/tanggalSeminar"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="@+id/layOutSeminar"
+        app:layout_constraintTop_toTopOf="@+id/tanggalSeminar"
+        app:layout_constraintVertical_bias="0.777"
+        app:srcCompat="@drawable/ic_baseline_date_range_24" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="29dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tanggalSidang"
+        app:layout_constraintEnd_toStartOf="@+id/tanggalSidang"
+        app:layout_constraintHorizontal_bias="0.876"
+        app:layout_constraintStart_toStartOf="@+id/layoutSidang"
+        app:layout_constraintTop_toTopOf="@+id/tanggalSidang"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_date_range_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
