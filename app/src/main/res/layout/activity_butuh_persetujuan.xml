@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa2"
         app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa2"
         app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa2"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/default_profile" />
 
     <TextView
         android:id="@+id/namaMahasiswa2"

@@ -18,13 +18,13 @@
 
     <ImageView
         android:id="@+id/imageMahasiswa3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/default_profile" />
 
     <TextView
         android:id="@+id/namaMahasiswa3"
@@ -120,7 +120,8 @@
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
         android:backgroundTint="#BA1A1A"
+        android:text="@string/reject"
         app:layout_constraintStart_toStartOf="@+id/rectangleRequest"
-        app:layout_constraintTop_toTopOf="@+id/buttonAccept"
-        tools:text="@string/reject" />
+        app:layout_constraintTop_toTopOf="@+id/buttonAccept" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="72dp"
         android:text="@string/detail_tugas_akhir_mahasiswa"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -47,7 +47,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa3"
         app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
         app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa3"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/default_profile" />
 
     <TextView
         android:id="@+id/namaMahasiswa4"
@@ -83,7 +83,7 @@
         android:id="@+id/namaMahasiswaDetailTA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/nama_mahasiswa_detail_ta"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -138,7 +138,7 @@
         android:id="@+id/imageView3"
         android:layout_width="157dp"
         android:layout_height="225dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:background="#D1D1D1"
         android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"

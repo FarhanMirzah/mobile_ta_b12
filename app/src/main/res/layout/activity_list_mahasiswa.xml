@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/rectangleDosen"
         app:layout_constraintStart_toStartOf="@+id/rectangleDosen"
         app:layout_constraintTop_toTopOf="@+id/rectangleDosen"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/default_profile" />
 
     <ImageView
         android:id="@+id/buttonProfilDosen"
@@ -96,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa"
         app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa"
         app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/default_profile" />
 
     <ImageView
         android:id="@+id/buttonDetailTA"
