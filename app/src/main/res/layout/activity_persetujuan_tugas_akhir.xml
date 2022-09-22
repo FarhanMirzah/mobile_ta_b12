@@ -123,4 +123,5 @@
         app:layout_constraintStart_toStartOf="@+id/rectangleRequest"
         app:layout_constraintTop_toTopOf="@+id/buttonAccept"
         tools:text="@string/reject" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
