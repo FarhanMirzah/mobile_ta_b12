@@ -32,13 +32,13 @@
             android:name=".EditProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".GantiPasswordActivity"
             android:exported="true" />
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".GantiPasswordActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
