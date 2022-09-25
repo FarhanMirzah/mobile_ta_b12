@@ -6,11 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/logounand"
+        android:layout_width="145dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/logo"
+        app:layout_constraintEnd_toEndOf="@+id/judulTengah"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/judulTengah"
+        app:layout_constraintTop_toBottomOf="@+id/judulTengah"
+        app:srcCompat="@drawable/logo" />
+
     <TextView
         android:id="@+id/judulTengah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="@string/pengelolaan_mahasiswa_bimbingan"
         app:layout_constraintEnd_toEndOf="@+id/judulAtas"
         app:layout_constraintStart_toStartOf="@+id/judulAtas"
@@ -20,7 +32,7 @@
         android:id="@+id/judulAtas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="56dp"
         android:text="@string/sistem_informasi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -31,68 +43,62 @@
         android:id="@+id/judulBawah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="@string/universitas_andalas"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/logounand" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_shape"
+        android:onClick="login"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+        tools:ignore="UsingOnClickInXml" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayoutUsername"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="250dp"
+        android:id="@+id/textInputLayout4"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:hint="@string/username"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/judulBawah">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputUsername"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayoutPassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="250dp"
+        android:id="@+id/textInputLayout5"
+        android:layout_width="288dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/password"
-        app:layout_constraintEnd_toEndOf="@+id/inputLayoutUsername"
-        app:layout_constraintStart_toStartOf="@+id/inputLayoutUsername"
-        app:layout_constraintTop_toBottomOf="@+id/inputLayoutUsername">
+        app:errorEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
+            android:hint="@string/password"
+
+            android:inputType="textPassword"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/inputLayoutPassword"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/inputLayoutPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputLayoutPassword"
-        app:layout_constraintVertical_bias="0.289" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="145dp"
-        android:layout_height="154dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="@+id/judulTengah"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="@+id/judulTengah"
-        app:layout_constraintTop_toBottomOf="@+id/judulTengah"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="@string/logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,21 @@
 <resources>
+    <string-array name="nama_mahasiswa">
+        <item>  Thomas Akram Ferdinan </item>
+        <item>  Muhammad Farhan Ananda Mirzah </item>
+        <item>  Fathih Muhammad Alfi </item>
+        <item>  Ramadya Arya Pratama </item>
+    </string-array>
+
+    <string-array name="nim_mahasiswa">
+        <item>  2011521014 </item>
+        <item>  2011522022 </item>
+        <item>  2011523002 </item>
+        <item>  2003040082 </item>
+    </string-array>
+
+
+
+
     <string name="app_name">Mobile TA B12</string>
     <string name="username">Username</string>
     <string name="pengelolaan_mahasiswa_bimbingan">PENGELOLAAN MAHASISWA BIMBINGAN</string>
@@ -7,7 +24,7 @@
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
     <string name="logo">logo</string>
-    
+
     <string name="list_jadwal_seminar_dan_sidang">List Jadwal Seminar dan Sidang</string>
     <string name="orange_adalah_jadwal_seminar_dan_hijau_adalah_jadwal_sidang">Orange adalah Jadwal Seminar dan Hijau adalah jadwal Sidang</string>
     <string name="_4_7_2022">4/7/2022</string>
@@ -61,4 +78,7 @@
     <string name="konfirmasi_password_baru">Konfirmasi Password Baru</string>
     <string name="masukkan_password_baru">Masukkan Password Baru</string>
     <string name="ceklis">Ceklis</string>
+    <string name="husnil_kamil_mt">Husnil Kamil, MT</string>
+    
+
 </resources>
