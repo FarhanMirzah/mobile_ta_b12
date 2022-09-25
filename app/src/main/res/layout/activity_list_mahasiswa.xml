@@ -6,127 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".ListMahasiswaActivity">
 
-    <TextView
-        android:id="@+id/rectangleDosen"
-        android:layout_width="366dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="56dp"
-        android:background="@color/teal_700"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/namaDosen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/nama_dosen"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageDosen"
-        app:layout_constraintStart_toEndOf="@+id/imageDosen"
-        app:layout_constraintTop_toTopOf="@+id/imageDosen" />
-
-    <ImageView
-        android:id="@+id/imageDosen"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangleDosen"
-        app:layout_constraintStart_toStartOf="@+id/rectangleDosen"
-        app:layout_constraintTop_toTopOf="@+id/rectangleDosen"
-        app:srcCompat="@drawable/default_profile" />
-
-    <ImageView
-        android:id="@+id/buttonProfilDosen"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageDosen"
-        app:layout_constraintEnd_toEndOf="@+id/rectangleDosen"
-        app:layout_constraintTop_toTopOf="@+id/imageDosen"
-        app:srcCompat="@drawable/ic_baseline_person_24" />
 
     <TextView
         android:id="@+id/listMahasiswaBimbingan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="@string/list_mahasiswa_bimbingan"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/rectangleDosen"
-        app:layout_constraintTop_toBottomOf="@+id/rectangleDosen" />
-
-    <TextView
-        android:id="@+id/rectangleMahasiswa"
-        android:layout_width="366dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/light_gray"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listMahasiswaBimbingan" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView_akunuser" />
 
-    <TextView
-        android:id="@+id/namaMahasiswa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/nama_mahasiswa"
-        android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/imageMahasiswa"
-        app:layout_constraintTop_toTopOf="@+id/imageMahasiswa" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonButuhPersetujuan"
+        app:layout_constraintTop_toBottomOf="@+id/listMahasiswaBimbingan"
+        app:layout_constraintVertical_bias="0.285"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/activity_tampilan_list_mahasiswa" />
 
-    <TextView
-        android:id="@+id/nimMahasiswa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nim_mahasiswa"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageMahasiswa"
-        app:layout_constraintStart_toStartOf="@+id/namaMahasiswa" />
-
-    <ImageView
-        android:id="@+id/imageMahasiswa"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa"
-        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa"
-        app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa"
-        app:srcCompat="@drawable/default_profile" />
-
-    <ImageView
-        android:id="@+id/buttonDetailTA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageMahasiswa"
-        app:layout_constraintEnd_toEndOf="@+id/rectangleMahasiswa"
-        app:layout_constraintTop_toTopOf="@+id/imageMahasiswa"
-        app:srcCompat="@drawable/ic_baseline_send_24" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonButuhPersetujuan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/button_shape"
         android:text="@string/butuh_persetujuan"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/buttonJadwal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonJadwal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="60dp"
+        android:background="@drawable/button_shape"
         android:text="@string/jadwal_seminar_dan_sidang"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardView_akunuser"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/warna_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/gambar_user"
+            android:layout_width="46dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.523"
+            app:srcCompat="@drawable/default_profile" />
+
+        <TextView
+            android:id="@+id/nama_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/husnil_kamil_mt"
+            android:textColor="@color/white"
+
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintStart_toEndOf="@+id/gambar_user"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:onClick="profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333"
+            app:srcCompat="@drawable/ic_baseline_person_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
