@@ -52,6 +52,9 @@
         <activity
             android:name=".InputNilaiTugasAkhirActivity"
             android:exported="true" />
+        <activity
+            android:name=".InputNilaiSidangActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputNilaiTugasAkhirActivity">
+    tools:context=".InputNilaiSidangActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonInputNilaiTA"
+        android:id="@+id/buttonInputNilaiSidang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -16,24 +16,11 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputNIlaiUjianSidang"
+        app:layout_constraintTop_toBottomOf="@+id/inputNilaiSkripsi"
         tools:ignore="UsingOnClickInXml" />
 
-    <TextView
-        android:id="@+id/headerInputNilaiTA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/input_nilai_ta"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/arrowBack4"
+        android:id="@+id/arrowBack5"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -42,65 +29,61 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
+    <TextView
+        android:id="@+id/headerInputNIlaiSidang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/input_nilai_sidang"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputNilaiBimbinganSeminar"
+        android:id="@+id/inputNilaiPenguji"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="@+id/headerInputNilaiTA"
-        app:layout_constraintTop_toBottomOf="@+id/headerInputNilaiTA">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/nilai_bimbingan_menuju_seminar_ta"
-            android:inputType="number"
-            android:textColorHint="#616161" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputNilaiUjianSeminar"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="@+id/inputNilaiBimbinganSeminar"
-        app:layout_constraintTop_toBottomOf="@+id/inputNilaiBimbinganSeminar">
+        app:layout_constraintStart_toStartOf="@+id/headerInputNIlaiSidang"
+        app:layout_constraintTop_toBottomOf="@+id/headerInputNIlaiSidang">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nilai_ujian_seminar_ta"
+            android:hint="@string/nilai_penguji"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputNIlaiBimbinganSidang"
+        android:id="@+id/inputNIlaiPembimbing"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="@+id/inputNilaiUjianSeminar"
-        app:layout_constraintTop_toBottomOf="@+id/inputNilaiUjianSeminar">
+        app:layout_constraintStart_toStartOf="@+id/inputNilaiPenguji"
+        app:layout_constraintTop_toBottomOf="@+id/inputNilaiPenguji">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nilai_bimbingan_menuju_sidang_ta"
+            android:hint="@string/nilai_pembimbing"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputNIlaiUjianSidang"
+        android:id="@+id/inputNilaiSkripsi"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="@+id/inputNIlaiBimbinganSidang"
-        app:layout_constraintTop_toBottomOf="@+id/inputNIlaiBimbinganSidang">
+        app:layout_constraintStart_toStartOf="@+id/inputNIlaiPembimbing"
+        app:layout_constraintTop_toBottomOf="@+id/inputNIlaiPembimbing">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nilai_ujian_sidang_ta"
+            android:hint="@string/nilai_skripsi"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

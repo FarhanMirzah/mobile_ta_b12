@@ -83,7 +83,13 @@
     <string name="nilai_ujian_seminar_ta">NIlai Ujian Seminar TA</string>
     <string name="nilai_bimbingan_menuju_sidang_ta">Nilai Bimbingan menuju Sidang TA</string>
     <string name="nilai_ujian_sidang_ta">Nilai Ujian Sidang TA</string>
+
     <string name="input">INPUT</string>
+
+    <string name="input_nilai_sidang">Input Nilai SIdang</string>
+    <string name="nilai_penguji">Nilai Penguji</string>
+    <string name="nilai_pembimbing">Nilai Pembimbing</string>
+    <string name="nilai_skripsi">Nilai Skripsi</string>
 
 
 </resources>
