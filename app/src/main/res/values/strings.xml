@@ -14,8 +14,6 @@
     </string-array>
 
 
-
-
     <string name="app_name">Mobile TA B12</string>
     <string name="username">Username</string>
     <string name="pengelolaan_mahasiswa_bimbingan">PENGELOLAAN MAHASISWA BIMBINGAN</string>
@@ -79,6 +77,19 @@
     <string name="masukkan_password_baru">Masukkan Password Baru</string>
     <string name="ceklis">Ceklis</string>
     <string name="husnil_kamil_mt">Husnil Kamil, MT</string>
-    
+
+    <string name="input_nilai_ta">Input Nilai TA</string>
+    <string name="nilai_bimbingan_menuju_seminar_ta">Nilai Bimbingan menuju Seminar TA</string>
+    <string name="nilai_ujian_seminar_ta">NIlai Ujian Seminar TA</string>
+    <string name="nilai_bimbingan_menuju_sidang_ta">Nilai Bimbingan menuju Sidang TA</string>
+    <string name="nilai_ujian_sidang_ta">Nilai Ujian Sidang TA</string>
+
+    <string name="input">INPUT</string>
+
+    <string name="input_nilai_sidang">Input Nilai SIdang</string>
+    <string name="nilai_penguji">Nilai Penguji</string>
+    <string name="nilai_pembimbing">Nilai Pembimbing</string>
+    <string name="nilai_skripsi">Nilai Skripsi</string>
+
 
 </resources>
