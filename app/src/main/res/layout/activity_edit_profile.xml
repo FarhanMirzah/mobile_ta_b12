@@ -8,7 +8,6 @@
     tools:ignore="ExtraText">
 
 
-
     <ImageView
         android:id="@+id/logo_back"
         android:layout_width="34dp"
@@ -16,6 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
         android:contentDescription="@string/logo_back"
+        android:onClick="buttonBackProfile"
         android:src="@drawable/ic_tombol_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

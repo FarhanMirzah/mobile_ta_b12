@@ -28,4 +28,9 @@ public class ProfileActivity extends AppCompatActivity {
         Intent gantipassword = new Intent(ProfileActivity.this, GantiPasswordActivity.class);
         startActivity(gantipassword);
     }
+
+    public void buttonLogout(View view) {
+        Intent logoutIntent = new Intent(this, LoginActivity.class);
+        startActivity(logoutIntent);
+    }
 }
