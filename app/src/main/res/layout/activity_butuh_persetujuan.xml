@@ -12,6 +12,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="buttonBackListMahasiswa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator" />
@@ -73,6 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:onClick="buttonPersetujuanTA"
         app:layout_constraintBottom_toBottomOf="@+id/imageMahasiswa2"
         app:layout_constraintEnd_toEndOf="@+id/rectangleMahasiswa2"
         app:layout_constraintTop_toTopOf="@+id/imageMahasiswa2"

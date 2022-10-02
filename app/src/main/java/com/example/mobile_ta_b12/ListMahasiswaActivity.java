@@ -61,4 +61,14 @@ public class ListMahasiswaActivity extends AppCompatActivity {
 //        startActivity(intent);
 //    }
     }
+
+    public void buttonButuhPersetujuan(View view) {
+        Intent butuhPersetujuanIntent = new Intent(this, ButuhPersetujuanActivity.class);
+        startActivity(butuhPersetujuanIntent);
+    }
+
+    public void buttonListJadwal(View view) {
+        Intent listJadwalIntent = new Intent(this, ListJadwalActivity.class);
+        startActivity(listJadwalIntent);
+    }
 }
