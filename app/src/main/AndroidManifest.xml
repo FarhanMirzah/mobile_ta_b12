@@ -58,6 +58,9 @@
         <activity
             android:name=".RekomendasiCatatanSeminarActivity"
             android:exported="true" />
+        <activity
+            android:name=".ListLogbookActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

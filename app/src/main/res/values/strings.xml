@@ -95,5 +95,10 @@
     <string name="rekomendasi_seminar">Rekomendasi Seminar</string>
     <string name="catatan_seminar">Catatan Seminar</string>
 
+    <string name="list_logbook">List Logbook</string>
+    <string name="hari_tanggal">Hari, Tanggal</string>
+    <string name="kegiatan">Kegiatan</string>
+    <string name="status_done">Done</string>
+
 
 </resources>
