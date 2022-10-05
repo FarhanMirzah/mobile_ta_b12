@@ -52,10 +52,10 @@
         <activity
             android:name=".DetailJadwalActivity"
             android:exported="true" />
-         <activity 
+        <activity
             android:name=".InputNilaiTugasAkhirActivity"
             android:exported="true" />
-          <activity
+        <activity
             android:name=".InputNilaiSidangActivity"
             android:exported="true" />
         <activity
@@ -63,6 +63,9 @@
             android:exported="true" />
         <activity
             android:name=".ListLogbookActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DetailLogbookActivity"
             android:exported="true" />
     </application>
 
