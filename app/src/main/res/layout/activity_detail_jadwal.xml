@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jadwal_Seminar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_marginBaseline="@dimen/cardview_compat_inset_shadow"
+    tools:context=".DetailJadwalActivity">
+
+    <ImageView
+        android:id="@+id/accept"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/acc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+    <ImageView
+        android:id="@+id/reject"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:contentDescription="@string/reject"
+        app:layout_constraintBottom_toBottomOf="@+id/accept"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_cancel_24" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="133dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judul_TA"
+        app:srcCompat="@drawable/skripsi" />
+
+    <TextView
+        android:id="@+id/detail_Jadwal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Detail Jadwal"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Nama : Raihan Baik"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_Jadwal" />
+
+    <TextView
+        android:id="@+id/NIM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="NIM : 1911523002"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nama" />
+
+    <TextView
+        android:id="@+id/jadwal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Jadwal : Rabu, 05 Oktober 2022"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NIM" />
+
+    <TextView
+        android:id="@+id/lokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Lokasi : Ruang Sidang JSI"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jadwal" />
+
+    <TextView
+        android:id="@+id/pembimbing1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Pembimbing 1 : Husnil Kamil, MT"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lokasi" />
+
+    <TextView
+        android:id="@+id/pembimbing2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Pembimbing 2 : Ricky Akbar, M.Kom"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pembimbing1" />
+
+    <TextView
+        android:id="@+id/penguji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Penguji : Prof. Surya Afnarius"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pembimbing2" />
+
+    <TextView
+        android:id="@+id/judul_TA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Judul TA : SPK Pemilihan Laptop Terbaik"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/penguji" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

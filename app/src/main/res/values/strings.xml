@@ -79,6 +79,9 @@
     <string name="masukkan_password_baru">Masukkan Password Baru</string>
     <string name="ceklis">Ceklis</string>
     <string name="husnil_kamil_mt">Husnil Kamil, MT</string>
-    
+    <string name="detail_jadwal">Detail Jadwal</string>
+    <string name="acc">ACC</string>
+    <string name="nama">Nama : Raihan Baik</string>
+
 
 </resources>
