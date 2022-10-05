@@ -22,17 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/Keterangan"
-        android:layout_width="315dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/orange_adalah_jadwal_seminar_dan_hijau_adalah_jadwal_sidang"
-        app:layout_constraintEnd_toEndOf="@+id/judulAtas"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toStartOf="@+id/judulAtas"
-        app:layout_constraintTop_toBottomOf="@+id/judulAtas" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="27dp"
@@ -44,80 +33,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
-    <TextView
-        android:id="@+id/layOutSeminar"
-        android:layout_width="367dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/orange"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJadwal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/judulAtas"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/judulAtas"
-        app:layout_constraintTop_toBottomOf="@+id/Keterangan"
-        app:layout_constraintVertical_bias="0.045"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/tanggalSeminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_4_7_2022"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/layOutSeminar"
-        app:layout_constraintEnd_toEndOf="@+id/layOutSeminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/layOutSeminar" />
-
-    <TextView
-        android:id="@+id/layoutSidang"
-        android:layout_width="367dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/tosca"
-        app:layout_constraintEnd_toEndOf="@+id/layOutSeminar"
-        app:layout_constraintStart_toStartOf="@+id/layOutSeminar"
-        app:layout_constraintTop_toBottomOf="@+id/layOutSeminar"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/tanggalSidang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_5_7_2022"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/layoutSidang"
-        app:layout_constraintEnd_toEndOf="@+id/tanggalSeminar"
-        app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="@+id/tanggalSeminar"
-        app:layout_constraintTop_toTopOf="@+id/layoutSidang"
-        app:layout_constraintVertical_bias="0.517" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="32dp"
-        android:layout_height="29dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tanggalSeminar"
-        app:layout_constraintEnd_toStartOf="@+id/tanggalSeminar"
-        app:layout_constraintHorizontal_bias="0.911"
-        app:layout_constraintStart_toStartOf="@+id/layOutSeminar"
-        app:layout_constraintTop_toTopOf="@+id/tanggalSeminar"
-        app:layout_constraintVertical_bias="0.777"
-        app:srcCompat="@drawable/ic_baseline_date_range_24" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="29dp"
-        android:layout_height="31dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tanggalSidang"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/tanggalSidang"
+        app:layout_constraintTop_toBottomOf="@+id/judulAtas"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_baseline_date_range_24" />
+        tools:listitem="@layout/item_jadwal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
