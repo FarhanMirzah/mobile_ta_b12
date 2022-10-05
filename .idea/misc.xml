@@ -50,11 +50,13 @@
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.172" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.118" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/drawable/skripsi.xml" value="0.194" />
-        <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_jadwal.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_jadwal.xml" value="0.22" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_seminar.xml" value="0.22" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_tugas_akhir.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_edit_profile.xml" value="0.15217391304347827" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_ganti_password.xml" value="0.15217391304347827" />
+        <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_input_nilai_sidang.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_input_nilai_tugas_akhir.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_jadwal.xml" value="0.22" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_mahasiswa.xml" value="0.15217391304347827" />
         <entry key="..\:/Users/fathi/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_login.xml" value="0.22" />
