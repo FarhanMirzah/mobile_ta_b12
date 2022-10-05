@@ -37,10 +37,13 @@ public class ListLogbookAdapter extends RecyclerView.Adapter<ListLogbookAdapter.
     @Override
     public void onBindViewHolder(@NonNull ListLogbookViewHolder holder, int position) {
         ListLogbook logbook = listLogbook.get(position);
-        holder.imageStatus.setImageResource(R.drawable.ic_check_circle_outline_green);
+        if (logbook.getStatus() == 1) {
+            holder.imageStatus.setImageResource(R.drawable.ic_check_circle_outline_green);
+        }else{
+            holder.imageStatus.setImageResource(R.drawable.ic_access_time_red);
+        }
         holder.textHariTanggal.setText(logbook.getHariTanggal());
         holder.textKegiatan.setText(logbook.getKegiatan());
-        holder.textStatus.setText(Integer.toString(logbook.getStatus()));
     }
 
     @Override
@@ -51,14 +54,13 @@ public class ListLogbookAdapter extends RecyclerView.Adapter<ListLogbookAdapter.
     public class ListLogbookViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView imageStatus;
-        TextView textHariTanggal, textKegiatan, textStatus;
+        TextView textHariTanggal, textKegiatan;
 
         public ListLogbookViewHolder(@NonNull View itemView) {
             super(itemView);
             imageStatus = itemView.findViewById(R.id.imageStatus);
             textHariTanggal = itemView.findViewById(R.id.textHariTanggal);
             textKegiatan = itemView.findViewById(R.id.textKegiatan);
-            textStatus = itemView.findViewById(R.id.textStatus);
         }
     }
 }
