@@ -147,6 +147,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/cardview_light_background"
         android:fontFamily="casual"
+        android:onClick="buttonLogout"
         android:text="@string/logout"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/black"
