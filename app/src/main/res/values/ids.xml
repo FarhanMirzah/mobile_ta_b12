@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="jabatan_user" type="id" />
+    <item name="imageJadwal" type="id" />
+    <item name="textJadwalType" type="id" />
+    <item name="textTanggal" type="id" />
+    <item name="textWaktu" type="id" />
+    <item name="textTempat" type="id" />
+    <item name="texttipe" type="id" />
+    <item name="rv_jadwal" type="id" />
 </resources>

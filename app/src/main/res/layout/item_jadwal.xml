@@ -17,19 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/ic_jadwal"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_date_range_24" />
-
         <TextView
             android:id="@+id/tipe_jadwal"
             android:layout_width="wrap_content"
@@ -39,7 +26,7 @@
             android:text="TextView"
             android:textColor="#FFFFFF"
             android:textSize="8sp"
-            app:layout_constraintStart_toEndOf="@+id/ic_jadwal"
+            app:layout_constraintStart_toEndOf="@+id/logoJadwal"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -61,7 +48,6 @@
             android:text="TextView"
             android:textColor="#FFFFFF"
             android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/ic_jadwal"
             app:layout_constraintStart_toStartOf="@+id/tanggal"
             app:layout_constraintTop_toBottomOf="@+id/tanggal" />
 
@@ -76,5 +62,16 @@
             app:layout_constraintBottom_toBottomOf="@+id/waktu"
             app:layout_constraintStart_toEndOf="@+id/waktu"
             app:layout_constraintTop_toTopOf="@+id/waktu" />
+
+        <ImageView
+            android:id="@+id/logoJadwal"
+            android:layout_width="48dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.761"
+            app:srcCompat="@drawable/ic_baseline_date_range_24" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
