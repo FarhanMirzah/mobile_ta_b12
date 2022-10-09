@@ -100,5 +100,11 @@
     <string name="kegiatan">Kegiatan</string>
     <string name="status_done">Done</string>
 
+    <string name="detail_logbook">Detail Logbook</string>
+    <string name="komentar">Komentar</string>
+    <string name="simpan_komentar">Simpan Komentar</string>
+    <string name="batal">Batal</string>
+    <string name="setuju">Setuju</string>
+
 
 </resources>
