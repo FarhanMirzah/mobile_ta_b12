@@ -6,4 +6,6 @@
     <item name="textTanggal" type="id" />
     <item name="textWaktu" type="id" />
     <item name="textTempat" type="id" />
+    <item name="texttipe" type="id" />
+    <item name="rv_jadwal" type="id" />
 </resources>

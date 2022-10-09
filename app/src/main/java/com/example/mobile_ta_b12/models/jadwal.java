@@ -1,37 +1,28 @@
 package com.example.mobile_ta_b12.models;
 
-public class ListJadwal {
-
-    String gambar;
-    int tipeJadwal;
+public class jadwal {
+    String tipe;
     String tanggal;
     String waktu;
     String tempat;
 
-    public ListJadwal(){ }
 
-    public ListJadwal(String gambar, int tipeJadwal, String tanggal, String waktu, String tempat) {
-        this.gambar = gambar;
-        this.tipeJadwal = tipeJadwal;
+    public jadwal(){}
+
+    public jadwal(String tipe, String tanggal, String waktu, String tempat) {
+        this.tipe = tipe;
         this.tanggal = tanggal;
         this.waktu = waktu;
         this.tempat = tempat;
     }
 
-    public String getGambar() {
-        return gambar;
+
+    public String getTipe() {
+        return tipe;
     }
 
-    public void setGambar(String gambar) {
-        this.gambar = gambar;
-    }
-
-    public int getTipeJadwal() {
-        return tipeJadwal;
-    }
-
-    public void setTipeJadwal(int tipeJadwal) {
-        this.tipeJadwal = tipeJadwal;
+    public void setTipe(String tipe) {
+        this.tipe = tipe;
     }
 
     public String getTanggal() {
