@@ -40,7 +40,31 @@ public class ListJadwalActivity extends AppCompatActivity {
                 "Sidang",
                 "07 Oktober 2022",
                 "09.00-11.00",
-                "R1.7"
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Seminar",
+                "13 Oktober 2022",
+                "10.00-12.00",
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Seminar",
+                "25 Oktober 2022",
+                "08.00-10.00",
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Sidang",
+                "1 November 2022",
+                "09.00-11.00",
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Sidang",
+                "8 November 2022",
+                "10.00-12.00",
+                "Ruang Sidang JSI"
         ));
         return ListJadwal;
     }
