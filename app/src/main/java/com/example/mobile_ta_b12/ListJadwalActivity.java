@@ -1,6 +1,8 @@
 package com.example.mobile_ta_b12;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,7 +24,7 @@ public class ListJadwalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_jadwal);
 
 
-        rvjadwal = findViewById(R.id.rv_jadwal);
+        rvjadwal = findViewById(R.id.rvJadwal);
 
         jadwalAdapter adapter = new jadwalAdapter(getjadwal());
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -41,5 +43,10 @@ public class ListJadwalActivity extends AppCompatActivity {
                 "R1.7"
         ));
         return ListJadwal;
+    }
+
+    public void buttonBackListMahasiswa(View view) {
+        Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
+        startActivity(buttonBackListMahasiswa);
     }
 }

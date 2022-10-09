@@ -35,10 +35,10 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
     public void onBindViewHolder(@NonNull JadwalViewHolder holder, int position) {
         jadwal jadwal =ListJadwal.get(position);
         holder.logoJadwal.setImageResource(R.drawable.ic_baseline_date_range_24);
-        holder.texttipe.setText(jadwal.getTipe());
-        holder.texttanggal.setText(jadwal.getTanggal());
-        holder.textwaktu.setText(jadwal.getWaktu());
-        holder.texttempat.setText(jadwal.getTempat());
+        holder.tipe_jadwal.setText(jadwal.getTipe());
+        holder.tanggal.setText(jadwal.getTanggal());
+        holder.waktu.setText(jadwal.getWaktu());
+        holder.tempat.setText(jadwal.getTempat());
     }
 
     @Override
@@ -49,16 +49,16 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
     public static class JadwalViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView logoJadwal;
-        public TextView texttipe, texttanggal, textwaktu, texttempat;
+        public TextView tipe_jadwal, tanggal, waktu, tempat;
 
         public JadwalViewHolder(@NonNull View itemView) {
             super(itemView);
 
             logoJadwal = itemView.findViewById(R.id.logoJadwal);
-            texttipe = itemView.findViewById(R.id.texttipe);
-            texttanggal = itemView.findViewById(R.id.textTanggal);
-            textwaktu = itemView.findViewById(R.id.textWaktu);
-            texttempat = itemView.findViewById(R.id.textTempat);
+            tipe_jadwal = itemView.findViewById(R.id.tipe_jadwal);
+            tanggal = itemView.findViewById(R.id.tanggal);
+            waktu = itemView.findViewById(R.id.waktu);
+            tempat = itemView.findViewById(R.id.tempat);
         }
     }
 }
