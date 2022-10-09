@@ -64,6 +64,12 @@
         <activity
             android:name=".ListLogbookActivity"
             android:exported="true" />
+        <activity
+            android:name=".DetailSidangActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DetailSeminarActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
