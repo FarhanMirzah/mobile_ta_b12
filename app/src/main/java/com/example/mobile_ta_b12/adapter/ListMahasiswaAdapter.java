@@ -1,6 +1,5 @@
-package com.example.mobile_ta_b12;
+package com.example.mobile_ta_b12.adapter;
 
-import android.app.ListActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.ListMahasiswa;
+import com.example.mobile_ta_b12.models.ListMahasiswa;
+import com.example.mobile_ta_b12.R;
 
 import java.util.ArrayList;
 

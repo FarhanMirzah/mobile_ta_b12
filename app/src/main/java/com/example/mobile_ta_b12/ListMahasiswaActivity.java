@@ -1,20 +1,17 @@
 package com.example.mobile_ta_b12;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.mobile_ta_b12.adapter.ListMahasiswaAdapter;
+import com.example.mobile_ta_b12.models.ListMahasiswa;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListMahasiswaActivity extends AppCompatActivity {
     private RecyclerView listmhs;
