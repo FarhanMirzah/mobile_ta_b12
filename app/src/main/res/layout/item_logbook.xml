@@ -52,16 +52,5 @@
             app:layout_constraintTop_toTopOf="@+id/textHariTanggal"
             app:srcCompat="@drawable/ic_check_circle_outline_green" />
 
-        <TextView
-            android:id="@+id/textStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@string/status_done"
-            android:textColor="#43A047"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/imageStatus"
-            app:layout_constraintEnd_toStartOf="@+id/imageStatus"
-            app:layout_constraintTop_toTopOf="@+id/imageStatus" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
