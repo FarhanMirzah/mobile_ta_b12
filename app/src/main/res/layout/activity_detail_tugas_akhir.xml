@@ -200,12 +200,14 @@
             android:layout_width="wrap_content"
             android:layout_height="54dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
             android:backgroundTint="@color/cardview_light_background"
             android:text="@string/pembatalan_tugas_akhir"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@color/orange"
             android:textSize="16sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/buttonHalamanDetailSidang"
             app:layout_constraintTop_toBottomOf="@+id/buttonHalamanDetailSidang" />
 
