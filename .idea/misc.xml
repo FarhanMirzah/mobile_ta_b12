@@ -52,11 +52,16 @@
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_butuh_persetujuan.xml" value="0.259375" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_jadwal.xml" value="0.259375" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_logbook.xml" value="0.259375" />
+        <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_mahasiswa.xml" value="0.259375" />
+        <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_seminar.xml" value="0.259375" />
+        <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_seminar_ta.xml" value="0.2453125" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_sidang.xml" value="0.259375" />
+        <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_sidang_ta.xml" value="0.259375" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_detail_tugas_akhir.xml" value="0.259375" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_edit_profile.xml" value="0.264" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_ganti_password.xml" value="0.4" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_ganti_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_input_nilai_tugas_akhir.xml" value="0.259375" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_jadwal.xml" value="0.259375" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_logbook.xml" value="0.259375" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_mahasiswa.xml" value="0.264" />
@@ -64,7 +69,7 @@
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_persetujuan_tugas_akhir.xml" value="0.2" />
-        <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_profile.xml" value="0.4" />
+        <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_recycle_view.xml" value="0.4" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_tampilan_list_mahasiswa.xml" value="0.2" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/layout/item_butuh_persetujuan.xml" value="0.264" />
