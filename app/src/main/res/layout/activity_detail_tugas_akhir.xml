@@ -1,149 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailTugasAkhirActivity">
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/arrowBack3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/homeAsUpIndicator" />
-
-    <TextView
-        android:id="@+id/detailTugasAkhirMahasiswa"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="72dp"
-        android:text="@string/detail_tugas_akhir_mahasiswa"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".DetailTugasAkhirActivity">
 
-    <TextView
-        android:id="@+id/rectangleMahasiswa3"
-        android:layout_width="366dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/light_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailTugasAkhirMahasiswa" />
+        <ImageView
+            android:id="@+id/arrowBack3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="buttonBackListMahasiswa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="?attr/homeAsUpIndicator" />
 
-    <ImageView
-        android:id="@+id/imageMahasiswa4"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa3"
-        app:srcCompat="@drawable/default_profile" />
+        <TextView
+            android:id="@+id/detailTugasAkhirMahasiswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="72dp"
+            android:text="@string/detail_tugas_akhir_mahasiswa"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/namaMahasiswa4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/nama_mahasiswa"
-        android:textColor="#000000"
-        app:layout_constraintStart_toEndOf="@+id/imageMahasiswa4"
-        app:layout_constraintTop_toTopOf="@+id/imageMahasiswa4" />
+        <TextView
+            android:id="@+id/rectangleMahasiswa3"
+            android:layout_width="366dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/light_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailTugasAkhirMahasiswa" />
 
-    <TextView
-        android:id="@+id/nimMahasiswa4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nim_mahasiswa"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/imageMahasiswa4"
-        app:layout_constraintStart_toStartOf="@+id/namaMahasiswa4" />
+        <ImageView
+            android:id="@+id/imageMahasiswa4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa3"
+            app:srcCompat="@drawable/default_profile" />
 
-    <ImageButton
-        android:id="@+id/dropdown"
-        android:layout_width="99dp"
-        android:layout_height="59dp"
-        android:background="#00FFFFFF"
-        android:contentDescription="@string/dropdown"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintEnd_toEndOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintTop_toTopOf="@+id/rectangleMahasiswa3"
-        app:srcCompat="@android:drawable/btn_dropdown" />
+        <TextView
+            android:id="@+id/namaMahasiswa4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/nama_mahasiswa"
+            android:textColor="#000000"
+            app:layout_constraintStart_toEndOf="@+id/imageMahasiswa4"
+            app:layout_constraintTop_toTopOf="@+id/imageMahasiswa4" />
 
-    <TextView
-        android:id="@+id/namaMahasiswaDetailTA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/nama_mahasiswa_detail_ta"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintTop_toBottomOf="@+id/rectangleMahasiswa3" />
+        <TextView
+            android:id="@+id/nimMahasiswa4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nim_mahasiswa"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/imageMahasiswa4"
+            app:layout_constraintStart_toStartOf="@+id/namaMahasiswa4" />
 
-    <TextView
-        android:id="@+id/judulDetailTA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/judul"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintTop_toBottomOf="@+id/namaMahasiswaDetailTA" />
+        <TextView
+            android:id="@+id/namaMahasiswaDetailTA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/nama_mahasiswa_detail_ta"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintTop_toBottomOf="@+id/rectangleMahasiswa3" />
 
-    <TextView
-        android:id="@+id/tanggalMulai"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/tanggal_mulai"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintTop_toBottomOf="@+id/judulDetailTA" />
+        <TextView
+            android:id="@+id/judulDetailTA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/judul"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintTop_toBottomOf="@+id/namaMahasiswaDetailTA" />
 
-    <TextView
-        android:id="@+id/pembimbing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/pembimbing"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintTop_toBottomOf="@+id/tanggalMulai" />
+        <TextView
+            android:id="@+id/tanggalMulai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tanggal_mulai"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintTop_toBottomOf="@+id/judulDetailTA" />
 
-    <TextView
-        android:id="@+id/abstrak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/abstrak"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
-        app:layout_constraintTop_toBottomOf="@+id/pembimbing" />
+        <TextView
+            android:id="@+id/pembimbing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pembimbing"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintTop_toBottomOf="@+id/tanggalMulai" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="157dp"
-        android:layout_height="225dp"
-        android:layout_marginTop="32dp"
-        android:background="#D1D1D1"
-        android:elevation="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abstrak"
-        app:srcCompat="@drawable/tugas_akhir" />
+        <TextView
+            android:id="@+id/abstrak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/abstrak"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintTop_toBottomOf="@+id/pembimbing" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="157dp"
+            android:layout_height="225dp"
+            android:layout_marginTop="32dp"
+            android:background="#D1D1D1"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/abstrak"
+            app:srcCompat="@drawable/tugas_akhir" />
+
+        <Button
+            android:id="@+id/buttonHalamanInputNilaiTA"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/cardview_light_background"
+            android:onClick="buttonInputNilaiTugasAkhir"
+            android:text="@string/input_nilai_tugas_akhir"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rectangleMahasiswa3"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <Button
+            android:id="@+id/buttonHalamanListLogbook"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/cardview_light_background"
+            android:onClick="buttonListLogbook"
+            android:text="@string/list_logbook"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/buttonHalamanInputNilaiTA"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHalamanInputNilaiTA" />
+
+        <Button
+            android:id="@+id/buttonHalamanDetailSeminar"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/cardview_light_background"
+            android:text="@string/detail_seminar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/buttonHalamanListLogbook"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHalamanListLogbook" />
+
+        <Button
+            android:id="@+id/buttonHalamanDetailSidang"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/cardview_light_background"
+            android:text="@string/detail_sidang"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/buttonHalamanDetailSeminar"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHalamanDetailSeminar" />
+
+        <Button
+            android:id="@+id/buttonHalamanBatalTA"
+            android:layout_width="wrap_content"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/cardview_light_background"
+            android:text="@string/pembatalan_tugas_akhir"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/buttonHalamanDetailSidang"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHalamanDetailSidang" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
