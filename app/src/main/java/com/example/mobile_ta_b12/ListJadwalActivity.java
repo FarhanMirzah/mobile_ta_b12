@@ -38,7 +38,7 @@ public class ListJadwalActivity extends AppCompatActivity {
         ArrayList<jadwal> ListJadwal = new ArrayList<>();
         ListJadwal.add(new jadwal(
                 "Sidang",
-                "07 Oktober 2022",
+                "05 Oktober 2022",
                 "09.00-11.00",
                 "Ruang Sidang JSI"
         ));

@@ -94,7 +94,7 @@
         android:background="@android:drawable/status_bar_item_app_background"
         android:lineSpacingExtra="8sp"
         android:paddingLeft="20dp"
-        android:text="Jadwal : Rabu, 03 Juli 2022"
+        android:text="Jadwal : Rabu, 13 Oktober 2022"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
