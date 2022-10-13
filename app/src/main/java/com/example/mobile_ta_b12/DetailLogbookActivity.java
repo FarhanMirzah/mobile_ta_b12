@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.mobile_ta_b12.adapter.ListLogbookAdapter;
 import com.example.mobile_ta_b12.models.ListLogbook;
@@ -26,6 +28,11 @@ public class DetailLogbookActivity extends AppCompatActivity {
 
         rvLogbook.setLayoutManager(layoutManager);
         rvLogbook.setAdapter(adapter);
+    }
+
+    public void buttonBackListLogbook(View view) {
+        Intent ListLogbookIntent = new Intent(this, ListLogbookActivity.class);
+        startActivity(ListLogbookIntent);
     }
 
     public ArrayList<ListLogbook> getListLogbook(){
