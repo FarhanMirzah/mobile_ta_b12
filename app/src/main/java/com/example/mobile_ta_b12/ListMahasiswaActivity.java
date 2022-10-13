@@ -60,7 +60,7 @@ public class ListMahasiswaActivity extends AppCompatActivity {
     }
 
     public void buttonButuhPersetujuan(View view) {
-        Intent butuhPersetujuanIntent = new Intent(this, ButuhPersetujuanActivity.class);
+        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
         startActivity(butuhPersetujuanIntent);
     }
 

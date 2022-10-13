@@ -15,7 +15,7 @@ public class PersetujuanTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonBackButuhPersetujuan(View view) {
-        Intent butuhPersetujuanIntent = new Intent(this, ButuhPersetujuanActivity.class);
+        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
         startActivity(butuhPersetujuanIntent);
     }
 }

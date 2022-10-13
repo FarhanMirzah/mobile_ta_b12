@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailMahasiswaActivity">
+
+
+    <ImageButton
+        android:id="@+id/logo_back"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_tombol_back"
+        android:onClick="tombolbackDetailMahasiswa"
+
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/gambar_user"
+        android:layout_width="130dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profilemahasiswa" />
+
+    <TextView
+        android:id="@+id/nama_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="36dp"
+        android:text="Nama      : Mahasiswa 1"
+        android:textColor="@color/black"
+
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gambar_user" />
+
+    <TextView
+        android:id="@+id/nim_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="Nim          : 1811521234"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/nama_mahasiswa"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/nama_mahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/nama_mahasiswa" />
+
+    <TextView
+        android:id="@+id/jurusan_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="Jurusan   : Sistem Informasi"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/nim_mahasiswa"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/nim_mahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/nim_mahasiswa" />
+
+    />
+
+    <TextView
+        android:id="@+id/email_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="Email        : Inimahasiswa@gmail.com  "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/jurusan_mahasiswa"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/jurusan_mahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/jurusan_mahasiswa" />
+
+    <TextView
+        android:id="@+id/nope_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="Telepon    : 081234567890"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/email_mahasiswa"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/email_mahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/email_mahasiswa" />
+
+    <TextView
+        android:id="@+id/status_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="Status    :aktif"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/nope_mahasiswa"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/nope_mahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/nope_mahasiswa" />
+
+    <TextView
+        android:id="@+id/asal_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="Daerah Asal: Bukittinggi"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/status_mahasiswa"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/status_mahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/status_mahasiswa" />
+
+    <TextView
+        android:id="@+id/tahunmasuk_mahasiswa"
+        android:layout_width="279dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:text="Tahun Masuk : 2018"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/asal_mahasiswa"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/asal_mahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/asal_mahasiswa" />
+
+    <TextView
+        android:id="@+id/DetailMAHASISWA"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:text="Detail Mahasiswa"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_back" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
