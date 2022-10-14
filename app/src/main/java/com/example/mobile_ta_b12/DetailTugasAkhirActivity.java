@@ -44,9 +44,8 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
         startActivity(detailSidangTugasAkhirIntent);
     }
 
-//    Sesuaikan jika activity Batal Tugas Akhir sudah dibuat
-//    public void buttonBatalTugasAkhir(View view) {
-//        Intent batalTugasAkhirIntent = new Intent(this, BatalTugasAkhirActivity.class);
-//        startActivity(batalTugasAkhirIntent);
-//    }
+    public void buttonBatalTugasAkhir(View view) {
+        Intent batalTugasAkhirIntent = new Intent(this, PembatalanTaActivity.class);
+        startActivity(batalTugasAkhirIntent);
+    }
 }
