@@ -19,6 +19,11 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
         startActivity(listMahasiswaIntent);
     }
 
+    public void buttonDetailMahasiswa(View view) {
+        Intent DetailMahasiswaIntent = new Intent(this, DetailMahasiswaActivity.class);
+        startActivity(DetailMahasiswaIntent);
+    }
+
     public void buttonInputNilaiTugasAkhir(View view) {
         Intent inputNilaiTugasAkhirIntent = new Intent(this, InputNilaiTugasAkhirActivity.class);
         startActivity(inputNilaiTugasAkhirIntent);
@@ -29,17 +34,15 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
         startActivity(listLogbookIntent);
     }
 
-//    Sesuaikan jika activity Detail Seminar (Detail TA) sudah dibuat
-//    public void buttonDetailSeminar(View view) {
-//        Intent detailSeminarIntent = new Intent(this, DetailSeminarActivity.class);
-//        startActivity(detailSeminarIntent);
-//    }
+    public void buttonDetailSeminarTA(View view) {
+        Intent detailSeminarTugasAkhirIntent = new Intent(this, TADetailSeminarActivity.class);
+        startActivity(detailSeminarTugasAkhirIntent);
+    }
 
-//    Sesuaikan jika activity Detail Sidang (Detail TA) sudah dibuat
-//    public void buttonDetailSidang(View view) {
-//        Intent detailSidangIntent = new Intent(this, DetailSidangActivity.class);
-//        startActivity(detailSidangIntent);
-//    }
+    public void buttonDetailSidangTA(View view) {
+        Intent detailSidangTugasAkhirIntent = new Intent(this, TADetailSidangActivity.class);
+        startActivity(detailSidangTugasAkhirIntent);
+    }
 
 //    Sesuaikan jika activity Batal Tugas Akhir sudah dibuat
 //    public void buttonBatalTugasAkhir(View view) {
