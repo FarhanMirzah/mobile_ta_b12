@@ -13,7 +13,7 @@ import com.example.mobile_ta_b12.models.jadwal;
 
 import java.util.ArrayList;
 
-public class ListJadwalActivity extends AppCompatActivity {
+public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapter.ItemJadwalClickListener {
 
     private RecyclerView rvjadwal;
     private Object jadwal;
@@ -27,6 +27,7 @@ public class ListJadwalActivity extends AppCompatActivity {
         rvjadwal = findViewById(R.id.rvJadwal);
 
         jadwalAdapter adapter = new jadwalAdapter(getjadwal());
+        adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvjadwal.setLayoutManager(layoutManager);
@@ -72,5 +73,12 @@ public class ListJadwalActivity extends AppCompatActivity {
     public void buttonBackListMahasiswa(View view) {
         Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
         startActivity(buttonBackListMahasiswa);
+    }
+
+    @Override
+    public void onItemJadwalClick(com.example.mobile_ta_b12.models.jadwal jadwal) {
+        Intent detailIntent = new Intent(this,DetailSidangActivity.class);
+        detailIntent.putExtra("tipeJadwal",jadwal.getTipe());
+        startActivity(detailIntent);
     }
 }
