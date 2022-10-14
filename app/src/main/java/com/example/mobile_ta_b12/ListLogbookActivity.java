@@ -55,6 +55,8 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
 
     @Override
     public void onItemLogbookClick(Logbook logbook) {
-        Toast.makeText(this, "Anda mengklik " + logbook.getHariTanggal(), Toast.LENGTH_SHORT).show();
+        Intent detailIntent = new Intent(this, DetailLogbookActivity.class);
+        detailIntent.putExtra("HARI_TANGGAL", logbook.getHariTanggal());
+        startActivity(detailIntent);
     }
 }

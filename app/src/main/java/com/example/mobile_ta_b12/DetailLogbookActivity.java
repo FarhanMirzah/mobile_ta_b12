@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.mobile_ta_b12.adapter.LogbookAdapter;
 import com.example.mobile_ta_b12.models.Logbook;
@@ -17,31 +18,24 @@ public class DetailLogbookActivity extends AppCompatActivity {
 
     private RecyclerView rvLogbook;
 
+    String hariTanggal;
+    TextView textDetailHariTanggal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_logbook);
-        rvLogbook = findViewById(R.id.rv_logbook);
 
-        LogbookAdapter adapter = new LogbookAdapter(getListLogbook());
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-
-        rvLogbook.setLayoutManager(layoutManager);
-        rvLogbook.setAdapter(adapter);
+        Intent detailIntent = getIntent();
+        if(detailIntent != null){
+            hariTanggal = detailIntent.getStringExtra("HARI_TANGGAL");
+        }
+        textDetailHariTanggal = findViewById(R.id.textDetailHariTanggal);
+        textDetailHariTanggal.setText(hariTanggal);
     }
 
     public void buttonBackListLogbook(View view) {
         Intent ListLogbookIntent = new Intent(this, ListLogbookActivity.class);
         startActivity(ListLogbookIntent);
-    }
-
-    public ArrayList<Logbook> getListLogbook(){
-        ArrayList<Logbook> logbook = new ArrayList<>();
-        logbook.add(new Logbook(
-                "Sabtu, 7 Mei 2022",
-                "Membuat latar belakang",
-                0
-        ));
-        return logbook;
     }
 }
