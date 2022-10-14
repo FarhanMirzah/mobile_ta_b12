@@ -17,13 +17,24 @@ import java.util.ArrayList;
 public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookViewHolder>{
 
     ArrayList<Logbook> listLogbook = new ArrayList<>();
+    ItemLogbookClickListener listener;
+
 
     public LogbookAdapter(ArrayList<Logbook> listLogbook) {
         this.listLogbook = listLogbook;
     }
 
+    public LogbookAdapter(ArrayList<Logbook> listLogbook, ItemLogbookClickListener listener) {
+        this.listLogbook = listLogbook;
+        this.listener = listener;
+    }
+
     public void setListLogbook(ArrayList<Logbook> listLogbook) {
         this.listLogbook = listLogbook;
+    }
+
+    public void setListener(ItemLogbookClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -51,7 +62,11 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
         return listLogbook.size();
     }
 
-    public class LogbookViewHolder extends RecyclerView.ViewHolder {
+    public interface ItemLogbookClickListener{
+        void onItemLogbookClick(Logbook logbook);
+    }
+
+    public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public ImageView imageStatus;
         TextView textHariTanggal, textKegiatan;
@@ -61,6 +76,14 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
             imageStatus = itemView.findViewById(R.id.imageStatus);
             textHariTanggal = itemView.findViewById(R.id.textHariTanggal);
             textKegiatan = itemView.findViewById(R.id.textKegiatan);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Logbook logbook = listLogbook.get(getAdapterPosition());
+            listener.onItemLogbookClick(logbook);
         }
     }
 }

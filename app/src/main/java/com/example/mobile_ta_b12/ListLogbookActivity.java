@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.mobile_ta_b12.adapter.LogbookAdapter;
 import com.example.mobile_ta_b12.models.Logbook;
 
 import java.util.ArrayList;
 
-public class ListLogbookActivity extends AppCompatActivity {
+public class ListLogbookActivity extends AppCompatActivity implements LogbookAdapter.ItemLogbookClickListener{
 
     private RecyclerView rvLogbook;
 
@@ -24,7 +25,8 @@ public class ListLogbookActivity extends AppCompatActivity {
 
         rvLogbook = findViewById(R.id.rv_logbook);
 
-        LogbookAdapter adapter = new LogbookAdapter(getListLogbook());
+        LogbookAdapter adapter = new LogbookAdapter(getLogbook());
+        adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvLogbook.setLayoutManager(layoutManager);
@@ -36,7 +38,7 @@ public class ListLogbookActivity extends AppCompatActivity {
         startActivity(DetailTugasAkhirIntent);
     }
 
-    public ArrayList<Logbook> getListLogbook(){
+    public ArrayList<Logbook> getLogbook(){
         ArrayList<Logbook> logbook = new ArrayList<>();
         logbook.add(new Logbook(
                 "Jumat, 6 Mei 2022",
@@ -49,5 +51,10 @@ public class ListLogbookActivity extends AppCompatActivity {
                 0
         ));
         return logbook;
+    }
+
+    @Override
+    public void onItemLogbookClick(Logbook logbook) {
+        Toast.makeText(this, "Anda mengklik " + logbook.getHariTanggal(), Toast.LENGTH_SHORT).show();
     }
 }
