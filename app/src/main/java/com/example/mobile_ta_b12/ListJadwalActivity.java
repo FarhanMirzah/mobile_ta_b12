@@ -77,7 +77,8 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
 
     @Override
     public void onItemJadwalClick(com.example.mobile_ta_b12.models.jadwal jadwal) {
-        Intent detailJadwal = new Intent(ListJadwalActivity. this,DetailSidangActivity.class);
-        startActivity(detailJadwal);
+        Intent detailIntent = new Intent(this,DetailSidangActivity.class);
+        detailIntent.putExtra("tipeJadwal",jadwal.getTipe());
+        startActivity(detailIntent);
     }
 }
