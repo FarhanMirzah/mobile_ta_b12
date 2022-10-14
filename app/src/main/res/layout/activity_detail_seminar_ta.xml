@@ -5,32 +5,8 @@
     android:id="@+id/detail_seminar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailSidangActivity">
+    tools:context=".TADetailSeminarActivity">
 
-
-    <ImageView
-        android:id="@+id/accept"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
-        android:onClick="buttonAccept"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_check_circle_24"
-        tools:ignore="OnClick" />
-
-    <ImageView
-        android:id="@+id/reject"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="32dp"
-        android:onClick="buttonRej"
-        android:contentDescription="@string/reject"
-        app:layout_constraintBottom_toBottomOf="@+id/accept"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_baseline_cancel_24"
-        tools:ignore="OnClick" />
 
     <ImageView
         android:id="@+id/gambarTA"
@@ -46,7 +22,7 @@
         android:id="@+id/detail_Jadwal"
         android:layout_width="386dp"
         android:layout_height="36dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@android:drawable/status_bar_item_app_background"
         android:paddingLeft="20dp"
         android:text="Detail Seminar"
@@ -54,52 +30,23 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/arrowBack9" />
+
 
     <TextView
-        android:id="@+id/nama"
+        android:id="@+id/jadwal"
         android:layout_width="385dp"
         android:layout_height="25dp"
         android:layout_marginTop="12dp"
         android:background="@android:drawable/status_bar_item_app_background"
         android:lineSpacingExtra="8sp"
         android:paddingLeft="20dp"
-        android:text="Nama : Rizky Baik"
+        android:text="Jadwal : Rabu, 03 Juli 2022"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detail_Jadwal" />
-
-    <TextView
-        android:id="@+id/NIM"
-        android:layout_width="385dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/status_bar_item_app_background"
-        android:lineSpacingExtra="8sp"
-        android:paddingLeft="20dp"
-        android:text="NIM : 1911523003"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nama" />
-
-    <TextView
-        android:id="@+id/jadwal"
-        android:layout_width="385dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/status_bar_item_app_background"
-        android:lineSpacingExtra="8sp"
-        android:paddingLeft="20dp"
-        android:text="Jadwal : Rabu, 13 Oktober 2022"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NIM" />
 
     <TextView
         android:id="@+id/lokasi"
@@ -113,6 +60,7 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jadwal" />
 
@@ -128,23 +76,9 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lokasi" />
-
-    <TextView
-        android:id="@+id/pembimbing2"
-        android:layout_width="385dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/status_bar_item_app_background"
-        android:lineSpacingExtra="8sp"
-        android:paddingLeft="20dp"
-        android:text="Pembimbing 2 : Ricky Akbar, M.Kom"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pembimbing1" />
 
     <TextView
         android:id="@+id/penguji"
@@ -158,6 +92,7 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pembimbing2" />
 
@@ -173,7 +108,35 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/penguji" />
+
+    <TextView
+        android:id="@+id/pembimbing2"
+        android:layout_width="385dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:lineSpacingExtra="8sp"
+        android:paddingLeft="20dp"
+        android:text="Pembimbing 2 : Ricky Akbar, M.Kom"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pembimbing1" />
+
+    <ImageView
+        android:id="@+id/arrowBack9"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="buttonBackDetailTugasAkhir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

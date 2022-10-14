@@ -6,6 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".DetailLogbookActivity">
 
+    <TextView
+        android:id="@+id/textDetailHariTanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/hari_tanggal"
+        android:textColor="#1400FF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textDetailLogbook"
+        app:layout_constraintTop_toBottomOf="@+id/textDetailLogbook" />
+
+    <TextView
+        android:id="@+id/textDetailKegiatan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/kegiatan"
+        android:textColor="#BF000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/textDetailHariTanggal"
+        app:layout_constraintTop_toBottomOf="@+id/textDetailHariTanggal" />
+
+    <ImageView
+        android:id="@+id/imageStatus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textDetailHariTanggal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textDetailHariTanggal"
+        app:srcCompat="@drawable/ic_check_circle_outline_green" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonStatusLogbook"
         android:layout_width="96dp"
@@ -37,11 +71,11 @@
         android:id="@+id/inputKomentar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintEnd_toEndOf="@+id/rv_logbook"
-        app:layout_constraintStart_toStartOf="@+id/rv_logbook"
-        app:layout_constraintTop_toBottomOf="@+id/rv_logbook">
+        app:layout_constraintEnd_toEndOf="@+id/imageStatus3"
+        app:layout_constraintStart_toStartOf="@+id/textDetailHariTanggal"
+        app:layout_constraintTop_toBottomOf="@+id/textDetailKegiatan">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -51,18 +85,6 @@
             android:paddingTop="30dp"
             android:textColorHint="#616161" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_logbook"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDetailLogbook"
-        tools:listitem="@layout/item_logbook" />
 
     <TextView
         android:id="@+id/textDetailLogbook"
@@ -83,6 +105,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="buttonBackListLogbook"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator" />

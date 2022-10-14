@@ -13,7 +13,7 @@ import com.example.mobile_ta_b12.models.jadwal;
 
 import java.util.ArrayList;
 
-public class ListJadwalActivity extends AppCompatActivity {
+public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapter.ItemJadwalClickListener {
 
     private RecyclerView rvjadwal;
     private Object jadwal;
@@ -27,6 +27,7 @@ public class ListJadwalActivity extends AppCompatActivity {
         rvjadwal = findViewById(R.id.rvJadwal);
 
         jadwalAdapter adapter = new jadwalAdapter(getjadwal());
+        adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvjadwal.setLayoutManager(layoutManager);
@@ -38,9 +39,33 @@ public class ListJadwalActivity extends AppCompatActivity {
         ArrayList<jadwal> ListJadwal = new ArrayList<>();
         ListJadwal.add(new jadwal(
                 "Sidang",
-                "07 Oktober 2022",
+                "05 Oktober 2022",
                 "09.00-11.00",
-                "R1.7"
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Seminar",
+                "13 Oktober 2022",
+                "10.00-12.00",
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Seminar",
+                "25 Oktober 2022",
+                "08.00-10.00",
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Sidang",
+                "1 November 2022",
+                "09.00-11.00",
+                "Ruang Sidang JSI"
+        ));
+        ListJadwal.add(new jadwal(
+                "Sidang",
+                "8 November 2022",
+                "10.00-12.00",
+                "Ruang Sidang JSI"
         ));
         return ListJadwal;
     }
@@ -48,5 +73,12 @@ public class ListJadwalActivity extends AppCompatActivity {
     public void buttonBackListMahasiswa(View view) {
         Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
         startActivity(buttonBackListMahasiswa);
+    }
+
+    @Override
+    public void onItemJadwalClick(com.example.mobile_ta_b12.models.jadwal jadwal) {
+        Intent detailIntent = new Intent(this,DetailSidangActivity.class);
+        detailIntent.putExtra("tipeJadwal",jadwal.getTipe());
+        startActivity(detailIntent);
     }
 }
