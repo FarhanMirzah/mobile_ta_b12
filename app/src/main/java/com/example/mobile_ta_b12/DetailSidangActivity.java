@@ -22,5 +22,7 @@ public class DetailSidangActivity extends AppCompatActivity {
         Intent RejectIntent = new Intent(this, ListJadwalActivity.class);
         startActivity(RejectIntent);
     }
+
+    Intent detailJadwal = getIntent();
 }
 

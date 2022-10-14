@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.collection.CircularArray;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_ta_b12.R;
@@ -17,9 +18,14 @@ import java.util.ArrayList;
 public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalViewHolder> {
 
     ArrayList<jadwal> ListJadwal;
+    ItemJadwalClickListener listener;
 
     public jadwalAdapter(ArrayList<jadwal> listJadwal) {
         ListJadwal = listJadwal;
+    }
+
+    public void setListener(ItemJadwalClickListener listener) {
+        this.listener = listener;
     }
 
 
@@ -46,10 +52,17 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
         return ListJadwal.size();
     }
 
-    public static class JadwalViewHolder extends RecyclerView.ViewHolder {
+    public interface ItemJadwalClickListener{
+        void onItemJadwalClick(jadwal jadwal);
+    }
+
+
+    public static class JadwalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView logoJadwal;
         public TextView tipe_jadwal, tanggal, waktu, tempat;
+        private ItemJadwalClickListener listener;
+        private CircularArray<Object> ListJadwal;
 
         public JadwalViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +72,14 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
             tanggal = itemView.findViewById(R.id.tanggal);
             waktu = itemView.findViewById(R.id.waktu);
             tempat = itemView.findViewById(R.id.tempat);
+
+        itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            jadwal jadwal = (com.example.mobile_ta_b12.models.jadwal) ListJadwal.get(getAdapterPosition());
+            listener.onItemJadwalClick(jadwal);
         }
     }
 }
