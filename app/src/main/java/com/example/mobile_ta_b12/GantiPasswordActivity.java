@@ -18,4 +18,8 @@ public class GantiPasswordActivity extends AppCompatActivity {
         Intent profileIntent = new Intent(this, ProfileActivity.class);
         startActivity(profileIntent);
     }
+    public void ceklis(View view) {
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        startActivity(profileIntent);
+    }
 }

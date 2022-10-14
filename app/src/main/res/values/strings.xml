@@ -106,5 +106,10 @@
     <string name="batal">Batal</string>
     <string name="setuju">Setuju</string>
 
+    <string name="input_nilai_tugas_akhir">Input Nilai Tugas Akhir</string>
+    <string name="detail_seminar">Detail Seminar</string>
+    <string name="detail_sidang">Detail Sidang</string>
+    <string name="pembatalan_tugas_akhir">Pembatalan Tugas Akhir</string>
+
 
 </resources>

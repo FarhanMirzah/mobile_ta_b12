@@ -6,16 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class InputNilaiSidangActivity extends AppCompatActivity {
+public class DetailMahasiswaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_nilai_sidang);
+        setContentView(R.layout.activity_detail_mahasiswa);
     }
-
-    public void buttonBackListJadwal(View view) {
-        Intent ListJadwalIntent = new Intent(this, ListJadwalActivity.class);
-        startActivity(ListJadwalIntent);
+    public void tombolbackDetailMahasiswa(View view) {
+        Intent back = new Intent(this, DetailTugasAkhirActivity.class);
+        startActivity(back);
     }
 }

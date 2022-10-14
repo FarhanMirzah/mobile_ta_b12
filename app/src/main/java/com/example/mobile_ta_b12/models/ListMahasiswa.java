@@ -1,4 +1,4 @@
-package com.example.mobile_ta_b12;
+package com.example.mobile_ta_b12.models;
 
 public class ListMahasiswa {
     private String nama_mahasiswa;
