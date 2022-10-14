@@ -5,7 +5,7 @@
     android:id="@+id/detail_seminar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailSidangActivity">
+    tools:context=".TADetailSeminarActivity">
 
 
     <ImageView
@@ -22,7 +22,7 @@
         android:id="@+id/detail_Jadwal"
         android:layout_width="386dp"
         android:layout_height="36dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@android:drawable/status_bar_item_app_background"
         android:paddingLeft="20dp"
         android:text="Detail Seminar"
@@ -30,7 +30,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/arrowBack9" />
 
 
     <TextView
@@ -127,5 +127,16 @@
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pembimbing1" />
+
+    <ImageView
+        android:id="@+id/arrowBack9"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="buttonBackDetailTugasAkhir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

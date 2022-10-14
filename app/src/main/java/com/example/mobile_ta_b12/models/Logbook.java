@@ -2,16 +2,12 @@ package com.example.mobile_ta_b12.models;
 
 import java.util.List;
 
-public class ListLogbook {
+public class Logbook {
     String hariTanggal;
     String kegiatan;
     int status;
 
-    public ListLogbook(){
-
-    }
-
-    public ListLogbook(String hariTanggal, String kegiatan, int status) {
+    public Logbook(String hariTanggal, String kegiatan, int status) {
         this.hariTanggal = hariTanggal;
         this.kegiatan = kegiatan;
         this.status = status;
