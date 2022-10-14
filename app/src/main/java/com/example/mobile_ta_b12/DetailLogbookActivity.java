@@ -8,8 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.mobile_ta_b12.adapter.ListLogbookAdapter;
-import com.example.mobile_ta_b12.models.ListLogbook;
+import com.example.mobile_ta_b12.adapter.LogbookAdapter;
+import com.example.mobile_ta_b12.models.Logbook;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class DetailLogbookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_logbook);
         rvLogbook = findViewById(R.id.rv_logbook);
 
-        ListLogbookAdapter adapter = new ListLogbookAdapter(getListLogbook());
+        LogbookAdapter adapter = new LogbookAdapter(getListLogbook());
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvLogbook.setLayoutManager(layoutManager);
@@ -35,13 +35,13 @@ public class DetailLogbookActivity extends AppCompatActivity {
         startActivity(ListLogbookIntent);
     }
 
-    public ArrayList<ListLogbook> getListLogbook(){
-        ArrayList<ListLogbook> listLogbook = new ArrayList<>();
-        listLogbook.add(new ListLogbook(
+    public ArrayList<Logbook> getListLogbook(){
+        ArrayList<Logbook> logbook = new ArrayList<>();
+        logbook.add(new Logbook(
                 "Sabtu, 7 Mei 2022",
                 "Membuat latar belakang",
                 0
         ));
-        return listLogbook;
+        return logbook;
     }
 }
