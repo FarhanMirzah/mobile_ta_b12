@@ -35,17 +35,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvJadwal"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="358dp"
+        android:layout_height="300dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/judulAtas"
-        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_jadwal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

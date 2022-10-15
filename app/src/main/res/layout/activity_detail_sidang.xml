@@ -41,7 +41,7 @@
         app:srcCompat="@drawable/skripsi" />
 
     <TextView
-        android:id="@+id/detail_Jadwal"
+        android:id="@+id/TextDetailTanggalSidang"
         android:layout_width="386dp"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
@@ -67,7 +67,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_Jadwal" />
+        app:layout_constraintTop_toBottomOf="@+id/TextDetailTanggalSidang" />
 
     <TextView
         android:id="@+id/NIM"
