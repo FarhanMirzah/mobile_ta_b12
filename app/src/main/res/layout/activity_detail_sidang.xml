@@ -41,7 +41,7 @@
         app:srcCompat="@drawable/skripsi" />
 
     <TextView
-        android:id="@+id/detail_Jadwal"
+        android:id="@+id/TextDetailTanggalSidang"
         android:layout_width="386dp"
         android:layout_height="36dp"
         android:layout_marginTop="16dp"
@@ -67,7 +67,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_Jadwal" />
+        app:layout_constraintTop_toBottomOf="@+id/TextDetailTanggalSidang" />
 
     <TextView
         android:id="@+id/NIM"
@@ -84,19 +84,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nama" />
 
+
     <TextView
         android:id="@+id/jadwal"
-        android:layout_width="385dp"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
         android:background="@android:drawable/status_bar_item_app_background"
         android:lineSpacingExtra="8sp"
         android:paddingLeft="20dp"
-        android:text="Jadwal : Rabu, 05 Oktober 2022"
+        android:text="Pukul : "
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lokasi"
         app:layout_constraintTop_toBottomOf="@+id/NIM" />
 
     <TextView
@@ -173,5 +173,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/penguji" />
+
+    <TextView
+        android:id="@+id/TextDetailWaktuSidang"
+        android:layout_width="314dp"
+        android:layout_height="0dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:text="09.00 WIB"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:paddingLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/jadwal"
+        app:layout_constraintEnd_toEndOf="@+id/NIM"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/jadwal"
+        app:layout_constraintTop_toTopOf="@+id/jadwal"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

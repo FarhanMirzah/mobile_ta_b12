@@ -44,29 +44,18 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
                 "Ruang Sidang JSI"
         ));
         ListJadwal.add(new jadwal(
-                "Seminar",
+                "Sidang",
                 "13 Oktober 2022",
                 "10.00-12.00",
                 "Ruang Sidang JSI"
         ));
         ListJadwal.add(new jadwal(
-                "Seminar",
+                "Sidang",
                 "25 Oktober 2022",
                 "08.00-10.00",
                 "Ruang Sidang JSI"
         ));
-        ListJadwal.add(new jadwal(
-                "Sidang",
-                "1 November 2022",
-                "09.00-11.00",
-                "Ruang Sidang JSI"
-        ));
-        ListJadwal.add(new jadwal(
-                "Sidang",
-                "8 November 2022",
-                "10.00-12.00",
-                "Ruang Sidang JSI"
-        ));
+
         return ListJadwal;
     }
 
@@ -78,7 +67,8 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
     @Override
     public void onItemJadwalClick(com.example.mobile_ta_b12.models.jadwal jadwal) {
         Intent detailIntent = new Intent(this,DetailSidangActivity.class);
-        detailIntent.putExtra("tipeJadwal",jadwal.getTipe());
+        detailIntent.putExtra("TANGGAL",jadwal.getTanggal());
+        detailIntent.putExtra("WAKTU",jadwal.getWaktu());
         startActivity(detailIntent);
     }
 }

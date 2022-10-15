@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailSidangActivity extends AppCompatActivity {
 
-    String tipeJadwal;
-    TextView detail_Jadwal;
+    String hariTanggal, Waktu;
+    TextView TextDetailTanggalSidang, TextDetailWaktuSidang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,13 @@ public class DetailSidangActivity extends AppCompatActivity {
 
         Intent detailIntent = getIntent();
         if(detailIntent != null){
-            tipeJadwal = detailIntent.getStringExtra("tipeJadwal");
-            detail_Jadwal = findViewById(R.id.detail_Jadwal);
-            detail_Jadwal.setText(tipeJadwal);}
+            hariTanggal = detailIntent.getStringExtra("TANGGAL");
+            Waktu = detailIntent.getStringExtra("WAKTU");
+        }
+        TextDetailTanggalSidang= findViewById(R.id.TextDetailTanggalSidang);
+        TextDetailWaktuSidang= findViewById(R.id.TextDetailWaktuSidang);
+        TextDetailTanggalSidang.setText(hariTanggal);
+        TextDetailWaktuSidang.setText(Waktu);
     }
 
     public void buttonAcc(View view) {

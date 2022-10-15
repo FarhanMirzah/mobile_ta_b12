@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.collection.CircularArray;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_ta_b12.R;
@@ -57,12 +56,10 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
     }
 
 
-    public static class JadwalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class JadwalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView logoJadwal;
         public TextView tipe_jadwal, tanggal, waktu, tempat;
-        private ItemJadwalClickListener listener;
-        private CircularArray<Object> ListJadwal;
 
         public JadwalViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,7 +75,7 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
 
         @Override
         public void onClick(View view) {
-            jadwal jadwal = (com.example.mobile_ta_b12.models.jadwal) ListJadwal.get(getAdapterPosition());
+            jadwal jadwal = ListJadwal.get(getAdapterPosition());
             listener.onItemJadwalClick(jadwal);
         }
     }

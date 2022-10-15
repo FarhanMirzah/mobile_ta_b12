@@ -1,8 +1,6 @@
 package com.example.mobile_ta_b12.models;
 
-import java.util.List;
-
-public class Logbook {
+public class  Logbook {
     String hariTanggal;
     String kegiatan;
     int status;
