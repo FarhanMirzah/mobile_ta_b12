@@ -16,14 +16,11 @@ import java.util.ArrayList;
 public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapter.ItemJadwalClickListener {
 
     private RecyclerView rvjadwal;
-    private Object jadwal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_jadwal);
-
-
         rvjadwal = findViewById(R.id.rvJadwal);
 
         jadwalAdapter adapter = new jadwalAdapter(getjadwal());
@@ -32,7 +29,6 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
 
         rvjadwal.setLayoutManager(layoutManager);
         rvjadwal.setAdapter(adapter);
-
     }
 
     public ArrayList<jadwal> getjadwal(){
@@ -62,6 +58,11 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
     public void buttonBackListMahasiswa(View view) {
         Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
         startActivity(buttonBackListMahasiswa);
+    }
+
+    public void buttonListJadwalSeminar(View view) {
+        Intent buttonListJadwalSeminar = new Intent(this, ListSeminarActivity.class);
+        startActivity(buttonListJadwalSeminar);
     }
 
     @Override

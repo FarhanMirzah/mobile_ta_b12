@@ -7,20 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ListJadwalActivity">
 
-    <EditText
-        android:id="@+id/judulAtas"
-        android:layout_width="373dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/list_jadwal_seminar_dan_sidang"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -28,22 +14,50 @@
         android:layout_height="27dp"
         android:layout_marginTop="16dp"
         android:onClick="buttonBackListMahasiswa"
-        app:layout_constraintBottom_toTopOf="@+id/judulAtas"
-        app:layout_constraintStart_toStartOf="@+id/judulAtas"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvJadwal"
-        android:layout_width="358dp"
-        android:layout_height="300dp"
+        android:layout_width="364dp"
+        android:layout_height="380dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judulAtas"
+        app:layout_constraintEnd_toEndOf="@+id/judulLaman"
+        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintStart_toStartOf="@+id/judulLaman"
+        app:layout_constraintTop_toBottomOf="@+id/judulLaman"
         tools:listitem="@layout/item_jadwal" />
+
+    <TextView
+        android:id="@+id/judulLaman"
+        android:layout_width="358dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:text="List Jadwal Sidang Mahasiswa Bimbingan Anda"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/Seminar"
+        android:layout_width="224dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="buttonListJadwalSeminar"
+        android:text="List Jadwal Seminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
