@@ -36,14 +36,14 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
     public ArrayList<Persetujuan> getPersetujuan(){
         ArrayList<Persetujuan> persetujuan = new ArrayList<>();
         persetujuan.add(new Persetujuan(
-                "Thomas Akram",
-                "2011521014"
+                "Burhanudin",
+                "2011529231"
 
 
         ));
         persetujuan.add(new Persetujuan(
-                "M Farhan Ananda",
-                "2011522022"
+                "Sultan",
+                "2011524012"
 
         ));
         return persetujuan;

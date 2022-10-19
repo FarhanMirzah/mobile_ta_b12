@@ -18,4 +18,12 @@ public class PersetujuanTugasAkhirActivity extends AppCompatActivity {
         Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
         startActivity(butuhPersetujuanIntent);
     }
+    public void buttonsetuju(View view) {
+        Intent buttonsetuju = new Intent(this, ListPersetujuanActivity.class);
+        startActivity(buttonsetuju);
+    }
+    public void buttontolak(View view) {
+        Intent buttontolak = new Intent(this, ListPersetujuanActivity.class);
+        startActivity(buttontolak);
+    }
 }
