@@ -37,7 +37,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  ListMah
     public ArrayList<Mahasiswa> getMahasiswa() {
         ArrayList<Mahasiswa> mahasiswa = new ArrayList<>();
         mahasiswa.add(new Mahasiswa(
-                "Thomas Akram",
+                "Thomas Akram Ferdinan",
                 "2011521014"
         ));
         mahasiswa.add(new Mahasiswa(
