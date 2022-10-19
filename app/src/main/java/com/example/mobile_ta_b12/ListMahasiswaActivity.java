@@ -13,7 +13,7 @@ import com.example.mobile_ta_b12.models.Mahasiswa;
 
 import java.util.ArrayList;
 
-public class ListMahasiswaActivity extends AppCompatActivity {
+public class ListMahasiswaActivity extends AppCompatActivity implements  ListMahasiswaAdapter.ItemMahasiswaClickListener{
 
     private RecyclerView rvlistmhs;
 
@@ -58,7 +58,7 @@ public class ListMahasiswaActivity extends AppCompatActivity {
 
 
     @Override
-    public void  onItemListMahasiswaClick(Mahasiswa mahasiswa){
+    public void  onItemMahasiswaClick(Mahasiswa mahasiswa){
         Intent iniintentlistmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
         iniintentlistmahasiswa.putExtra("Nama Mahasiswa", mahasiswa.getNama_Mahasiswa());
         startActivity(iniintentlistmahasiswa);
