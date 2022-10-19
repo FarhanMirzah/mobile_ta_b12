@@ -112,6 +112,7 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="#5DB075"
         android:text="@string/accept"
+        android:onClick="buttonsetuju"
         app:layout_constraintEnd_toEndOf="@+id/rectangleRequest"
         app:layout_constraintTop_toBottomOf="@+id/rectangleRequest" />
 
@@ -122,6 +123,7 @@
         android:layout_marginStart="20dp"
         android:backgroundTint="#BA1A1A"
         android:text="@string/reject"
+        android:onClick="buttontolak"
         app:layout_constraintStart_toStartOf="@+id/rectangleRequest"
         app:layout_constraintTop_toTopOf="@+id/buttonAccept" />
 
