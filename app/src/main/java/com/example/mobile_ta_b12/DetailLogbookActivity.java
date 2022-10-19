@@ -36,7 +36,7 @@ public class DetailLogbookActivity extends AppCompatActivity {
         if(detailIntent != null){
             hariTanggal = detailIntent.getStringExtra("HARI_TANGGAL");
             kegiatan = detailIntent.getStringExtra("KEGIATAN");
-//            status = detailIntent.getIntExtra("STATUS", 1);
+            status = detailIntent.getIntExtra("STATUS", 0);
         }
         textDetailHariTanggal = findViewById(R.id.textDetailHariTanggal);
         textDetailHariTanggal.setText(hariTanggal);
@@ -44,8 +44,12 @@ public class DetailLogbookActivity extends AppCompatActivity {
         textDetailKegiatan = findViewById(R.id.textDetailKegiatan);
         textDetailKegiatan.setText(kegiatan);
 
-//        imageStatusLogbook = findViewById(R.id.imageStatusLogbook);
-//        imageStatusLogbook.setImageResource(status);
+        imageStatusLogbook = findViewById(R.id.imageStatusLogbook);
+        if(status == 1){
+            imageStatusLogbook.setImageResource(R.drawable.ic_check_circle_outline_green);
+        }else{
+            imageStatusLogbook.setImageResource(R.drawable.ic_access_time_red);
+        }
     }
 
     public void buttonBackListLogbook(View view) {
