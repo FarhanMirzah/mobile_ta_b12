@@ -8,47 +8,56 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.adapter.ListMahasiswaAdapter;
-import com.example.mobile_ta_b12.models.ListMahasiswa;
+import com.example.mobile_ta_b12.adapter.LogbookAdapter;
+import com.example.mobile_ta_b12.adapter.PersetujuanAdapter;
+import com.example.mobile_ta_b12.models.Persetujuan;
 
 import java.util.ArrayList;
 
-public class ListPersetujuanActivity extends AppCompatActivity {
-    private RecyclerView listmhs;
-    private ArrayList<ListMahasiswa> list = new ArrayList<>();
+public class ListPersetujuanActivity extends AppCompatActivity implements PersetujuanAdapter.ItemPersetujuanClickListener{
+
+    private RecyclerView rvPersetujuan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_persetujuan);
 
-        listmhs = findViewById(R.id.recyclerview_persetujuan);
-        listmhs.setHasFixedSize(true);
+        rvPersetujuan = findViewById(R.id.rv_Persetujuan);
 
-        list.addAll(getListMahasiswaa());
-        showRecyclerList();
+        PersetujuanAdapter adapter = new PersetujuanAdapter(getPersetujuan());
+        adapter.setListener(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
+        rvPersetujuan.setLayoutManager(layoutManager);
+        rvPersetujuan.setAdapter(adapter);
     }
 
-    private void showRecyclerList() {
-        listmhs.setLayoutManager(new LinearLayoutManager(this));
-        ListMahasiswaAdapter listHeroAdapter = new ListMahasiswaAdapter(list);
-        listmhs.setAdapter(listHeroAdapter);
+    public ArrayList<Persetujuan> getPersetujuan(){
+        ArrayList<Persetujuan> persetujuan = new ArrayList<>();
+        persetujuan.add(new Persetujuan(
+                "Burhanudin",
+                "2011529231"
+
+
+        ));
+        persetujuan.add(new Persetujuan(
+                "Sultan",
+                "2011524012"
+
+        ));
+        return persetujuan;
     }
 
-    public ArrayList<ListMahasiswa> getListMahasiswaa() {
-        String[] nama_mahasiswa = getResources().getStringArray(R.array.nama_mahasiswa);
-        String[] nim_mahasiswa = getResources().getStringArray(R.array.nim_mahasiswa);
-        ArrayList<ListMahasiswa> listMahasiswab = new ArrayList<>();
-        for (int i = 0; i < nama_mahasiswa.length; i++) {
-            ListMahasiswa listMahasiswa = new ListMahasiswa();
-            listMahasiswa.setNama_mahasiswa(nama_mahasiswa[i]);
-            listMahasiswa.setNim_peserta(nim_mahasiswa[i]);
-            listMahasiswab.add(listMahasiswa);
-        }
-        return listMahasiswab;
+    @Override
+    public  void onItemPersetujuanClick(Persetujuan persetujuan){
+           Intent detailintentmahasiswa = new Intent(this, PersetujuanTugasAkhirActivity.class);
+           detailintentmahasiswa.putExtra("Nama Mahasiswa", persetujuan.getNamaMhsP());
+           startActivity(detailintentmahasiswa);
     }
 
-    public void arrowBack(View view) {
+
+    public void arrowBackPersetujuan(View view) {
         Intent profileIntent = new Intent(this, ListMahasiswaActivity.class);
         startActivity(profileIntent);
     }

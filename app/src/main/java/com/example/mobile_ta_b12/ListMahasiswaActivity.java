@@ -9,62 +9,72 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_ta_b12.adapter.ListMahasiswaAdapter;
-import com.example.mobile_ta_b12.models.ListMahasiswa;
+import com.example.mobile_ta_b12.models.Mahasiswa;
 
 import java.util.ArrayList;
 
-public class ListMahasiswaActivity extends AppCompatActivity {
-    private RecyclerView listmhs;
-    private ArrayList<ListMahasiswa> list = new ArrayList<>();
+public class ListMahasiswaActivity extends AppCompatActivity implements  ListMahasiswaAdapter.ItemMahasiswaClickListener{
 
+    private RecyclerView rvlistmhs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_mahasiswa);
 
-        listmhs = findViewById(R.id.recycleview_listmahasiswa);
-        listmhs.setHasFixedSize(true);
+        rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 
-        list.addAll(getListMahasiswaa());
-        showRecyclerList();
+        ListMahasiswaAdapter adapter = new ListMahasiswaAdapter(getMahasiswa());
+        adapter.setListener(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
+        rvlistmhs.setLayoutManager(layoutManager);
+        rvlistmhs.setAdapter(adapter);
+
     }
 
-    private void showRecyclerList() {
-        listmhs.setLayoutManager(new LinearLayoutManager(this));
-        ListMahasiswaAdapter listHeroAdapter = new ListMahasiswaAdapter(list);
-        listmhs.setAdapter(listHeroAdapter);
+
+    public ArrayList<Mahasiswa> getMahasiswa() {
+        ArrayList<Mahasiswa> mahasiswa = new ArrayList<>();
+        mahasiswa.add(new Mahasiswa(
+                "Thomas Akram Ferdinan",
+                "2011521014"
+        ));
+        mahasiswa.add(new Mahasiswa(
+                "M Farhan Ananda",
+                "2011522022"
+        ));
+        mahasiswa.add(new Mahasiswa(
+                "Fathih Alfi",
+                "2011523002"
+
+        ));
+        mahasiswa.add(new Mahasiswa(
+                "Ramadya Arya Pratama",
+                "2003040082"
+        ));
+        return mahasiswa;
     }
 
-    public ArrayList<ListMahasiswa> getListMahasiswaa() {
-        String[] nama_mahasiswa = getResources().getStringArray(R.array.nama_mahasiswa);
-        String[] nim_mahasiswa = getResources().getStringArray(R.array.nim_mahasiswa);
-        ArrayList<ListMahasiswa> listMahasiswab = new ArrayList<>();
-        for (int i = 0; i < nama_mahasiswa.length; i++) {
-            ListMahasiswa listMahasiswa = new ListMahasiswa();
-            listMahasiswa.setNama_mahasiswa(nama_mahasiswa[i]);
-            listMahasiswa.setNim_peserta(nim_mahasiswa[i]);
-            listMahasiswab.add(listMahasiswa);
+
+    @Override
+    public void  onItemMahasiswaClick(Mahasiswa mahasiswa){
+        Intent iniintentlistmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
+        iniintentlistmahasiswa.putExtra("Nama Mahasiswa", mahasiswa.getNama_Mahasiswa());
+        startActivity(iniintentlistmahasiswa);
         }
-        return listMahasiswab;
-    }
 
     public void profile(View view) {
         Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);
         startActivity(intent);
-
-//    public void tambahLB(View view) {
-//        Intent intent = new Intent(LogbookActivity.this,AddlogbookActivity.class);
-//        startActivity(intent);
-//    }
     }
 
-    public void buttonButuhPersetujuan(View view) {
+    public void buttonButuhPersetujuan (View view){
         Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
         startActivity(butuhPersetujuanIntent);
     }
 
-    public void buttonListJadwal(View view) {
+    public void buttonListJadwal (View view){
         Intent listJadwalIntent = new Intent(this, ListJadwalActivity.class);
         startActivity(listJadwalIntent);
     }
