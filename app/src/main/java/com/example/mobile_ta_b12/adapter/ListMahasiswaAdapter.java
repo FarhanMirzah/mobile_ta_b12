@@ -8,44 +8,54 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.models.ListMahasiswa;
+import com.example.mobile_ta_b12.models.Mahasiswa;
 import com.example.mobile_ta_b12.R;
+import com.example.mobile_ta_b12.models.Persetujuan;
 
 import java.util.ArrayList;
 
-public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdapter.ListViewHolder>{
-    private ArrayList<ListMahasiswa>ListMahasiswa;
-    public ListMahasiswaAdapter(ArrayList<ListMahasiswa>list){
-        this.ListMahasiswa = list;
+
+public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdapter.MahasiswaViewHolder>{
+    ArrayList<Mahasiswa>listMahasiswa = new ArrayList<>();
+    ItemMahasiswaClickListener listenermahasiswa;
+
+    public ListMahasiswaAdapter(ArrayList<Mahasiswa> listMahasiswa){this.listMahasiswa = listMahasiswa;}
+
+    public ListMahasiswaAdapter(ArrayList<Mahasiswa>listMahasiswa, ItemMahasiswaClickListener listenermahasiswa){
+        this.listMahasiswa = listMahasiswa;
+        this.listenermahasiswa = listenermahasiswa;
     }
 
+    public setListMahasiswa(ArrayList<Mahasiswa>listMahasiswa){this.listMahasiswa = listMahasiswa;}
+    public setListener(ItemMahasiswaClickListener listenermahasiswa){this.listenermahasiswa = listenermahasiswa;}
 
     @NonNull
     @Override
-    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MahasiswaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_tampilan_list_mahasiswa,parent, false);
-        return new ListViewHolder(view);
+        return new MahasiswaViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListViewHolder holder, int position) {
-        ListMahasiswa listpeserta = ListMahasiswa.get(position);
-        holder.tvNamaPeserta.setText(listpeserta.getNama_mahasiswa());
-        holder.tvNim.setText(listpeserta.getNim_mahasiswa());
+    public void onBindViewHolder(@NonNull MahasiswaViewHolder holder, int position) {
+        Mahasiswa listpeserta = this.listMahasiswa.get(position);
+        holder.nama_mahasiswa.setText(listpeserta.getNama_Mahasiswa());
+        holder.nim_mahasiswa.setText(listpeserta.getNim_Mahasiswa());
     }
 
     @Override
-    public int getItemCount() {
-        return ListMahasiswa.size();
+    public int getItemCount() {return listMahasiswa.size();}
+
+    public  interface ItemMahasiswaClickListener{
+        void onItemMahasiswaClick(Mahasiswa mahasiswa);
     }
+    public class MahasiswaViewHolder extends RecyclerView.ViewHolder{
+        TextView nama_mahasiswa, nim_mahasiswa;
 
-    public class ListViewHolder extends RecyclerView.ViewHolder{
-        TextView tvNamaPeserta, tvNim;
-
-        public ListViewHolder(@NonNull View itemView) {
+        public MahasiswaViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvNamaPeserta = itemView.findViewById(R.id.namaMahasiswa);
-            tvNim = itemView.findViewById(R.id.nimMahasiswa);
+            nama_mahasiswa = itemView.findViewById(R.id.namaMahasiswa);
+            nim_mahasiswa = itemView.findViewById(R.id.nimMahasiswa);
         }
     }
 }
