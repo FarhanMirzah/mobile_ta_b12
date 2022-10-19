@@ -34,7 +34,7 @@ public class DetailSeminarActivity extends AppCompatActivity {
     }
 
     public void buttonRej(View view) {
-        Intent RejectIntent = new Intent(this, ListJadwalActivity.class);
+        Intent RejectIntent = new Intent(this, ListSeminarActivity.class);
         startActivity(RejectIntent);
     }
 }
