@@ -58,7 +58,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  ListMah
 
 
     @Override
-    public void  onItemMahasiswaClick(Mahasiswa mahasiswa){
+    public void onItemMahasiswaClick(Mahasiswa mahasiswa){
         Intent iniintentlistmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
         iniintentlistmahasiswa.putExtra("Nama Mahasiswa", mahasiswa.getNama_Mahasiswa());
         startActivity(iniintentlistmahasiswa);
