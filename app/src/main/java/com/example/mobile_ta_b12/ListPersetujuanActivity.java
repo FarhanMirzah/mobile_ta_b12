@@ -24,33 +24,39 @@ public class ListPersetujuanActivity extends AppCompatActivity {
 
         rvPersetujuan = findViewById(R.id.rv_Persetujuan);
 
-        PersetujuanAdapterr adapter = new PersetujuanAdapter(getPersetujuan());
-        adapter.setListener(this);
+        PersetujuanAdapter adapter = new PersetujuanAdapter(getPersetujuan());
+        adapter.setListenerpersetujuan(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvPersetujuan.setLayoutManager(layoutManager);
         rvPersetujuan.setAdapter(adapter);
     }
 
-    public void buttonBackDetailTugasAkhir(View view) {
-        Intent DetailTugasAkhirIntent = new Intent(this, DetailTugasAkhirActivity.class);
-        startActivity(DetailTugasAkhirIntent);
-    }
+
+
 
     public ArrayList<Persetujuan> getPersetujuan(){
         ArrayList<Persetujuan> persetujuan = new ArrayList<>();
-        persetujuan.add(new persetujuan(
+        persetujuan.add(new Persetujuan(
                 "Thomas Akram",
                 "2011521014"
 
+
         ));
-        persetujuan.add(new persetujuan(
+        persetujuan.add(new Persetujuan(
                 "M Farhan Ananda",
                 "2011522022"
 
         ));
         return persetujuan;
     }
+        @Override
+    public  void onItemPersetujuanClickListener(Persetujuan persetujuan){
+           Intent detailintentmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
+           detailintentmahasiswa.putExtra("Nama Mahasiswa", persetujuan.getNamaMhsP());
+           startActivity(detailintentmahasiswa);
+    }
+
 
     public void arrowBackPersetujuan(View view) {
         Intent profileIntent = new Intent(this, ListMahasiswaActivity.class);
