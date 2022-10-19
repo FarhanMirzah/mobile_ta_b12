@@ -51,7 +51,7 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
 
     @Override
     public  void onItemPersetujuanClick(Persetujuan persetujuan){
-           Intent detailintentmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
+           Intent detailintentmahasiswa = new Intent(this, PersetujuanTugasAkhirActivity.class);
            detailintentmahasiswa.putExtra("Nama Mahasiswa", persetujuan.getNamaMhsP());
            startActivity(detailintentmahasiswa);
     }
