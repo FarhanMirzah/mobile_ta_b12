@@ -57,6 +57,8 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
     public void onItemLogbookClick(Logbook logbook) {
         Intent detailIntent = new Intent(this, DetailLogbookActivity.class);
         detailIntent.putExtra("HARI_TANGGAL", logbook.getHariTanggal());
+        detailIntent.putExtra("KEGIATAN", logbook.getKegiatan());
+        detailIntent.putExtra("STATUS", logbook.getStatus());
         startActivity(detailIntent);
     }
 }
