@@ -49,13 +49,21 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
     public  interface ItemMahasiswaClickListener{
         void onItemMahasiswaClick(Mahasiswa mahasiswa);
     }
-    public class MahasiswaViewHolder extends RecyclerView.ViewHolder{
+    public class MahasiswaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView nama_mahasiswa, nim_mahasiswa;
 
         public MahasiswaViewHolder(@NonNull View itemView) {
             super(itemView);
             nama_mahasiswa = itemView.findViewById(R.id.namaMahasiswa);
             nim_mahasiswa = itemView.findViewById(R.id.nimMahasiswa);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Mahasiswa mahasiswa = listMahasiswa.get(getAdapterPosition());
+            listenermahasiswa.onItemMahasiswaClick(mahasiswa);
         }
     }
 }
