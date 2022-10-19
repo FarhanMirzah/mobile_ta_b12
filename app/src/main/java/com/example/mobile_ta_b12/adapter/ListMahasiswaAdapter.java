@@ -26,8 +26,8 @@ public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdap
         this.listenermahasiswa = listenermahasiswa;
     }
 
-    public setListMahasiswa(ArrayList<Mahasiswa>listMahasiswa){this.listMahasiswa = listMahasiswa;}
-    public setListener(ItemMahasiswaClickListener listenermahasiswa){this.listenermahasiswa = listenermahasiswa;}
+    public void setListMahasiswa(ArrayList<Mahasiswa>listMahasiswa){ this.listMahasiswa = listMahasiswa; }
+    public void setListener(ItemMahasiswaClickListener listenermahasiswa){ this.listenermahasiswa = listenermahasiswa; }
 
     @NonNull
     @Override

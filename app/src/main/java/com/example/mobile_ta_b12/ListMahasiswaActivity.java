@@ -67,16 +67,15 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  ListMah
     public void profile(View view) {
         Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);
         startActivity(intent);
+    }
 
+    public void buttonButuhPersetujuan (View view){
+        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
+        startActivity(butuhPersetujuanIntent);
+    }
 
-        public void buttonButuhPersetujuan (View view){
-            Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
-            startActivity(butuhPersetujuanIntent);
-        }
-
-        public void buttonListJadwal (View view){
-            Intent listJadwalIntent = new Intent(this, ListJadwalActivity.class);
-            startActivity(listJadwalIntent);
-        }
+    public void buttonListJadwal (View view){
+        Intent listJadwalIntent = new Intent(this, ListJadwalActivity.class);
+        startActivity(listJadwalIntent);
     }
 }
