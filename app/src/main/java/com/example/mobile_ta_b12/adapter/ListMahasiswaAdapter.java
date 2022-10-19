@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_ta_b12.models.Mahasiswa;
 import com.example.mobile_ta_b12.R;
-import com.example.mobile_ta_b12.models.Persetujuan;
+
 
 import java.util.ArrayList;
 
