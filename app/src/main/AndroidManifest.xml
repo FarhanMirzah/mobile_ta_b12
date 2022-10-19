@@ -85,6 +85,9 @@
         <activity
             android:name=".TADetailSidangActivity"
             android:exported="true" />
+        <activity
+            android:name=".ListSeminarActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
