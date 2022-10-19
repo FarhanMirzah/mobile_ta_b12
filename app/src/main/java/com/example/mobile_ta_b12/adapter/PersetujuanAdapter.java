@@ -28,7 +28,7 @@ public class PersetujuanAdapter extends RecyclerView.Adapter<PersetujuanAdapter.
     }
 
     public void setListPersetujuan(ArrayList<Persetujuan>listPersetujuan) {this.listPersetujuan = listPersetujuan;}
-    public void setListenerpersetujuan(ItemPersetujuanClickListener listenerpersetujuan) {this.listenerpersetujuan = listenerpersetujuan;}
+    public void setListener(ItemPersetujuanClickListener listenerpersetujuan) {this.listenerpersetujuan = listenerpersetujuan;}
     @NonNull
     @Override
 

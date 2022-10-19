@@ -8,16 +8,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mobile_ta_b12.adapter.LogbookAdapter;
 import com.example.mobile_ta_b12.adapter.PersetujuanAdapter;
 import com.example.mobile_ta_b12.models.Persetujuan;
 
 import java.util.ArrayList;
 
-public class ListPersetujuanActivity extends AppCompatActivity {
+public class ListPersetujuanActivity extends AppCompatActivity implements PersetujuanAdapter.ItemPersetujuanClickListener{
 
     private RecyclerView rvPersetujuan;
 
-       @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_persetujuan);
@@ -25,15 +26,12 @@ public class ListPersetujuanActivity extends AppCompatActivity {
         rvPersetujuan = findViewById(R.id.rv_Persetujuan);
 
         PersetujuanAdapter adapter = new PersetujuanAdapter(getPersetujuan());
-        adapter.setListenerpersetujuan(this);
+        adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         rvPersetujuan.setLayoutManager(layoutManager);
         rvPersetujuan.setAdapter(adapter);
     }
-
-
-
 
     public ArrayList<Persetujuan> getPersetujuan(){
         ArrayList<Persetujuan> persetujuan = new ArrayList<>();
@@ -50,8 +48,9 @@ public class ListPersetujuanActivity extends AppCompatActivity {
         ));
         return persetujuan;
     }
-        @Override
-    public  void onItemPersetujuanClickListener(Persetujuan persetujuan){
+
+    @Override
+    public  void onItemPersetujuanClick(Persetujuan persetujuan){
            Intent detailintentmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
            detailintentmahasiswa.putExtra("Nama Mahasiswa", persetujuan.getNamaMhsP());
            startActivity(detailintentmahasiswa);
