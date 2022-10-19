@@ -23,7 +23,7 @@ public class DetailSidangActivity extends AppCompatActivity {
             Waktu = detailIntent.getStringExtra("WAKTU");
         }
         TextDetailTanggalSidang= findViewById(R.id.TextDetailTanggalSidang);
-        TextDetailWaktuSidang= findViewById(R.id.TextDetailWaktuSidang);
+        TextDetailWaktuSidang= findViewById(R.id.jam);
         TextDetailTanggalSidang.setText(hariTanggal);
         TextDetailWaktuSidang.setText(Waktu);
     }

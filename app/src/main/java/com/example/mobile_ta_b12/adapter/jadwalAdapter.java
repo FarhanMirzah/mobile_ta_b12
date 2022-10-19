@@ -23,6 +23,10 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
         ListJadwal = listJadwal;
     }
 
+    public jadwalAdapter() {
+
+    }
+
     public void setListener(ItemJadwalClickListener listener) {
         this.listener = listener;
     }
@@ -65,8 +69,8 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
             super(itemView);
 
             logoJadwal = itemView.findViewById(R.id.logoJadwal);
-            tipe_jadwal = itemView.findViewById(R.id.tipe_jadwal);
-            tanggal = itemView.findViewById(R.id.tanggal);
+            tipe_jadwal = itemView.findViewById(R.id.tipe);
+            tanggal = itemView.findViewById(R.id.tanggalSeminar);
             waktu = itemView.findViewById(R.id.waktu);
             tempat = itemView.findViewById(R.id.tempat);
 
