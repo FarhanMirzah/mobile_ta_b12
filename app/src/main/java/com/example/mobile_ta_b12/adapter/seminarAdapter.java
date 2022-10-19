@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.ListSeminarActivity;
 import com.example.mobile_ta_b12.R;
 import com.example.mobile_ta_b12.models.seminar;
 
@@ -17,15 +16,20 @@ import java.util.ArrayList;
 
 public class seminarAdapter extends RecyclerView.Adapter<seminarAdapter.SeminarViewHolder>{
 
-    ArrayList<seminar> listSeminar = new ArrayList<>();
+    ArrayList<seminar> listSeminar;
+    ItemSeminarClickListener listener;
 
     public seminarAdapter(ArrayList<seminar> listSeminar) {
         this.listSeminar = listSeminar;
     }
 
     public seminarAdapter() {
-
     }
+
+    public void setListener(ItemSeminarClickListener listener){
+        this.listener = listener;
+    }
+
 
     @NonNull
     @Override
@@ -47,14 +51,14 @@ public class seminarAdapter extends RecyclerView.Adapter<seminarAdapter.SeminarV
     }
 
     @Override
-    public int getItemCount() {
-        return listSeminar.size();
+    public int getItemCount() {return listSeminar.size();
     }
 
-    public void setListener(ListSeminarActivity listJadwalActivity) {
+    public interface ItemSeminarClickListener{
+        void onItemSeminarClick(seminar seminar);
     }
 
-    public class SeminarViewHolder extends RecyclerView.ViewHolder {
+    public class SeminarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView logoSeminar;
         public TextView TextSeminarType, TextTanggalseminar, waktu, tempat;
@@ -67,6 +71,15 @@ public class seminarAdapter extends RecyclerView.Adapter<seminarAdapter.SeminarV
             TextTanggalseminar = itemView.findViewById(R.id.tanggalSeminar);
             waktu = itemView.findViewById(R.id.waktu);
             tempat = itemView.findViewById(R.id.tempat);
+
+            itemView.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            seminar seminar = listSeminar.get(getAdapterPosition());
+            listener.onItemSeminarClick(seminar);
         }
     }
 }

@@ -8,7 +8,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_seminar"
         android:layout_width="365dp"
-        android:layout_height="380dp"
+        android:layout_height="500dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="List Jadwal Sidang Mahasiswa Bimbingan Anda"
+        android:text="List Jadwal Seminar Mahasiswa Bimbingan Anda"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:paddingLeft="8dp"

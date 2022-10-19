@@ -13,7 +13,7 @@ import com.example.mobile_ta_b12.models.seminar;
 
 import java.util.ArrayList;
 
-public class ListSeminarActivity extends AppCompatActivity {
+public class ListSeminarActivity extends AppCompatActivity implements seminarAdapter.ItemSeminarClickListener {
 
     private RecyclerView rvseminar;
 
@@ -54,6 +54,27 @@ public class ListSeminarActivity extends AppCompatActivity {
                 "Ruang Sidang JSI"
         ));
 
+        ListSeminar.add(new seminar(
+                "Seminar",
+                "26 Oktober 2022",
+                "08.00-10.00",
+                "Ruang Sidang JSI"
+        ));
+
+        ListSeminar.add(new seminar(
+                "Seminar",
+                "15 November 2022",
+                "07.30-09.30",
+                "Ruang Sidang JSI"
+        ));
+
+        ListSeminar.add(new seminar(
+                "Seminar",
+                "3 Desember 2022",
+                "13.30-15.30",
+                "Ruang Sidang JSI"
+        ));
+
         return ListSeminar;
     }
 
@@ -62,4 +83,12 @@ public class ListSeminarActivity extends AppCompatActivity {
         startActivity(buttonBackListJadwal);
     }
 
+    @Override
+    public void onItemSeminarClick(seminar seminar) {
+        Intent detailIntent = new Intent(this,DetailSeminarActivity.class);
+        detailIntent.putExtra("tanggal",seminar.getTanggal());
+        detailIntent.putExtra("waktu",seminar.getWaktu());
+        startActivity(detailIntent);
+    }
 }
+
