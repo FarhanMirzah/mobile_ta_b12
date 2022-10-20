@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".PembatalanTaActivity">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputKomentar"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/arrowBackTA"
+        app:layout_constraintTop_toBottomOf="@+id/judul">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|start"
+            android:hint="@string/rekomendasi_seminar"
+            android:paddingTop="30dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:id="@+id/nim_mahasiswa"
         android:layout_width="280dp"
@@ -28,17 +45,6 @@
         app:layout_constraintStart_toStartOf="@+id/nim_mahasiswa"
         app:layout_constraintTop_toBottomOf="@+id/nim_mahasiswa" />
 
-
-    <TextView
-        android:id="@+id/textalasan"
-        android:layout_width="280dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="40dp"
-        android:text="Alasan Pembatalan Mahasiswa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judul" />
 
     <ImageView
         android:id="@+id/arrowBackTA"
@@ -78,19 +84,10 @@
         android:id="@+id/textInputLayout"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textalasan">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        tools:layout_editor_absoluteY="550dp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -101,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/inputKomentar" />
 
     <Button
         android:id="@+id/button2"
