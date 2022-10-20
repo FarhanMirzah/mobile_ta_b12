@@ -23,15 +23,19 @@
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_input_nilai_sidang.xml" value="0.26927083333333335" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_input_nilai_tugas_akhir.xml" value="0.26927083333333335" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_jadwal.xml" value="0.26927083333333335" />
-        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_logbook.xml" value="0.45" />
-        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_mahasiswa.xml" value="0.33" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_logbook.xml" value="0.16964285714285715" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_mahasiswa.xml" value="0.24522292993630573" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_list_seminar.xml" value="0.223731884057971" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_login.xml" value="0.24592391304347827" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_pembatalan_ta.xml" value="0.25" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_persetujuan_tugas_akhir.xml" value="0.33" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_rekomendasi_catatan_seminar.xml" value="0.26927083333333335" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/activity_tampilan_list_mahasiswa.xml" value="0.26927083333333335" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/item_butuh_persetujuan.xml" value="0.13095238095238096" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/item_jadwal.xml" value="0.20878623188405798" />
         <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/item_logbook.xml" value="0.375" />
+        <entry key="..\:/Programs/Android/AndroidStudioProjects/mobile_ta_b12/app/src/main/res/layout/item_mahasiswa.xml" value="0.223731884057971" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1835" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/drawable/button_shape.xml" value="0.2265" />
         <entry key="..\:/Users/akram/StudioProjects/mobile_ta_b12/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2265" />
