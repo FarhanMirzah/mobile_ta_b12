@@ -9,6 +9,6 @@ public class TampilanListMahasiswaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tampilan_list_mahasiswa);
+        setContentView(R.layout.item_mahasiswa);
     }
 }
