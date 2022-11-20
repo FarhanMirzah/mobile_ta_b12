@@ -77,7 +77,7 @@
             app:srcCompat="@drawable/default_profile" />
 
         <TextView
-            android:id="@+id/nama_user"
+            android:id="@+id/namaUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/husnil_kamil_mt"

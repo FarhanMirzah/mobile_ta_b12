@@ -3,24 +3,55 @@ package com.example.mobile_ta_b12;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_ta_b12.adapter.ListMahasiswaAdapter;
+import com.example.mobile_ta_b12.databinding.ActivityListMahasiswaBinding;
 import com.example.mobile_ta_b12.models.Mahasiswa;
 
 import java.util.ArrayList;
 
 public class ListMahasiswaActivity extends AppCompatActivity implements  ListMahasiswaAdapter.ItemMahasiswaClickListener{
 
+    private boolean isLoggedIn = false;
+    // Kode lama (findViewById)
+//    TextView namaUser;
+
+    // Kode baru (View Binding)
+    private ActivityListMahasiswaBinding binding;
     private RecyclerView rvlistmhs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_mahasiswa);
+        // Kode lama (findViewById)
+//        setContentView(R.layout.activity_list_mahasiswa);
+
+        // Kode baru (View Binding)
+        binding = ActivityListMahasiswaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        Intent mainIntent = getIntent();
+        String username = mainIntent.getStringExtra("USERNAME");
+        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
+
+        if(!isLoggedIn){
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+            finish();
+        }
+
+        // Kode lama (findViewById)
+//        namaUser = (TextView) findViewById(R.id.namaUser);
+//        namaUser.setText(username);
+
+        // Kode baru (View Binding)
+        binding.namaUser.setText(username);
 
         rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 
