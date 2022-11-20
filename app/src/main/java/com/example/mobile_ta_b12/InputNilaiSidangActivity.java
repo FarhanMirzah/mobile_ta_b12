@@ -14,8 +14,8 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
         setContentView(R.layout.activity_input_nilai_sidang);
     }
 
-    public void buttonBackListJadwal(View view) {
-        Intent ListJadwalIntent = new Intent(this, ListJadwalActivity.class);
-        startActivity(ListJadwalIntent);
+    public void buttonBackListJadwalSidang(View view) {
+        onBackPressed();
+        finish();
     }
 }

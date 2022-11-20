@@ -31,14 +31,16 @@ public class DetailSidangActivity extends AppCompatActivity {
     public void buttonAcc(View view) {
         Intent AcceptIntent = new Intent(this, InputNilaiSidangActivity.class);
         startActivity(AcceptIntent);
+        finish();
     }
 
     public void buttonReject(View view) {
-        Intent RejectIntent = new Intent(this, ListJadwalActivity.class);
-        startActivity(RejectIntent);
+        onBackPressed();
     }
 
-
+    public void buttonBackListJadwalSidang(View view) {
+        onBackPressed();
+    }
 
 }
 

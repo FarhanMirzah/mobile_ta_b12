@@ -15,7 +15,6 @@ public class PembatalanTaActivity extends AppCompatActivity {
     }
 
     public void buttonBackDetailTugasAkhir(View view) {
-        Intent DetailTugasAkhirIntent = new Intent(this, DetailTugasAkhirActivity.class);
-        startActivity(DetailTugasAkhirIntent);
+        onBackPressed();
     }
 }

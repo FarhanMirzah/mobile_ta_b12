@@ -15,15 +15,12 @@ public class PersetujuanTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonBackButuhPersetujuan(View view) {
-        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
-        startActivity(butuhPersetujuanIntent);
+        onBackPressed();
     }
     public void buttonsetuju(View view) {
-        Intent buttonsetuju = new Intent(this, ListPersetujuanActivity.class);
-        startActivity(buttonsetuju);
+        onBackPressed();
     }
     public void buttontolak(View view) {
-        Intent buttontolak = new Intent(this, ListPersetujuanActivity.class);
-        startActivity(buttontolak);
+        onBackPressed();
     }
 }

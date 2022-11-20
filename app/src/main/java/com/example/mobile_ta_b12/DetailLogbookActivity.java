@@ -53,7 +53,6 @@ public class DetailLogbookActivity extends AppCompatActivity {
     }
 
     public void buttonBackListLogbook(View view) {
-        Intent ListLogbookIntent = new Intent(this, ListLogbookActivity.class);
-        startActivity(ListLogbookIntent);
+        onBackPressed();
     }
 }

@@ -56,8 +56,7 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
     }
 
     public void buttonBackListMahasiswa(View view) {
-        Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
-        startActivity(buttonBackListMahasiswa);
+        onBackPressed();
     }
 
     public void buttonListJadwalSeminar(View view) {

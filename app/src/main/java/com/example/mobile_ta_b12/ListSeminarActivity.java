@@ -79,8 +79,7 @@ public class ListSeminarActivity extends AppCompatActivity implements seminarAda
     }
 
     public void buttonBackListJadwal(View view) {
-        Intent buttonBackListJadwal = new Intent(this, ListJadwalActivity.class);
-        startActivity(buttonBackListJadwal);
+        onBackPressed();
     }
 
     @Override

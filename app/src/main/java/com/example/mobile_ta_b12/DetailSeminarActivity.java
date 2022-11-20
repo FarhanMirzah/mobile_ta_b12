@@ -29,12 +29,16 @@ public class DetailSeminarActivity extends AppCompatActivity {
 
     }
     public void buttonAccept(View view) {
-        Intent AccIntent = new Intent(this, RekomendasiCatatanSeminarActivity.class);
+        Intent AccIntent = new Intent(this, InputRekomendasiCatatanSeminarActivity.class);
         startActivity(AccIntent);
+        finish();
     }
 
     public void buttonRej(View view) {
-        Intent RejectIntent = new Intent(this, ListSeminarActivity.class);
-        startActivity(RejectIntent);
+        onBackPressed();
+    }
+
+    public void buttonBackListJadwalSeminar(View view) {
+        onBackPressed();
     }
 }

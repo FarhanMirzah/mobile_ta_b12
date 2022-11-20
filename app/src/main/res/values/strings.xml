@@ -36,7 +36,7 @@
     <string name="nama_mahasiswa">Nama Mahasiswa</string>
     <string name="nim_mahasiswa">NIM Mahasiswa</string>
     <string name="butuh_persetujuan">Butuh Persetujuan</string>
-    <string name="jadwal_seminar_dan_sidang">Jadwal Seminar dan Sidang</string>
+    <string name="jadwal_sidang_dan_seminar">Jadwal Sidang dan Seminar</string>
 
     <string name="list_mahasiswa">List Mahasiswa</string>
 

@@ -45,7 +45,7 @@
         android:layout_marginBottom="60dp"
         android:background="@drawable/button_shape"
         android:onClick="buttonListJadwal"
-        android:text="@string/jadwal_seminar_dan_sidang"
+        android:text="@string/jadwal_sidang_dan_seminar"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
@@ -69,7 +69,7 @@
             android:id="@+id/gambar_user"
             android:layout_width="46dp"
             android:layout_height="37dp"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -80,13 +80,12 @@
             android:id="@+id/namaUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+
             android:text="@string/husnil_kamil_mt"
             android:textColor="@color/white"
-
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.137"
             app:layout_constraintStart_toEndOf="@+id/gambar_user"
             app:layout_constraintTop_toTopOf="parent" />
 

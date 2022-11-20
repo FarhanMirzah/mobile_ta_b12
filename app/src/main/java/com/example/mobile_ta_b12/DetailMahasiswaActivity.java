@@ -14,7 +14,6 @@ public class DetailMahasiswaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_mahasiswa);
     }
     public void tombolbackDetailMahasiswa(View view) {
-        Intent back = new Intent(this, DetailTugasAkhirActivity.class);
-        startActivity(back);
+        onBackPressed();
     }
 }

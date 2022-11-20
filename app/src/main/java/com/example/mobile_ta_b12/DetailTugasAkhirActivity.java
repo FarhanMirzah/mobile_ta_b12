@@ -15,8 +15,7 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonBackListMahasiswa(View view) {
-        Intent listMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
-        startActivity(listMahasiswaIntent);
+        onBackPressed();
     }
 
     public void buttonDetailMahasiswa(View view) {

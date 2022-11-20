@@ -15,16 +15,12 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void buttonBackProfile(View view) {
-        Intent profileIntent = new Intent(this, ProfileActivity.class);
-        startActivity(profileIntent);
-
+        onBackPressed();
     }
     public void buttonCancel(View view) {
-        Intent profileIntent = new Intent(this, ProfileActivity.class);
-        startActivity(profileIntent);
+        onBackPressed();
     }
     public void buttonSave(View view) {
-        Intent profileIntent = new Intent(this, ProfileActivity.class);
-        startActivity(profileIntent);
+        onBackPressed();
     }
 }

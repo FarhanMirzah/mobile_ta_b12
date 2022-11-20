@@ -9,6 +9,17 @@
 
 
     <ImageView
+        android:id="@+id/arrowBack11"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="buttonBackListJadwalSidang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <ImageView
         android:id="@+id/accept"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -44,7 +55,7 @@
         android:id="@+id/TextDetailTanggalSidang"
         android:layout_width="386dp"
         android:layout_height="36dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:background="@android:drawable/status_bar_item_app_background"
         android:paddingLeft="20dp"
         android:text="Detail Sidang"
@@ -52,7 +63,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/arrowBack11" />
 
     <TextView
         android:id="@+id/nama"
