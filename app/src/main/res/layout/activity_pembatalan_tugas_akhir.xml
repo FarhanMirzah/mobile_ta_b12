@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PembatalanTaActivity">
+    tools:context=".PembatalanTugasAkhirActivity">
 
     <TextView
         android:id="@+id/nim_mahasiswa"

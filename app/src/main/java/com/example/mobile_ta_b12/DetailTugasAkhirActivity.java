@@ -44,7 +44,7 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonBatalTugasAkhir(View view) {
-        Intent batalTugasAkhirIntent = new Intent(this, PembatalanTaActivity.class);
+        Intent batalTugasAkhirIntent = new Intent(this, PembatalanTugasAkhirActivity.class);
         startActivity(batalTugasAkhirIntent);
     }
 }
