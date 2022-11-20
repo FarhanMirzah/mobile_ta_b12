@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DetailSidangActivity extends AppCompatActivity {
+public class DetailSidangJadwalActivity extends AppCompatActivity {
 
     String hariTanggal, Waktu;
     TextView TextDetailTanggalSidang, TextDetailWaktuSidang;
@@ -15,7 +15,7 @@ public class DetailSidangActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_sidang);
+        setContentView(R.layout.activity_detail_sidang_jadwal);
 
         Intent detailIntent = getIntent();
         if(detailIntent != null){

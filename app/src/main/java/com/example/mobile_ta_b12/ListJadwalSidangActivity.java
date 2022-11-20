@@ -66,7 +66,7 @@ public class ListJadwalSidangActivity extends AppCompatActivity implements Jadwa
 
     @Override
     public void onItemJadwalClick(Jadwal jadwal) {
-        Intent detailIntent = new Intent(this,DetailSidangActivity.class);
+        Intent detailIntent = new Intent(this, DetailSidangJadwalActivity.class);
         detailIntent.putExtra("TANGGAL",jadwal.getTanggal());
         detailIntent.putExtra("WAKTU",jadwal.getWaktu());
         startActivity(detailIntent);

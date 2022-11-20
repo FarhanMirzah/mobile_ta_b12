@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DetailSeminarActivity extends AppCompatActivity {
+public class DetailSeminarJadwalActivity extends AppCompatActivity {
 
     String hariTanggal, Waktu;
     TextView TextDetailTanggalSeminar, TextDetailWaktuSeminar;
@@ -15,7 +15,7 @@ public class DetailSeminarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_seminar);
+        setContentView(R.layout.activity_detail_seminar_jadwal);
 
         Intent detailIntent = getIntent();
         if(detailIntent != null){

@@ -34,12 +34,12 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonDetailSeminarTA(View view) {
-        Intent detailSeminarTugasAkhirIntent = new Intent(this, TADetailSeminarActivity.class);
+        Intent detailSeminarTugasAkhirIntent = new Intent(this, DetailSeminarTugasAkhirActivity.class);
         startActivity(detailSeminarTugasAkhirIntent);
     }
 
     public void buttonDetailSidangTA(View view) {
-        Intent detailSidangTugasAkhirIntent = new Intent(this, TADetailSidangActivity.class);
+        Intent detailSidangTugasAkhirIntent = new Intent(this, DetailSidangTugasAkhirActivity.class);
         startActivity(detailSidangTugasAkhirIntent);
     }
 

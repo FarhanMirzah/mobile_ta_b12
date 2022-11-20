@@ -84,7 +84,7 @@ public class ListJadwalSeminarActivity extends AppCompatActivity implements Semi
 
     @Override
     public void onItemSeminarClick(Seminar seminar) {
-        Intent detailIntent = new Intent(this,DetailSeminarActivity.class);
+        Intent detailIntent = new Intent(this, DetailSeminarJadwalActivity.class);
         detailIntent.putExtra("tanggal",seminar.getTanggal());
         detailIntent.putExtra("waktu",seminar.getWaktu());
         startActivity(detailIntent);

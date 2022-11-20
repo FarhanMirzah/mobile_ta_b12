@@ -65,19 +65,19 @@
             android:name=".ListLogbookActivity"
             android:exported="true" />
         <activity
-            android:name=".DetailSidangActivity"
+            android:name=".DetailSidangJadwalActivity"
             android:exported="true" />
         <activity
-            android:name=".DetailSeminarActivity"
+            android:name=".DetailSeminarJadwalActivity"
             android:exported="true" />
         <activity
             android:name=".DetailLogbookActivity"
             android:exported="true" />
         <activity
-            android:name=".TADetailSeminarActivity"
+            android:name=".DetailSeminarTugasAkhirActivity"
             android:exported="true" />
         <activity
-            android:name=".TADetailSidangActivity"
+            android:name=".DetailSidangTugasAkhirActivity"
             android:exported="true" />
         <activity
             android:name=".ListJadwalSeminarActivity"
