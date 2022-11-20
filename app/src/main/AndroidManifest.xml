@@ -32,9 +32,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TampilanListMahasiswaActivity"
-            android:exported="true" />
-        <activity
             android:name=".ListJadwalSidangActivity"
             android:exported="true" />
         <activity
