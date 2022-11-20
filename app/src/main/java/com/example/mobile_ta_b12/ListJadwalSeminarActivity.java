@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.adapter.seminarAdapter;
-import com.example.mobile_ta_b12.models.seminar;
+import com.example.mobile_ta_b12.adapter.SeminarAdapter;
+import com.example.mobile_ta_b12.models.Seminar;
 
 import java.util.ArrayList;
 
-public class ListJadwalSeminarActivity extends AppCompatActivity implements seminarAdapter.ItemSeminarClickListener {
+public class ListJadwalSeminarActivity extends AppCompatActivity implements SeminarAdapter.ItemSeminarClickListener {
 
     private RecyclerView rvseminar;
 
@@ -23,7 +23,7 @@ public class ListJadwalSeminarActivity extends AppCompatActivity implements semi
         setContentView(R.layout.activity_list_jadwal_seminar);
         rvseminar = findViewById(R.id.rv_seminar);
 
-        seminarAdapter Adapter = new seminarAdapter(getSeminar());
+        SeminarAdapter Adapter = new SeminarAdapter(getSeminar());
         Adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
@@ -31,51 +31,51 @@ public class ListJadwalSeminarActivity extends AppCompatActivity implements semi
         rvseminar.setAdapter(Adapter);
     }
 
-    public ArrayList<seminar> getSeminar(){
-        ArrayList<seminar> ListSeminar = new ArrayList<>();
-        ListSeminar.add(new seminar(
+    public ArrayList<Seminar> getSeminar(){
+        ArrayList<Seminar> listSeminar = new ArrayList<>();
+        listSeminar.add(new Seminar(
                 "Seminar",
                 "05 Oktober 2022",
                 "09.00-11.00",
                 "Ruang Sidang JSI"
         ));
 
-        ListSeminar.add(new seminar(
+        listSeminar.add(new Seminar(
                 "Seminar",
                 "13 Oktober 2022",
                 "10.00-12.00",
                 "Ruang Sidang JSI"
         ));
 
-        ListSeminar.add(new seminar(
+        listSeminar.add(new Seminar(
                 "Seminar",
                 "25 Oktober 2022",
                 "08.00-10.00",
                 "Ruang Sidang JSI"
         ));
 
-        ListSeminar.add(new seminar(
+        listSeminar.add(new Seminar(
                 "Seminar",
                 "26 Oktober 2022",
                 "08.00-10.00",
                 "Ruang Sidang JSI"
         ));
 
-        ListSeminar.add(new seminar(
+        listSeminar.add(new Seminar(
                 "Seminar",
                 "15 November 2022",
                 "07.30-09.30",
                 "Ruang Sidang JSI"
         ));
 
-        ListSeminar.add(new seminar(
+        listSeminar.add(new Seminar(
                 "Seminar",
                 "3 Desember 2022",
                 "13.30-15.30",
                 "Ruang Sidang JSI"
         ));
 
-        return ListSeminar;
+        return listSeminar;
     }
 
     public void buttonBackListJadwal(View view) {
@@ -83,7 +83,7 @@ public class ListJadwalSeminarActivity extends AppCompatActivity implements semi
     }
 
     @Override
-    public void onItemSeminarClick(seminar seminar) {
+    public void onItemSeminarClick(Seminar seminar) {
         Intent detailIntent = new Intent(this,DetailSeminarActivity.class);
         detailIntent.putExtra("tanggal",seminar.getTanggal());
         detailIntent.putExtra("waktu",seminar.getWaktu());

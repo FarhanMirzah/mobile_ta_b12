@@ -8,13 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.adapter.ListMahasiswaAdapter;
+import com.example.mobile_ta_b12.adapter.MahasiswaAdapter;
 import com.example.mobile_ta_b12.databinding.ActivityListMahasiswaBinding;
 import com.example.mobile_ta_b12.models.Mahasiswa;
 
 import java.util.ArrayList;
 
-public class ListMahasiswaActivity extends AppCompatActivity implements  ListMahasiswaAdapter.ItemMahasiswaClickListener{
+public class ListMahasiswaActivity extends AppCompatActivity implements  MahasiswaAdapter.ItemMahasiswaClickListener{
 
     private boolean isLoggedIn = false;
     // Kode lama (findViewById)
@@ -54,7 +54,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  ListMah
 
         rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 
-        ListMahasiswaAdapter adapter = new ListMahasiswaAdapter(getMahasiswa());
+        MahasiswaAdapter adapter = new MahasiswaAdapter(getMahasiswa());
         adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 

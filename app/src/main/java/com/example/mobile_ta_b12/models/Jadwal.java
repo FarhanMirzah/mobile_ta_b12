@@ -1,19 +1,21 @@
 package com.example.mobile_ta_b12.models;
 
-public class seminar {
+public class Jadwal {
     String tipe;
     String tanggal;
     String waktu;
     String tempat;
 
-    public seminar(){}
 
-    public seminar(String tipe, String tanggal, String waktu, String tempat) {
+    public Jadwal(){}
+
+    public Jadwal(String tipe, String tanggal, String waktu, String tempat) {
         this.tipe = tipe;
         this.tanggal = tanggal;
         this.waktu = waktu;
         this.tempat = tempat;
     }
+
 
     public String getTipe() {
         return tipe;
@@ -47,4 +49,3 @@ public class seminar {
         this.tempat = tempat;
     }
 }
-
