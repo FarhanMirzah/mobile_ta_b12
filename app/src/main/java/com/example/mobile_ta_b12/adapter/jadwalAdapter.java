@@ -36,7 +36,7 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
     @Override
     public JadwalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_jadwal, parent, false);
+                .inflate(R.layout.item_sidang, parent, false);
         return new JadwalViewHolder(view);
     }
 

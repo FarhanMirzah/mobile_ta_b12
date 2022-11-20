@@ -29,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.659"
         app:layout_constraintStart_toStartOf="@+id/judulLaman"
         app:layout_constraintTop_toBottomOf="@+id/judulLaman"
-        tools:listitem="@layout/item_jadwal" />
+        tools:listitem="@layout/item_sidang" />
 
     <TextView
         android:id="@+id/judulLaman"
