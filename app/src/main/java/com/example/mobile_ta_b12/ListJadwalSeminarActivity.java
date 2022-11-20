@@ -13,14 +13,14 @@ import com.example.mobile_ta_b12.models.seminar;
 
 import java.util.ArrayList;
 
-public class ListSeminarActivity extends AppCompatActivity implements seminarAdapter.ItemSeminarClickListener {
+public class ListJadwalSeminarActivity extends AppCompatActivity implements seminarAdapter.ItemSeminarClickListener {
 
     private RecyclerView rvseminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_seminar);
+        setContentView(R.layout.activity_list_jadwal_seminar);
         rvseminar = findViewById(R.id.rv_seminar);
 
         seminarAdapter Adapter = new seminarAdapter(getSeminar());

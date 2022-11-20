@@ -3,7 +3,6 @@ package com.example.mobile_ta_b12;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -106,7 +105,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  ListMah
     }
 
     public void buttonListJadwal (View view){
-        Intent listJadwalIntent = new Intent(this, ListJadwalActivity.class);
+        Intent listJadwalIntent = new Intent(this, ListJadwalSidangActivity.class);
         startActivity(listJadwalIntent);
     }
 }

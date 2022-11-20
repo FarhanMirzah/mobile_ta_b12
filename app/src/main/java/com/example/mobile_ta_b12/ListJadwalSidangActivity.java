@@ -13,14 +13,14 @@ import com.example.mobile_ta_b12.models.jadwal;
 
 import java.util.ArrayList;
 
-public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapter.ItemJadwalClickListener {
+public class ListJadwalSidangActivity extends AppCompatActivity implements jadwalAdapter.ItemJadwalClickListener {
 
     private RecyclerView rvjadwal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_jadwal);
+        setContentView(R.layout.activity_list_jadwal_sidang);
         rvjadwal = findViewById(R.id.rvJadwal);
 
         jadwalAdapter adapter = new jadwalAdapter(getjadwal());
@@ -60,7 +60,7 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
     }
 
     public void buttonListJadwalSeminar(View view) {
-        Intent buttonListJadwalSeminar = new Intent(this, ListSeminarActivity.class);
+        Intent buttonListJadwalSeminar = new Intent(this, ListJadwalSeminarActivity.class);
         startActivity(buttonListJadwalSeminar);
     }
 

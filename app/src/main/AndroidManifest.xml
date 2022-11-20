@@ -35,7 +35,7 @@
             android:name=".TampilanListMahasiswaActivity"
             android:exported="true" />
         <activity
-            android:name=".ListJadwalActivity"
+            android:name=".ListJadwalSidangActivity"
             android:exported="true" />
         <activity
             android:name=".DetailTugasAkhirActivity"
@@ -86,7 +86,7 @@
             android:name=".TADetailSidangActivity"
             android:exported="true" />
         <activity
-            android:name=".ListSeminarActivity"
+            android:name=".ListJadwalSeminarActivity"
             android:exported="true" />
     </application>
 
