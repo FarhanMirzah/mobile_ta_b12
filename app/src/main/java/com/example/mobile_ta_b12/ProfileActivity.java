@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void buttonLogout(View view) {
         Intent logoutIntent = new Intent(this, LoginActivity.class);
+        logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(logoutIntent);
     }
 }
