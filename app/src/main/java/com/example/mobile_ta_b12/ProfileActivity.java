@@ -20,7 +20,10 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void tombolbackprofile(View view) {
-        onBackPressed();
+        Intent tombolbackprofile = new Intent(ProfileActivity.this, ListMahasiswaActivity.class);
+        tombolbackprofile.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(tombolbackprofile);
+        finish();
     }
 
     public void gantipassword(View view) {

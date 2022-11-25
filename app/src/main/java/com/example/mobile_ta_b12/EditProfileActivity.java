@@ -15,12 +15,21 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void buttonBackProfile(View view) {
-        onBackPressed();
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(profileIntent);
+        finish();
     }
     public void buttonCancel(View view) {
-        onBackPressed();
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(profileIntent);
+        finish();
     }
     public void buttonSave(View view) {
-        onBackPressed();
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(profileIntent);
+        finish();
     }
 }

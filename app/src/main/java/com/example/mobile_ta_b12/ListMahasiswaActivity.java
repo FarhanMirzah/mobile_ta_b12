@@ -37,7 +37,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
 
         Intent mainIntent = getIntent();
         String username = mainIntent.getStringExtra("USERNAME");
-        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
+        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", true);
 
         if(!isLoggedIn){
             Intent loginIntent = new Intent(this, LoginActivity.class);

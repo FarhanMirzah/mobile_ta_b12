@@ -34,7 +34,10 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
     }
 
     public void buttonBackDetailTugasAkhir(View view) {
-        onBackPressed();
+        Intent DetailTugasAkhirIntent = new Intent(this, DetailTugasAkhirActivity.class);
+        DetailTugasAkhirIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(DetailTugasAkhirIntent);
+        finish();
     }
 
     public ArrayList<Logbook> getLogbook(){

@@ -15,12 +15,21 @@ public class PersetujuanTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonBackButuhPersetujuan(View view) {
-        onBackPressed();
+        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
+        butuhPersetujuanIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(butuhPersetujuanIntent);
+        finish();
     }
     public void buttonsetuju(View view) {
-        onBackPressed();
+        Intent buttonsetuju = new Intent(this, ListPersetujuanActivity.class);
+        buttonsetuju.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(buttonsetuju);
+        finish();
     }
     public void buttontolak(View view) {
-        onBackPressed();
+        Intent buttontolak = new Intent(this, ListPersetujuanActivity.class);
+        buttontolak.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(buttontolak);
+        finish();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.mobile_ta_b12;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,6 +14,9 @@ public class DetailSidangTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonBackDetailTugasAkhir(View view) {
-        onBackPressed();
+        Intent DetailTugasAkhirIntent = new Intent(this, DetailTugasAkhirActivity.class);
+        DetailTugasAkhirIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(DetailTugasAkhirIntent);
+        finish();
     }
 }

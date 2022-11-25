@@ -30,15 +30,22 @@ public class DetailSeminarJadwalActivity extends AppCompatActivity {
     }
     public void buttonAccept(View view) {
         Intent AccIntent = new Intent(this, InputRekomendasiCatatanSeminarActivity.class);
+        AccIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(AccIntent);
         finish();
     }
 
     public void buttonRej(View view) {
-        onBackPressed();
+        Intent RejectIntent = new Intent(this, ListJadwalSeminarActivity.class);
+        RejectIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(RejectIntent);
+        finish();
     }
 
     public void buttonBackListJadwalSeminar(View view) {
-        onBackPressed();
+        Intent ListJadwalSeminarIntent = new Intent(this, ListJadwalSeminarActivity.class);
+        ListJadwalSeminarIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListJadwalSeminarIntent);
+        finish();
     }
 }

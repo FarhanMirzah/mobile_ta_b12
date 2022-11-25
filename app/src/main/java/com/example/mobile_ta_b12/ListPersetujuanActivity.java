@@ -58,6 +58,9 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
 
 
     public void arrowBackPersetujuan(View view) {
-        onBackPressed();
+        Intent ListMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
+        ListMahasiswaIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListMahasiswaIntent);
+        finish();
     }
 }

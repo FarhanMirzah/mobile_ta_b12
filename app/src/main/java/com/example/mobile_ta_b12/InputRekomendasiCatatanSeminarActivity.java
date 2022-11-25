@@ -2,6 +2,7 @@ package com.example.mobile_ta_b12;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,7 +15,9 @@ public class InputRekomendasiCatatanSeminarActivity extends AppCompatActivity {
     }
 
     public void buttonBackListJadwalSeminar(View view) {
-        onBackPressed();
+        Intent ListJadwalSeminarIntent = new Intent(this, ListJadwalSeminarActivity.class);
+        ListJadwalSeminarIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListJadwalSeminarIntent);
         finish();
     }
 }

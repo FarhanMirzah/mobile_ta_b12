@@ -30,16 +30,23 @@ public class DetailSidangJadwalActivity extends AppCompatActivity {
 
     public void buttonAcc(View view) {
         Intent AcceptIntent = new Intent(this, InputNilaiSidangActivity.class);
+        AcceptIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(AcceptIntent);
         finish();
     }
 
     public void buttonReject(View view) {
-        onBackPressed();
+        Intent RejectIntent = new Intent(this, ListJadwalSidangActivity.class);
+        RejectIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(RejectIntent);
+        finish();
     }
 
     public void buttonBackListJadwalSidang(View view) {
-        onBackPressed();
+        Intent ListJadwalSidangIntent = new Intent(this, ListJadwalSidangActivity.class);
+        ListJadwalSidangIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListJadwalSidangIntent);
+        finish();
     }
 
 }
