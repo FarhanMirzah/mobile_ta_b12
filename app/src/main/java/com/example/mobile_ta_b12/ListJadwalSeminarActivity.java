@@ -92,5 +92,14 @@ public class ListJadwalSeminarActivity extends AppCompatActivity implements Semi
         detailIntent.putExtra("waktu",seminar.getWaktu());
         startActivity(detailIntent);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent buttonBackListJadwalSidang = new Intent(this, ListJadwalSidangActivity.class);
+        buttonBackListJadwalSidang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(buttonBackListJadwalSidang);
+        finish();
+    }
 }
 

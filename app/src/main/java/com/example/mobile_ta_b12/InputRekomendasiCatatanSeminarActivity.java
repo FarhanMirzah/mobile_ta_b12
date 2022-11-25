@@ -20,4 +20,13 @@ public class InputRekomendasiCatatanSeminarActivity extends AppCompatActivity {
         startActivity(ListJadwalSeminarIntent);
         finish();
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent ListJadwalSeminarIntent = new Intent(this, ListJadwalSeminarActivity.class);
+        ListJadwalSeminarIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListJadwalSeminarIntent);
+        finish();
+    }
 }

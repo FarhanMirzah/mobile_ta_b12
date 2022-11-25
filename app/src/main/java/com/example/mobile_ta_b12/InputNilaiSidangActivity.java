@@ -20,4 +20,13 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
         startActivity(ListJadwalSidangIntent);
         finish();
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent ListJadwalSidangIntent = new Intent(this, ListJadwalSidangActivity.class);
+        ListJadwalSidangIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListJadwalSidangIntent);
+        finish();
+    }
 }

@@ -32,4 +32,13 @@ public class PersetujuanTugasAkhirActivity extends AppCompatActivity {
         startActivity(buttontolak);
         finish();
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
+        butuhPersetujuanIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(butuhPersetujuanIntent);
+        finish();
+    }
 }

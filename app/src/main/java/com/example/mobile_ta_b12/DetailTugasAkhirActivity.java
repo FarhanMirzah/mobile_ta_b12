@@ -51,4 +51,14 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
         Intent batalTugasAkhirIntent = new Intent(this, PembatalanTugasAkhirActivity.class);
         startActivity(batalTugasAkhirIntent);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent listMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
+        listMahasiswaIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        listMahasiswaIntent.putExtra("IS_LOGGED_IN", true);
+        startActivity(listMahasiswaIntent);
+        finish();
+    }
 }

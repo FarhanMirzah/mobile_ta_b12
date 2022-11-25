@@ -19,4 +19,13 @@ public class DetailMahasiswaActivity extends AppCompatActivity {
         startActivity(back);
         finish();
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent back = new Intent(this, DetailTugasAkhirActivity.class);
+        back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(back);
+        finish();
+    }
 }

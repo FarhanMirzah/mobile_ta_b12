@@ -32,4 +32,13 @@ public class EditProfileActivity extends AppCompatActivity {
         startActivity(profileIntent);
         finish();
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(profileIntent);
+        finish();
+    }
 }

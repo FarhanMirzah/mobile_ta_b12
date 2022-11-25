@@ -39,9 +39,15 @@ public class DetailLogbookActivity extends AppCompatActivity {
             status = detailIntent.getIntExtra("STATUS", 0);
         }
         textDetailHariTanggal = findViewById(R.id.textDetailHariTanggal);
+        if(hariTanggal == null){
+            hariTanggal = "Hari, Tanggal"; //Assign default string
+        }
         textDetailHariTanggal.setText(hariTanggal);
 
         textDetailKegiatan = findViewById(R.id.textDetailKegiatan);
+        if(kegiatan == null){
+            kegiatan = "Kegiatan"; //Assign default string
+        }
         textDetailKegiatan.setText(kegiatan);
 
         imageStatusLogbook = findViewById(R.id.imageStatusLogbook);
@@ -53,6 +59,15 @@ public class DetailLogbookActivity extends AppCompatActivity {
     }
 
     public void buttonBackListLogbook(View view) {
+        Intent ListLogbookIntent = new Intent(this, ListLogbookActivity.class);
+        ListLogbookIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListLogbookIntent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
         Intent ListLogbookIntent = new Intent(this, ListLogbookActivity.class);
         ListLogbookIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(ListLogbookIntent);

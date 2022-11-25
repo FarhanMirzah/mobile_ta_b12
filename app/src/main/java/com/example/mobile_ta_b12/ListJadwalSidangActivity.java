@@ -75,4 +75,14 @@ public class ListJadwalSidangActivity extends AppCompatActivity implements Jadwa
         detailIntent.putExtra("WAKTU",jadwal.getWaktu());
         startActivity(detailIntent);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
+        buttonBackListMahasiswa.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        buttonBackListMahasiswa.putExtra("IS_LOGGED_IN", true);
+        startActivity(buttonBackListMahasiswa);
+        finish();
+    }
 }
