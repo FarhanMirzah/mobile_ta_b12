@@ -17,6 +17,7 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
     public void buttonBackListMahasiswa(View view) {
         Intent listMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
         listMahasiswaIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        listMahasiswaIntent.putExtra("IS_LOGGED_IN", true);
         startActivity(listMahasiswaIntent);
         finish();
     }

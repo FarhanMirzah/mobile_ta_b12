@@ -22,6 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
     public void tombolbackprofile(View view) {
         Intent tombolbackprofile = new Intent(ProfileActivity.this, ListMahasiswaActivity.class);
         tombolbackprofile.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        tombolbackprofile.putExtra("IS_LOGGED_IN", true);
         startActivity(tombolbackprofile);
         finish();
     }

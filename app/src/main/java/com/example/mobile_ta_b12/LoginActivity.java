@@ -42,13 +42,14 @@ public class LoginActivity extends AppCompatActivity {
         String username = binding.editUsername.getText().toString();
         String password = binding.editPassword.getText().toString();
 
-        if(password.equals("123")){
+        if(username.equals("Husnil Kamil") && password.equals("123")){
             Intent mainIntent = new Intent(LoginActivity. this,ListMahasiswaActivity.class);
             mainIntent.putExtra("USERNAME", username);
             mainIntent.putExtra("IS_LOGGED_IN", true);
             startActivity(mainIntent);
+            finish();
         }else{
-            Toast.makeText(this, "Password salah (username terserah, password = 123", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show();
         }
     }
 }

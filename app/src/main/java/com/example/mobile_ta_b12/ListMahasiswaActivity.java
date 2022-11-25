@@ -37,13 +37,18 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
 
         Intent mainIntent = getIntent();
         String username = mainIntent.getStringExtra("USERNAME");
-        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", true);
+        if(username == null){
+            username = "Husnil Kamil"; //Assign default string
+        }
+        // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
+        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
 
         if(!isLoggedIn){
             Intent loginIntent = new Intent(this, LoginActivity.class);
             startActivity(loginIntent);
             finish();
         }
+
 
         // Kode lama (findViewById)
 //        namaUser = (TextView) findViewById(R.id.namaUser);
@@ -107,5 +112,11 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
     public void buttonListJadwal (View view){
         Intent listJadwalIntent = new Intent(this, ListJadwalSidangActivity.class);
         startActivity(listJadwalIntent);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        moveTaskToBack(true);
     }
 }

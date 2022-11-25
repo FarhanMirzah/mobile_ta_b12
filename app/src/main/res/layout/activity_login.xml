@@ -79,7 +79,8 @@
             android:id="@+id/editUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username"
+            android:hint="@string/username_hint"
+            android:inputType="text"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,7 +100,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:hint="@string/password"
+            android:hint="@string/password_hint"
+            android:imeOptions="actionDone"
             android:inputType="textPassword"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
