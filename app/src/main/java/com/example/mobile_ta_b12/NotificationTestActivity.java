@@ -38,7 +38,7 @@ public class NotificationTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent resultIntent = new Intent(NotificationTestActivity.this, DetailMahasiswaActivity.class);
+                Intent resultIntent = new Intent(NotificationTestActivity.this, PersetujuanTugasAkhirActivity.class);
                 TaskStackBuilder stackBuilder = TaskStackBuilder.create(NotificationTestActivity.this);
                 stackBuilder.addNextIntentWithParentStack(resultIntent);
                 PendingIntent resultPendingIntent =
@@ -48,8 +48,8 @@ public class NotificationTestActivity extends AppCompatActivity {
                 // 3. Buat builder untuk membuat notifikasi
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(NotificationTestActivity.this, CHANNEL_ID)
                         .setSmallIcon(R.drawable.ic_baseline_warning_24)
-                        .setContentTitle("Notifikasi ke activity Detail Mahasiswa")
-                        .setContentText("Klik notifikasi ini untuk pergi ke activity Detail Mahasiswa")
+                        .setContentTitle("Notifikasi ke activity Persetujuan TA")
+                        .setContentText("Klik notifikasi ini untuk pergi ke activity Persetujuan TA")
 //                        .setContentIntent(resultPendingIntent)
                         .addAction(R.drawable.ic_baseline_warning_24, "PERGI", resultPendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT);
