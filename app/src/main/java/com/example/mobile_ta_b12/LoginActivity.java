@@ -52,4 +52,10 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Username atau Password salah", Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        moveTaskToBack(true);
+    }
 }
