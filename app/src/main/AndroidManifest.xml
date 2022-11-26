@@ -14,80 +14,168 @@
         android:theme="@style/Theme.MobileTAB12"
         tools:targetApi="31">
         <activity
-            android:name=".DetailMahasiswaActivity"
-            android:exported="true" />
-        <activity
-            android:name=".PembatalanTaActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ListPersetujuanActivity"
-            android:exported="true" />
-        <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"/>
+        <activity
+            android:name=".ListMahasiswaActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".TampilanListMahasiswaActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ListJadwalActivity"
-            android:exported="true" />
-        <activity
-            android:name=".DetailTugasAkhirActivity"
-            android:exported="true" />
-        <activity
-            android:name=".PersetujuanTugasAkhirActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ListMahasiswaActivity"
-            android:exported="true" />
+            android:name=".ProfileActivity"
+            android:exported="true"
+            android:parentActivityName=".ListMahasiswaActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListMahasiswaActivity"/>
+        </activity>
         <activity
             android:name=".EditProfileActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".ProfileActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProfileActivity"/>
+        </activity>
         <activity
             android:name=".GantiPasswordActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".ProfileActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProfileActivity"/>
+        </activity>
         <activity
-            android:name=".ProfileActivity"
-            android:exported="true" />
+            android:name=".DetailTugasAkhirActivity"
+            android:exported="true"
+            android:parentActivityName=".ListMahasiswaActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListMahasiswaActivity"/>
+        </activity>
         <activity
-            android:name=".DetailJadwalActivity"
-            android:exported="true" />
+            android:name=".DetailMahasiswaActivity"
+            android:exported="true"
+            android:parentActivityName=".DetailTugasAkhirActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailTugasAkhirActivity"/>
+        </activity>
         <activity
             android:name=".InputNilaiTugasAkhirActivity"
-            android:exported="true" />
-        <activity
-            android:name=".InputNilaiSidangActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RekomendasiCatatanSeminarActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".DetailTugasAkhirActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailTugasAkhirActivity"/>
+        </activity>
         <activity
             android:name=".ListLogbookActivity"
-            android:exported="true" />
-        <activity
-            android:name=".DetailSidangActivity"
-            android:exported="true" />
-        <activity
-            android:name=".DetailSeminarActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".DetailTugasAkhirActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailTugasAkhirActivity"/>
+        </activity>
         <activity
             android:name=".DetailLogbookActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".ListLogbookActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListLogbookActivity"/>
+        </activity>
         <activity
-            android:name=".TADetailSeminarActivity"
-            android:exported="true" />
+            android:name=".DetailSeminarTugasAkhirActivity"
+            android:exported="true"
+            android:parentActivityName=".DetailTugasAkhirActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailTugasAkhirActivity"/>
+        </activity>
         <activity
-            android:name=".TADetailSidangActivity"
-            android:exported="true" />
+            android:name=".DetailSidangTugasAkhirActivity"
+            android:exported="true"
+            android:parentActivityName=".DetailTugasAkhirActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailTugasAkhirActivity"/>
+        </activity>
         <activity
-            android:name=".ListSeminarActivity"
-            android:exported="true" />
+            android:name=".PembatalanTugasAkhirActivity"
+            android:exported="true"
+            android:parentActivityName=".DetailTugasAkhirActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailTugasAkhirActivity"/>
+        </activity>
+        <activity
+            android:name=".ListPersetujuanActivity"
+            android:exported="true"
+            android:parentActivityName=".ListMahasiswaActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListMahasiswaActivity"/>
+        </activity>
+        <activity
+            android:name=".PersetujuanTugasAkhirActivity"
+            android:exported="true"
+            android:parentActivityName=".ListPersetujuanActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListPersetujuanActivity"/>
+        </activity>
+        <activity
+            android:name=".ListJadwalSidangActivity"
+            android:exported="true"
+            android:parentActivityName=".ListMahasiswaActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListMahasiswaActivity"/>
+        </activity>
+        <activity
+            android:name=".DetailSidangJadwalActivity"
+            android:exported="true"
+            android:parentActivityName=".ListJadwalSidangActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListJadwalSidangActivity"/>
+        </activity>
+        <activity
+            android:name=".InputNilaiSidangActivity"
+            android:exported="true"
+            android:parentActivityName=".DetailSidangJadwalActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailSidangJadwalActivity"/>
+        </activity>
+        <activity
+            android:name=".ListJadwalSeminarActivity"
+            android:exported="true"
+            android:parentActivityName=".ListJadwalSidangActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListJadwalSidangActivity"/>
+        </activity>
+        <activity
+            android:name=".DetailSeminarJadwalActivity"
+            android:exported="true"
+            android:parentActivityName=".ListJadwalSeminarActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListJadwalSeminarActivity"/>
+        </activity>
+        <activity
+            android:name=".InputRekomendasiCatatanSeminarActivity"
+            android:exported="true"
+            android:parentActivityName=".DetailSeminarJadwalActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailSeminarJadwalActivity"/>
+        </activity>
     </application>
 
 </manifest>

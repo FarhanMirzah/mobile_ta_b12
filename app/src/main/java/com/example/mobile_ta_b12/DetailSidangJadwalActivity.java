@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DetailSidangActivity extends AppCompatActivity {
+public class DetailSidangJadwalActivity extends AppCompatActivity {
 
     String hariTanggal, Waktu;
     TextView TextDetailTanggalSidang, TextDetailWaktuSidang;
@@ -15,7 +15,7 @@ public class DetailSidangActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_sidang);
+        setContentView(R.layout.activity_detail_sidang_jadwal);
 
         Intent detailIntent = getIntent();
         if(detailIntent != null){
@@ -30,15 +30,32 @@ public class DetailSidangActivity extends AppCompatActivity {
 
     public void buttonAcc(View view) {
         Intent AcceptIntent = new Intent(this, InputNilaiSidangActivity.class);
+        AcceptIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(AcceptIntent);
+        finish();
     }
 
     public void buttonReject(View view) {
-        Intent RejectIntent = new Intent(this, ListJadwalActivity.class);
+        Intent RejectIntent = new Intent(this, ListJadwalSidangActivity.class);
+        RejectIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(RejectIntent);
+        finish();
     }
 
+    public void buttonBackListJadwalSidang(View view) {
+        Intent ListJadwalSidangIntent = new Intent(this, ListJadwalSidangActivity.class);
+        ListJadwalSidangIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListJadwalSidangIntent);
+        finish();
+    }
 
-
+    @Override
+    public void onBackPressed()
+    {
+        Intent ListJadwalSidangIntent = new Intent(this, ListJadwalSidangActivity.class);
+        ListJadwalSidangIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(ListJadwalSidangIntent);
+        finish();
+    }
 }
 

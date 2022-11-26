@@ -15,6 +15,17 @@ public class DetailMahasiswaActivity extends AppCompatActivity {
     }
     public void tombolbackDetailMahasiswa(View view) {
         Intent back = new Intent(this, DetailTugasAkhirActivity.class);
+        back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(back);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent back = new Intent(this, DetailTugasAkhirActivity.class);
+        back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(back);
+        finish();
     }
 }

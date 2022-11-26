@@ -8,22 +8,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.adapter.jadwalAdapter;
-import com.example.mobile_ta_b12.models.jadwal;
+import com.example.mobile_ta_b12.adapter.JadwalAdapter;
+import com.example.mobile_ta_b12.models.Jadwal;
 
 import java.util.ArrayList;
 
-public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapter.ItemJadwalClickListener {
+public class ListJadwalSidangActivity extends AppCompatActivity implements JadwalAdapter.ItemJadwalClickListener {
 
     private RecyclerView rvjadwal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_jadwal);
+        setContentView(R.layout.activity_list_jadwal_sidang);
         rvjadwal = findViewById(R.id.rvJadwal);
 
-        jadwalAdapter adapter = new jadwalAdapter(getjadwal());
+        JadwalAdapter adapter = new JadwalAdapter(getjadwal());
         adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
@@ -31,45 +31,58 @@ public class ListJadwalActivity extends AppCompatActivity implements jadwalAdapt
         rvjadwal.setAdapter(adapter);
     }
 
-    public ArrayList<jadwal> getjadwal(){
-        ArrayList<jadwal> ListJadwal = new ArrayList<>();
-        ListJadwal.add(new jadwal(
+    public ArrayList<Jadwal> getjadwal(){
+        ArrayList<Jadwal> listJadwal = new ArrayList<>();
+        listJadwal.add(new Jadwal(
                 "Sidang",
                 "05 Oktober 2022",
                 "09.00-11.00",
                 "Ruang Sidang JSI"
         ));
-        ListJadwal.add(new jadwal(
+        listJadwal.add(new Jadwal(
                 "Sidang",
                 "13 Oktober 2022",
                 "10.00-12.00",
                 "Ruang Sidang JSI"
         ));
-        ListJadwal.add(new jadwal(
+        listJadwal.add(new Jadwal(
                 "Sidang",
                 "25 Oktober 2022",
                 "08.00-10.00",
                 "Ruang Sidang JSI"
         ));
 
-        return ListJadwal;
+        return listJadwal;
     }
 
     public void buttonBackListMahasiswa(View view) {
         Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
+        buttonBackListMahasiswa.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        buttonBackListMahasiswa.putExtra("IS_LOGGED_IN", true);
         startActivity(buttonBackListMahasiswa);
+        finish();
     }
 
     public void buttonListJadwalSeminar(View view) {
-        Intent buttonListJadwalSeminar = new Intent(this, ListSeminarActivity.class);
+        Intent buttonListJadwalSeminar = new Intent(this, ListJadwalSeminarActivity.class);
         startActivity(buttonListJadwalSeminar);
     }
 
     @Override
-    public void onItemJadwalClick(com.example.mobile_ta_b12.models.jadwal jadwal) {
-        Intent detailIntent = new Intent(this,DetailSidangActivity.class);
+    public void onItemJadwalClick(Jadwal jadwal) {
+        Intent detailIntent = new Intent(this, DetailSidangJadwalActivity.class);
         detailIntent.putExtra("TANGGAL",jadwal.getTanggal());
         detailIntent.putExtra("WAKTU",jadwal.getWaktu());
         startActivity(detailIntent);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent buttonBackListMahasiswa = new Intent(this, ListMahasiswaActivity.class);
+        buttonBackListMahasiswa.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        buttonBackListMahasiswa.putExtra("IS_LOGGED_IN", true);
+        startActivity(buttonBackListMahasiswa);
+        finish();
     }
 }

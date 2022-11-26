@@ -8,23 +8,58 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mobile_ta_b12.adapter.ListMahasiswaAdapter;
+import com.example.mobile_ta_b12.adapter.MahasiswaAdapter;
+import com.example.mobile_ta_b12.databinding.ActivityListMahasiswaBinding;
 import com.example.mobile_ta_b12.models.Mahasiswa;
 
 import java.util.ArrayList;
 
-public class ListMahasiswaActivity extends AppCompatActivity implements  ListMahasiswaAdapter.ItemMahasiswaClickListener{
+public class ListMahasiswaActivity extends AppCompatActivity implements  MahasiswaAdapter.ItemMahasiswaClickListener{
 
+    private boolean isLoggedIn = false;
+    // Kode lama (findViewById)
+//    TextView namaUser;
+
+    // Kode baru (View Binding)
+    private ActivityListMahasiswaBinding binding;
     private RecyclerView rvlistmhs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_mahasiswa);
+        // Kode lama (findViewById)
+//        setContentView(R.layout.activity_list_mahasiswa);
+
+        // Kode baru (View Binding)
+        binding = ActivityListMahasiswaBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        Intent mainIntent = getIntent();
+        String username = mainIntent.getStringExtra("USERNAME");
+        if(username == null){
+            username = "Husnil Kamil"; //Assign default string
+        }
+        // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
+        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
+
+        if(!isLoggedIn){
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+            finish();
+        }
+
+
+        // Kode lama (findViewById)
+//        namaUser = (TextView) findViewById(R.id.namaUser);
+//        namaUser.setText(username);
+
+        // Kode baru (View Binding)
+        binding.namaUser.setText(username);
 
         rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 
-        ListMahasiswaAdapter adapter = new ListMahasiswaAdapter(getMahasiswa());
+        MahasiswaAdapter adapter = new MahasiswaAdapter(getMahasiswa());
         adapter.setListener(this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
@@ -75,7 +110,13 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  ListMah
     }
 
     public void buttonListJadwal (View view){
-        Intent listJadwalIntent = new Intent(this, ListJadwalActivity.class);
+        Intent listJadwalIntent = new Intent(this, ListJadwalSidangActivity.class);
         startActivity(listJadwalIntent);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        moveTaskToBack(true);
     }
 }

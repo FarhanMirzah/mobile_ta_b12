@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_ta_b12.R;
-import com.example.mobile_ta_b12.models.seminar;
+import com.example.mobile_ta_b12.models.Seminar;
 
 import java.util.ArrayList;
 
-public class seminarAdapter extends RecyclerView.Adapter<seminarAdapter.SeminarViewHolder>{
+public class SeminarAdapter extends RecyclerView.Adapter<SeminarAdapter.SeminarViewHolder>{
 
-    ArrayList<seminar> listSeminar;
+    ArrayList<Seminar> listSeminar;
     ItemSeminarClickListener listener;
 
-    public seminarAdapter(ArrayList<seminar> listSeminar) {
+    public SeminarAdapter(ArrayList<Seminar> listSeminar) {
         this.listSeminar = listSeminar;
     }
 
-    public seminarAdapter() {
+    public SeminarAdapter() {
     }
 
     public void setListener(ItemSeminarClickListener listener){
@@ -36,12 +36,12 @@ public class seminarAdapter extends RecyclerView.Adapter<seminarAdapter.SeminarV
     public SeminarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_seminar, parent, false);
-        return new seminarAdapter.SeminarViewHolder(view);
+        return new SeminarAdapter.SeminarViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SeminarViewHolder holder, int position) {
-        seminar seminar = listSeminar.get(position);
+        Seminar seminar = listSeminar.get(position);
         holder.logoSeminar.setImageResource(R.drawable.ic_baseline_date_range_24);
         holder.TextSeminarType.setText(seminar.getTipe());
         holder.TextTanggalseminar.setText(seminar.getTanggal());
@@ -55,7 +55,7 @@ public class seminarAdapter extends RecyclerView.Adapter<seminarAdapter.SeminarV
     }
 
     public interface ItemSeminarClickListener{
-        void onItemSeminarClick(seminar seminar);
+        void onItemSeminarClick(Seminar seminar);
     }
 
     public class SeminarViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -78,7 +78,7 @@ public class seminarAdapter extends RecyclerView.Adapter<seminarAdapter.SeminarV
 
         @Override
         public void onClick(View view) {
-            seminar seminar = listSeminar.get(getAdapterPosition());
+            Seminar seminar = listSeminar.get(getAdapterPosition());
             listener.onItemSeminarClick(seminar);
         }
     }

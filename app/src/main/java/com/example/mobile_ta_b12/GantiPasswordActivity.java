@@ -16,10 +16,23 @@ public class GantiPasswordActivity extends AppCompatActivity {
 
     public void buttonBackProfile(View view) {
         Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(profileIntent);
+        finish();
     }
     public void ceklis(View view) {
         Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(profileIntent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(profileIntent);
+        finish();
     }
 }

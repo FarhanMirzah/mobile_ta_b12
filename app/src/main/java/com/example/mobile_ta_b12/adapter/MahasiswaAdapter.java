@@ -15,13 +15,13 @@ import com.example.mobile_ta_b12.R;
 import java.util.ArrayList;
 
 
-public class ListMahasiswaAdapter extends RecyclerView.Adapter<ListMahasiswaAdapter.MahasiswaViewHolder>{
+public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder>{
     ArrayList<Mahasiswa>listMahasiswa = new ArrayList<>();
     ItemMahasiswaClickListener listenermahasiswa;
 
-    public ListMahasiswaAdapter(ArrayList<Mahasiswa> listMahasiswa){this.listMahasiswa = listMahasiswa;}
+    public MahasiswaAdapter(ArrayList<Mahasiswa> listMahasiswa){this.listMahasiswa = listMahasiswa;}
 
-    public ListMahasiswaAdapter(ArrayList<Mahasiswa>listMahasiswa, ItemMahasiswaClickListener listenermahasiswa){
+    public MahasiswaAdapter(ArrayList<Mahasiswa>listMahasiswa, ItemMahasiswaClickListener listenermahasiswa){
         this.listMahasiswa = listMahasiswa;
         this.listenermahasiswa = listenermahasiswa;
     }

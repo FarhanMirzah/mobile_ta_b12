@@ -10,20 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobile_ta_b12.R;
-import com.example.mobile_ta_b12.models.jadwal;
+import com.example.mobile_ta_b12.models.Jadwal;
 
 import java.util.ArrayList;
 
-public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalViewHolder> {
+public class JadwalAdapter extends RecyclerView.Adapter<JadwalAdapter.JadwalViewHolder> {
 
-    ArrayList<jadwal> ListJadwal;
+    ArrayList<Jadwal> listJadwal;
     ItemJadwalClickListener listener;
 
-    public jadwalAdapter(ArrayList<jadwal> listJadwal) {
-        ListJadwal = listJadwal;
+    public JadwalAdapter(ArrayList<Jadwal> listJadwal) {
+        this.listJadwal = listJadwal;
     }
 
-    public jadwalAdapter() {
+    public JadwalAdapter() {
 
     }
 
@@ -36,13 +36,13 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
     @Override
     public JadwalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_jadwal, parent, false);
+                .inflate(R.layout.item_sidang, parent, false);
         return new JadwalViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull JadwalViewHolder holder, int position) {
-        jadwal jadwal =ListJadwal.get(position);
+        Jadwal jadwal = listJadwal.get(position);
         holder.logoJadwal.setImageResource(R.drawable.ic_baseline_date_range_24);
         holder.tipe_jadwal.setText(jadwal.getTipe());
         holder.tanggal.setText(jadwal.getTanggal());
@@ -52,11 +52,11 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
 
     @Override
     public int getItemCount() {
-        return ListJadwal.size();
+        return listJadwal.size();
     }
 
     public interface ItemJadwalClickListener{
-        void onItemJadwalClick(jadwal jadwal);
+        void onItemJadwalClick(Jadwal jadwal);
     }
 
 
@@ -79,7 +79,7 @@ public class jadwalAdapter extends RecyclerView.Adapter<jadwalAdapter.JadwalView
 
         @Override
         public void onClick(View view) {
-            jadwal jadwal = ListJadwal.get(getAdapterPosition());
+            Jadwal jadwal = listJadwal.get(getAdapterPosition());
             listener.onItemJadwalClick(jadwal);
         }
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RekomendasiCatatanSeminarActivity">
+    tools:context=".InputRekomendasiCatatanSeminarActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonInputRekomendasiCatatan"
@@ -38,7 +38,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:onClick="buttonBackListJadwal"
+        android:onClick="buttonBackListJadwalSeminar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator" />

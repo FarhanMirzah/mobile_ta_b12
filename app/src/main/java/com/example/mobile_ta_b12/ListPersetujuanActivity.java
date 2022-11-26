@@ -58,7 +58,20 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
 
 
     public void arrowBackPersetujuan(View view) {
-        Intent profileIntent = new Intent(this, ListMahasiswaActivity.class);
-        startActivity(profileIntent);
+        Intent ListMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
+        ListMahasiswaIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        ListMahasiswaIntent.putExtra("IS_LOGGED_IN", true);
+        startActivity(ListMahasiswaIntent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent ListMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
+        ListMahasiswaIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        ListMahasiswaIntent.putExtra("IS_LOGGED_IN", true);
+        startActivity(ListMahasiswaIntent);
+        finish();
     }
 }

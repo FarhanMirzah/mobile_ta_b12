@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class InputNilaiTugasAkhirActivity extends AppCompatActivity {
+public class PembatalanTugasAkhirActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_nilai_tugas_akhir);
+        setContentView(R.layout.activity_pembatalan_tugas_akhir);
     }
 
     public void buttonBackDetailTugasAkhir(View view) {

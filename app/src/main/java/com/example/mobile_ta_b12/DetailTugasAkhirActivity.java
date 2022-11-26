@@ -16,7 +16,10 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
 
     public void buttonBackListMahasiswa(View view) {
         Intent listMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
+        listMahasiswaIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        listMahasiswaIntent.putExtra("IS_LOGGED_IN", true);
         startActivity(listMahasiswaIntent);
+        finish();
     }
 
     public void buttonDetailMahasiswa(View view) {
@@ -35,17 +38,27 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
     }
 
     public void buttonDetailSeminarTA(View view) {
-        Intent detailSeminarTugasAkhirIntent = new Intent(this, TADetailSeminarActivity.class);
+        Intent detailSeminarTugasAkhirIntent = new Intent(this, DetailSeminarTugasAkhirActivity.class);
         startActivity(detailSeminarTugasAkhirIntent);
     }
 
     public void buttonDetailSidangTA(View view) {
-        Intent detailSidangTugasAkhirIntent = new Intent(this, TADetailSidangActivity.class);
+        Intent detailSidangTugasAkhirIntent = new Intent(this, DetailSidangTugasAkhirActivity.class);
         startActivity(detailSidangTugasAkhirIntent);
     }
 
     public void buttonBatalTugasAkhir(View view) {
-        Intent batalTugasAkhirIntent = new Intent(this, PembatalanTaActivity.class);
+        Intent batalTugasAkhirIntent = new Intent(this, PembatalanTugasAkhirActivity.class);
         startActivity(batalTugasAkhirIntent);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent listMahasiswaIntent = new Intent(this, ListMahasiswaActivity.class);
+        listMahasiswaIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        listMahasiswaIntent.putExtra("IS_LOGGED_IN", true);
+        startActivity(listMahasiswaIntent);
+        finish();
     }
 }
