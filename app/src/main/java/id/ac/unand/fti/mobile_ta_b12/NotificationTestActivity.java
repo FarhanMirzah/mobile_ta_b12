@@ -1,5 +1,6 @@
 package id.ac.unand.fti.mobile_ta_b12;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -12,11 +13,18 @@ import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class NotificationTestActivity extends AppCompatActivity {
 
+    private static final String TAG = "Notification-Debug";
     private static final String CHANNEL_ID = "test_channel" ;
     private Button buttonShow;
     private NotificationManagerCompat notificationManager;
@@ -60,6 +68,25 @@ public class NotificationTestActivity extends AppCompatActivity {
                 notificationManager.notify(101, notification);
             }
         });
+
+        // Kode token Firebase
+        FirebaseMessaging.getInstance().getToken()
+            .addOnCompleteListener(new OnCompleteListener<String>() {
+                @Override
+                public void onComplete(@NonNull Task<String> task) {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+
+                    // Get new FCM registration token
+                    String token = task.getResult();
+
+                    // Log and toast
+                    Log.d(TAG, token);
+                    Toast.makeText(NotificationTestActivity.this, token, Toast.LENGTH_SHORT).show();
+                }
+            });
     }
 
     // 2a. Buat channel

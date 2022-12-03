@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "12991308911",
+    "project_id": "ptb-b-83908",
+    "storage_bucket": "ptb-b-83908.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12991308911:android:32eac35d5ec744260a199a",
+        "android_client_info": {
+          "package_name": "id.ac.unand.fti.mobile_ta_b12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12991308911-u13nd7n2idd24hoj0dvi0s63d478ltn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9QvEFIIHqbeEPshlJD2cbgbS5dS7zlvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12991308911-u13nd7n2idd24hoj0dvi0s63d478ltn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
