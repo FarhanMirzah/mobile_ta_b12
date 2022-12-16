@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="id.ac.unand.fti.mobile_ta_b12">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -24,9 +26,6 @@
         <!-- Untuk test Notifikasi saja -->
         <activity
             android:name=".NotificationTestActivity"
-            android:exported="true" />
-        <activity
-            android:name=".NotificationTestActivity2"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
