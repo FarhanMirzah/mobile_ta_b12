@@ -42,9 +42,9 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
         setContentView(view);
 
         Intent mainIntent = getIntent();
-        String username = mainIntent.getStringExtra("USERNAME");
-        if(username == null){
-            username = "Username"; //Assign default string
+        String name = mainIntent.getStringExtra("NAME");
+        if(name == null){
+            name = "Name"; //Assign default string
         }
         // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
         isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
@@ -58,10 +58,10 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
 
         // Kode lama (findViewById)
 //        namaUser = (TextView) findViewById(R.id.namaUser);
-//        namaUser.setText(username);
+//        namaUser.setText(name);
 
         // Kode baru (View Binding)
-        binding.namaUser.setText(username);
+        binding.namaUser.setText(name);
 
         rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 

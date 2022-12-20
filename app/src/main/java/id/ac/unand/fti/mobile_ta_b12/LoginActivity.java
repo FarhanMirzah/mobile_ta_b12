@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
 
                                 String token = loginResponse.getAuthorisation().getToken();
+                                String name = loginResponse.getUser().getName();
 
                                 SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
 
@@ -86,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.apply();
 
                                 Intent mainIntent = new Intent(LoginActivity.this,ListMahasiswaActivity.class);
-                                mainIntent.putExtra("USERNAME", username);
+                                mainIntent.putExtra("NAME", name);
                                 mainIntent.putExtra("IS_LOGGED_IN", true);
                                 startActivity(mainIntent);
                             }
