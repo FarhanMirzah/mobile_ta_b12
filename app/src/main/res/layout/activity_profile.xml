@@ -45,30 +45,60 @@
         app:layout_constraintTop_toBottomOf="@+id/gambar_user" />
 
     <TextView
-        android:id="@+id/namaUser"
-        android:layout_width="279dp"
+        android:id="@+id/textNama"
+        android:layout_width="wrap_content"
         android:layout_height="41dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="12dp"
-        android:text="@string/nama_husnil_kamil_mt"
-        android:textColor="@color/black"
 
+        android:text="Nama :"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_ubah_profile" />
 
     <TextView
-        android:id="@+id/nip_user"
-        android:layout_width="279dp"
+        android:id="@+id/namaUser"
+        android:layout_width="0dp"
         android:layout_height="41dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/nip_198201182008121002"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginEnd="64dp"
+        android:text="Nama User"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/namaUser"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/namaUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textNama"
+        app:layout_constraintTop_toTopOf="@+id/textNama" />
+
+    <TextView
+        android:id="@+id/textNIP"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+
+        android:layout_marginTop="8dp"
+        android:text="NIP :"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/namaUser" />
+
+    <TextView
+        android:id="@+id/nipUser"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="64dp"
+        android:text="NIP User"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textNIP"
+        app:layout_constraintTop_toTopOf="@+id/textNIP" />
 
     <TextView
         android:id="@+id/jabatan_user"
@@ -78,25 +108,39 @@
         android:text="@string/jabatan_lektor"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/nip_user"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/nip_user"
-        app:layout_constraintTop_toBottomOf="@+id/nip_user" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nipUser" />
 
     />
 
     <TextView
-        android:id="@+id/email_user"
-        android:layout_width="279dp"
+        android:id="@+id/textEmail"
+        android:layout_width="wrap_content"
         android:layout_height="41dp"
+        android:layout_marginStart="64dp"
+
         android:layout_marginTop="8dp"
-        android:text="@string/email_iniemaildosen_gmail_com"
+        android:text="Email :"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/jabatan_user"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/jabatan_user"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jabatan_user" />
+
+    <TextView
+        android:id="@+id/emailUser"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="64dp"
+        android:text="Email User"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textEmail"
+        app:layout_constraintTop_toTopOf="@+id/textEmail" />
 
     <TextView
         android:id="@+id/nope_user"
@@ -106,10 +150,9 @@
         android:text="@string/no_telp_081234567890"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/email_user"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/email_user"
-        app:layout_constraintTop_toBottomOf="@+id/email_user" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailUser" />
 
     <TextView
         android:id="@+id/status_user"
@@ -119,9 +162,9 @@
         android:text="@string/status_aktif"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/nope_user"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/nope_user"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nope_user" />
 
     <Button

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,9 +31,6 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        String token = sharedPref.getString("TOKEN", "");
-
         // Kode lama (findViewById)
 //        setContentView(R.layout.activity_list_mahasiswa);
 
@@ -40,6 +38,14 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
         binding = ActivityListMahasiswaBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
+        Log.d("ListMahasiswa-Debug", token);
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("TOKEN", token);
+        editor.apply();
 
         Intent mainIntent = getIntent();
         String name = mainIntent.getStringExtra("NAME");

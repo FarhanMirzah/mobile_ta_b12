@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
                     String username= binding.editUsername.getText().toString();
                     String password = binding.editPassword.getText().toString();
+                    Log.d("LoginAct-Debug", username + " : " + password);
 
                     Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl(API_BASE_URL)
@@ -67,9 +68,9 @@ public class LoginActivity extends AppCompatActivity {
 
                     InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
 
-                    Call<LoginResponse> login = dosen.login(username, password);
+                    Call<LoginResponse> call = dosen.login(username, password);
 
-                    login.enqueue(new Callback<LoginResponse>() {
+                    call.enqueue(new Callback<LoginResponse>() {
                         @Override
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                             LoginResponse loginResponse = response.body();
