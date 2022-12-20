@@ -29,6 +29,10 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
+
         // Kode lama (findViewById)
 //        setContentView(R.layout.activity_list_mahasiswa);
 

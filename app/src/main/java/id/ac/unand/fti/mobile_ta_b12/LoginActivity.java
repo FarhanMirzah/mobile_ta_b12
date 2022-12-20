@@ -74,8 +74,16 @@ public class LoginActivity extends AppCompatActivity {
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                             LoginResponse loginResponse = response.body();
                             Log.d("LoginAct-Debug", response.toString());
-                            if(loginResponse != null){
+                            if(loginResponse != null && loginResponse.getStatus().equals("success")){
                                 Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
+
+                                String token = loginResponse.getAuthorisation().getToken();
+
+                                SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putString("TOKEN", token);
+                                editor.apply();
 
                                 Intent mainIntent = new Intent(LoginActivity.this,ListMahasiswaActivity.class);
                                 mainIntent.putExtra("USERNAME", username);
@@ -83,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(mainIntent);
                             }
                             else{
-                                Toast.makeText(LoginActivity.this, "Username Atau Pasword Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Username Atau Password Salah", Toast.LENGTH_SHORT).show();
                             }
                         }
 
