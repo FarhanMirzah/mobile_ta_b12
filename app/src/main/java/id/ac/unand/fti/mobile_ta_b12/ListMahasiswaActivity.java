@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Kode lama (findViewById)
 //        setContentView(R.layout.activity_list_mahasiswa);
 
@@ -37,10 +39,18 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
         View view = binding.getRoot();
         setContentView(view);
 
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
+        Log.d("ListMahasiswa-Debug", token);
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("TOKEN", token);
+        editor.apply();
+
         Intent mainIntent = getIntent();
-        String username = mainIntent.getStringExtra("USERNAME");
-        if(username == null){
-            username = "Username"; //Assign default string
+        String name = mainIntent.getStringExtra("NAME");
+        if(name == null){
+            name = "Name"; //Assign default string
         }
         // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
         isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
@@ -54,10 +64,10 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
 
         // Kode lama (findViewById)
 //        namaUser = (TextView) findViewById(R.id.namaUser);
-//        namaUser.setText(username);
+//        namaUser.setText(name);
 
         // Kode baru (View Binding)
-        binding.namaUser.setText(username);
+        binding.namaUser.setText(name);
 
         rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 

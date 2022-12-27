@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                     String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
                     String username= binding.editUsername.getText().toString();
                     String password = binding.editPassword.getText().toString();
+                    Log.d("LoginAct-Debug", username + " : " + password);
 
                     Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl(API_BASE_URL)
@@ -67,23 +68,32 @@ public class LoginActivity extends AppCompatActivity {
 
                     InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
 
-                    Call<LoginResponse> login = dosen.login(username, password);
+                    Call<LoginResponse> call = dosen.login(username, password);
 
-                    login.enqueue(new Callback<LoginResponse>() {
+                    call.enqueue(new Callback<LoginResponse>() {
                         @Override
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                             LoginResponse loginResponse = response.body();
                             Log.d("LoginAct-Debug", response.toString());
-                            if(loginResponse != null){
+                            if(loginResponse != null && loginResponse.getStatus().equals("success")){
                                 Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
 
+                                String token = loginResponse.getAuthorisation().getToken();
+                                String name = loginResponse.getUser().getName();
+
+                                SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putString("TOKEN", token);
+                                editor.apply();
+
                                 Intent mainIntent = new Intent(LoginActivity.this,ListMahasiswaActivity.class);
-                                mainIntent.putExtra("USERNAME", username);
+                                mainIntent.putExtra("NAME", name);
                                 mainIntent.putExtra("IS_LOGGED_IN", true);
                                 startActivity(mainIntent);
                             }
                             else{
-                                Toast.makeText(LoginActivity.this, "Username Atau Pasword Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Username Atau Password Salah", Toast.LENGTH_SHORT).show();
                             }
                         }
 
