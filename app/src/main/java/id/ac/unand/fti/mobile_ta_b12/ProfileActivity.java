@@ -102,17 +102,17 @@ public class ProfileActivity extends AppCompatActivity {
         InterfaceDosen interfaceDosen = APIClient.getService();
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.kelompok_15.tb_ptb.SHARED_KEY",MODE_PRIVATE);
         gettoken = sharedPreferences.getString("token","");
-        token = "Bearer " + gettoken;
+        token = "DADAAAHH " + gettoken;
         Toast.makeText(ProfileActivity.this, token, Toast.LENGTH_SHORT).show();
 
-        Call<LogoutResponse> call = InterfaceDosen.logout(token);
+        Call<LogoutResponse> call = interfaceDosen.logout(token);
         call.enqueue(new Callback<LogoutResponse>() {
             @Override
             public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
 
                 LogoutResponse logoutResponse = response.body();
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.clear();
+                editor.remove("TOKEN");
                 editor.apply();
                 finish();
                 Toast.makeText(ProfileActivity.this, logoutResponse.getMessage(), Toast.LENGTH_SHORT).show();
