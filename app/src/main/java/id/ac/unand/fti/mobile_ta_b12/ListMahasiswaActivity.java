@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,7 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import id.ac.unand.fti.mobile_ta_b12.adapter.MahasiswaAdapter;
 import id.ac.unand.fti.mobile_ta_b12.databinding.ActivityListMahasiswaBinding;
+import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.Mahasiswa;
+import id.ac.unand.fti.mobile_ta_b12.retrofit.InterfaceDosen;
+import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.ArrayList;
 
@@ -21,7 +30,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
 
     private boolean isLoggedIn = false;
     // Kode lama (findViewById)
-//    TextView namaUser;
+    TextView namaUser;
 
     // Kode baru (View Binding)
     private ActivityListMahasiswaBinding binding;
@@ -47,11 +56,49 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
         editor.putString("TOKEN", token);
         editor.apply();
 
+        // Minta data ke server
+        String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(API_BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create() )
+                .client(new OkHttpClient.Builder().build())
+                .build();
+
+        InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
+
+        Call<GetProfileResponse> login = dosen.getProfile("Bearer " + token);
+        login.enqueue(new Callback<GetProfileResponse>() {
+            @Override
+            public void onResponse(Call<GetProfileResponse> call, Response<GetProfileResponse> response) {
+                Log.d("ProfileAct-Debug", response.toString());
+                GetProfileResponse getProfileResponse = response.body();
+                if(getProfileResponse != null){
+                    String nip = getProfileResponse.getUsername();
+                    String name = getProfileResponse.getName();
+                    String email = getProfileResponse.getEmail();
+
+                    Log.d("ProfileAct-Debug", nip + " : " + name + " : " + email);
+
+                    namaUser = (TextView) findViewById(R.id.namaUser);
+                    namaUser.setText(name);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetProfileResponse> call, Throwable t) {
+
+            }
+        });
+
         Intent mainIntent = getIntent();
-        String name = mainIntent.getStringExtra("NAME");
-        if(name == null){
-            name = "Name"; //Assign default string
-        }
+
+        // Tidak dipakai lagi
+//        String name = mainIntent.getStringExtra("NAME");
+//        if(name == null){
+//            name = "Name"; //Assign default string
+//        }
+
         // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
         isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
 
@@ -66,8 +113,8 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
 //        namaUser = (TextView) findViewById(R.id.namaUser);
 //        namaUser.setText(name);
 
-        // Kode baru (View Binding)
-        binding.namaUser.setText(name);
+        // Kode baru (View Binding) - Tidak dipakai lagi
+//        binding.namaUser.setText(name);
 
         rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 
