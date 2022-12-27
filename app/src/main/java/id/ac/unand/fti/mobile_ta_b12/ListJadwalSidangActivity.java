@@ -29,6 +29,7 @@ public class ListJadwalSidangActivity extends AppCompatActivity implements Jadwa
 
         rvjadwal.setLayoutManager(layoutManager);
         rvjadwal.setAdapter(adapter);
+
     }
 
     public ArrayList<Jadwal> getjadwal(){

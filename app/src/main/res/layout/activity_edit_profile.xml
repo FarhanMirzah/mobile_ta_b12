@@ -51,26 +51,12 @@
         app:layout_constraintTop_toTopOf="parent"
         android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/kolomubahjabatan"
-        android:layout_width="258dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="232dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/masukkan_jabatan_anda"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/kolomubahemail"
         android:layout_width="258dp"
         android:layout_height="48dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="12dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/masukkan_email_anda"
@@ -79,39 +65,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kolomubahnip"
         tools:ignore="TextFields" />
-
-
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="258dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="360dp"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="@string/masukkan_notelp_anda"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/kolomubahstatus"
-        android:layout_width="258dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="424dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/masukkan_status_anda"
-        android:inputType="textPersonName"
-        android:textColorHint="#757575"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSave"

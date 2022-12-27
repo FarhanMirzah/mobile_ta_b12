@@ -9,9 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LoginResponse;
+import id.ac.unand.fti.mobile_ta_b12.models.LogoutResponse;
+import id.ac.unand.fti.mobile_ta_b12.retrofit.APIClient;
 import id.ac.unand.fti.mobile_ta_b12.retrofit.InterfaceDosen;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -23,6 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProfileActivity extends AppCompatActivity {
 
     TextView namaUser, nipUser, emailUser;
+    String gettoken, token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +96,37 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void buttonLogout(View view) {
-        Intent logoutIntent = new Intent(this, LoginActivity.class);
-        logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(logoutIntent);
+//        Intent logoutIntent = new Intent(this, LoginActivity.class);
+//        logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(logoutIntent);
+        InterfaceDosen interfaceDosen = APIClient.getService();
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.kelompok_15.tb_ptb.SHARED_KEY",MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("token","");
+        token = "DADAAAHH " + gettoken;
+        Toast.makeText(ProfileActivity.this, token, Toast.LENGTH_SHORT).show();
+
+        Call<LogoutResponse> call = interfaceDosen.logout(token);
+        call.enqueue(new Callback<LogoutResponse>() {
+            @Override
+            public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
+
+                LogoutResponse logoutResponse = response.body();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("TOKEN");
+                editor.apply();
+                finish();
+                Toast.makeText(ProfileActivity.this, logoutResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onFailure(Call<LogoutResponse> call, Throwable t) {
+
+            }
+        });
+
+
     }
 
     @Override
