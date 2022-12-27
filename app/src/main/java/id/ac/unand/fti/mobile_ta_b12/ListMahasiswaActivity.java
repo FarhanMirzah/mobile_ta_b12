@@ -1,6 +1,8 @@
 package id.ac.unand.fti.mobile_ta_b12;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -38,7 +40,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
         Intent mainIntent = getIntent();
         String username = mainIntent.getStringExtra("USERNAME");
         if(username == null){
-            username = "Husnil Kamil"; //Assign default string
+            username = "Username"; //Assign default string
         }
         // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
         isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
