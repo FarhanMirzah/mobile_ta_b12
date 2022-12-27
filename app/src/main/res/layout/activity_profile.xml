@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/foto_pakhusnil" />
+        app:srcCompat="@drawable/default_profile" />
 
     <Button
         android:id="@+id/button_ubah_profile"
@@ -98,21 +98,13 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textNIP"
-        app:layout_constraintTop_toTopOf="@+id/textNIP" />
-
-    <TextView
-        android:id="@+id/jabatan_user"
-        android:layout_width="279dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/jabatan_lektor"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nipUser" />
+        app:layout_constraintTop_toTopOf="@+id/textNIP" /><![CDATA[
 
     />
+
+
+
+    ]]>
 
     <TextView
         android:id="@+id/textEmail"
@@ -120,13 +112,13 @@
         android:layout_height="41dp"
         android:layout_marginStart="64dp"
 
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:text="Email :"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jabatan_user" />
+        app:layout_constraintTop_toBottomOf="@+id/textNIP" />
 
     <TextView
         android:id="@+id/emailUser"
@@ -141,31 +133,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textEmail"
         app:layout_constraintTop_toTopOf="@+id/textEmail" />
-
-    <TextView
-        android:id="@+id/nope_user"
-        android:layout_width="279dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/no_telp_081234567890"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailUser" />
-
-    <TextView
-        android:id="@+id/status_user"
-        android:layout_width="279dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/status_aktif"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nope_user" />
 
     <Button
         android:id="@+id/ganti_password"
