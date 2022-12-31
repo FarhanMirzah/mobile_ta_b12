@@ -6,39 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".PembatalanTugasAkhirActivity">
 
-    <TextView
-        android:id="@+id/nim_mahasiswa"
-        android:layout_width="280dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="28dp"
-        android:text="Nim          : 2011521234"
-        app:layout_constraintEnd_toEndOf="@+id/nama_mahasiswa"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/nama_mahasiswa"
-        app:layout_constraintTop_toBottomOf="@+id/nama_mahasiswa" />
+    <Button
+        android:id="@+id/buttonBatalTA"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#BA1A1A"
+        android:text="IYA"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textBatalTA"
+        app:layout_constraintStart_toStartOf="@+id/textBatalTA"
+        app:layout_constraintTop_toBottomOf="@+id/textBatalTA" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputAlasanPembatalan"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toStartOf="@+id/textJudulTA"
+        app:layout_constraintTop_toBottomOf="@+id/judulTA">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|start"
+            android:hint="Alasan Pembatalan TA Mahasiswa"
+            android:paddingTop="30dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/judul"
-        android:layout_width="280dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="28dp"
-        android:text="Judul         : Spk Pemilihan Laptop Terbaik"
-        app:layout_constraintEnd_toEndOf="@+id/nim_mahasiswa"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/nim_mahasiswa"
-        app:layout_constraintTop_toBottomOf="@+id/nim_mahasiswa" />
+        android:id="@+id/textNamaMahasiswa"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
 
+        android:layout_marginTop="24dp"
+        android:text="Nama :"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/detailTugasAkhirMahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/detailTugasAkhirMahasiswa" />
 
     <TextView
-        android:id="@+id/textalasan"
-        android:layout_width="280dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="40dp"
-        android:text="Alasan Pembatalan Mahasiswa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judul" />
+        android:id="@+id/textNimMahasiswa"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+
+        android:layout_marginTop="8dp"
+        android:text="NIM :"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textNamaMahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/textNamaMahasiswa" />
+
+    <TextView
+        android:id="@+id/textJudulTA"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+
+        android:layout_marginTop="8dp"
+        android:text="Judul :"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textNamaMahasiswa"
+        app:layout_constraintTop_toBottomOf="@+id/textNimMahasiswa" />
+
+    <TextView
+        android:id="@+id/namaMahasiswaTA"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+
+        android:layout_marginStart="8dp"
+        android:text="@string/nama_mahasiswa"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textNamaMahasiswa"
+        app:layout_constraintTop_toTopOf="@+id/textNamaMahasiswa" />
+
+    <TextView
+        android:id="@+id/nimMahasiswaTA"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+
+        android:layout_marginStart="8dp"
+        android:text="@string/nim_mahasiswa"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textNimMahasiswa"
+        app:layout_constraintTop_toTopOf="@+id/textNimMahasiswa" />
+
+    <TextView
+        android:id="@+id/judulTA"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+
+        android:layout_marginStart="8dp"
+        android:text="Judul Tugas Akhir"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/textJudulTA"
+        app:layout_constraintTop_toTopOf="@+id/textJudulTA" />
+
 
     <ImageView
         android:id="@+id/arrowBackTA"
@@ -55,63 +127,27 @@
         android:id="@+id/detailTugasAkhirMahasiswa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="83dp"
         android:text="Form Pembatalan Tugas Akhir Mahasiswa"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nama_mahasiswa"
-        android:layout_width="280dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="48dp"
-        android:text="Nama      : Mahasiswa 1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailTugasAkhirMahasiswa" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textalasan">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="250dp"
-        android:layout_height="35dp"
+        android:id="@+id/textBatalTA"
+        android:layout_width="306dp"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:text="Aapakah Anda yakin Ingin Membatalkan bimbingan TA mahasiswa ini"
+        android:text="Apakah Anda yakin Ingin membatalkan bimbingan Tugas Akhir mahasiswa ini?"
+        android:textAlignment="center"
+        android:textColor="#BA1A1A"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/inputAlasanPembatalan" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="YA"
-        android:background="@drawable/button_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
