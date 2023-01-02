@@ -74,8 +74,8 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
         public LogbookViewHolder(@NonNull View itemView) {
             super(itemView);
             imageStatus = itemView.findViewById(R.id.imageStatus);
-            textHariTanggal = itemView.findViewById(R.id.textHariTanggal);
-            textKegiatan = itemView.findViewById(R.id.textKegiatan);
+            textHariTanggal = itemView.findViewById(R.id.date);
+            textKegiatan = itemView.findViewById(R.id.progress);
 
             itemView.setOnClickListener(this);
         }
