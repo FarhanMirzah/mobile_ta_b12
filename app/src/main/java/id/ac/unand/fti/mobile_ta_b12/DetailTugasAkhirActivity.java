@@ -2,8 +2,11 @@ package id.ac.unand.fti.mobile_ta_b12;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class DetailTugasAkhirActivity extends AppCompatActivity {
@@ -12,6 +15,14 @@ public class DetailTugasAkhirActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_tugas_akhir);
+
+        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        String token = sharedPref.getString("TOKEN", "");
+        Log.d("DetailTA-Debug", token);
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("TOKEN", token);
+        editor.apply();
     }
 
     public void buttonBackListMahasiswa(View view) {

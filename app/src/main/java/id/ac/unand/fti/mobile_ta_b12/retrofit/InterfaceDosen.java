@@ -1,5 +1,6 @@
 package id.ac.unand.fti.mobile_ta_b12.retrofit;
 
+import id.ac.unand.fti.mobile_ta_b12.models.GetLogbookResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LoginResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LogoutResponse;
@@ -17,6 +18,9 @@ public interface InterfaceDosen {
 
     @GET("api/me")
     Call<GetProfileResponse> getProfile(@Header("Authorization") String token);
+
+    @GET("api/theses/309/logbooks")
+    Call<GetLogbookResponse> getListLogbook();
 
     @POST("api/logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);

@@ -11,14 +11,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import id.ac.unand.fti.mobile_ta_b12.R;
 import id.ac.unand.fti.mobile_ta_b12.models.Logbook;
+import id.ac.unand.fti.mobile_ta_b12.models.LogbooksItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookViewHolder>{
 
+    private List<LogbooksItem> itemList;
+
+    public void setItemList(List<LogbooksItem> itemList) {
+        this.itemList = itemList;
+    }
+
     ArrayList<Logbook> listLogbook = new ArrayList<>();
     ItemLogbookClickListener listener;
-
 
     public LogbookAdapter(ArrayList<Logbook> listLogbook) {
         this.listLogbook = listLogbook;
@@ -47,6 +54,9 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
 
     @Override
     public void onBindViewHolder(@NonNull LogbookViewHolder holder, int position) {
+        LogbooksItem logbooks = itemList.get(position);
+        holder.textKegiatan.setText(logbooks.getProgress());
+
         Logbook logbook = this.listLogbook.get(position);
         if (logbook.getStatus() == 1) {
             holder.imageStatus.setImageResource(R.drawable.ic_check_circle_outline_green);
@@ -59,7 +69,7 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
 
     @Override
     public int getItemCount() {
-        return listLogbook.size();
+        return itemList.size();
     }
 
     public interface ItemLogbookClickListener{
@@ -69,7 +79,7 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
     public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public ImageView imageStatus;
-        TextView textHariTanggal, textKegiatan;
+        public TextView id, textHariTanggal, textKegiatan;
 
         public LogbookViewHolder(@NonNull View itemView) {
             super(itemView);

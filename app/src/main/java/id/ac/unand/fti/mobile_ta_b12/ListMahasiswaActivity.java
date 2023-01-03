@@ -71,14 +71,14 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
         login.enqueue(new Callback<GetProfileResponse>() {
             @Override
             public void onResponse(Call<GetProfileResponse> call, Response<GetProfileResponse> response) {
-                Log.d("ProfileAct-Debug", response.toString());
+                Log.d("ListMahasiswa-Debug", response.toString());
                 GetProfileResponse getProfileResponse = response.body();
                 if(getProfileResponse != null){
                     String nip = getProfileResponse.getUsername();
                     String name = getProfileResponse.getName();
                     String email = getProfileResponse.getEmail();
 
-                    Log.d("ProfileAct-Debug", nip + " : " + name + " : " + email);
+                    Log.d("ListMahasiswa-Debug", nip + " : " + name + " : " + email);
 
                     namaUser = (TextView) findViewById(R.id.namaUser);
                     namaUser.setText(name);
