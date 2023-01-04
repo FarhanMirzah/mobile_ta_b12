@@ -20,7 +20,7 @@ public interface InterfaceDosen {
     Call<GetProfileResponse> getProfile(@Header("Authorization") String token);
 
     @GET("api/theses/309/logbooks")
-    Call<GetLogbookResponse> getListLogbook();
+    Call<GetLogbookResponse> getListLogbook(@Header("Authorization") String token);
 
     @POST("api/logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);

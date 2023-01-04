@@ -17,32 +17,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookViewHolder>{
-
-    private List<LogbooksItem> itemList;
+    private List<LogbooksItem> itemList = new ArrayList<>();
 
     public void setItemList(List<LogbooksItem> itemList) {
         this.itemList = itemList;
+        notifyDataSetChanged();
     }
-
-    ArrayList<Logbook> listLogbook = new ArrayList<>();
-    ItemLogbookClickListener listener;
-
-    public LogbookAdapter(ArrayList<Logbook> listLogbook) {
-        this.listLogbook = listLogbook;
-    }
-
-    public LogbookAdapter(ArrayList<Logbook> listLogbook, ItemLogbookClickListener listener) {
-        this.listLogbook = listLogbook;
-        this.listener = listener;
-    }
-
-    public void setListLogbook(ArrayList<Logbook> listLogbook) {
-        this.listLogbook = listLogbook;
-    }
-
-    public void setListener(ItemLogbookClickListener listener) {
-        this.listener = listener;
-    }
+    // Komentar = kode lama
+//    ArrayList<Logbook> listLogbook = new ArrayList<>();
+//    ItemLogbookClickListener listener;
+//
+//    public LogbookAdapter(ArrayList<Logbook> listLogbook) {
+//        this.listLogbook = listLogbook;
+//    }
+//
+//    public LogbookAdapter(ArrayList<Logbook> listLogbook, ItemLogbookClickListener listener) {
+//        this.listLogbook = listLogbook;
+//        this.listener = listener;
+//    }
+//
+//    public void setListLogbook(ArrayList<Logbook> listLogbook) {
+//        this.listLogbook = listLogbook;
+//    }
+//
+//    public void setListener(ItemLogbookClickListener listener) {
+//        this.listener = listener;
+//    }
 
     @NonNull
     @Override
@@ -55,16 +55,17 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
     @Override
     public void onBindViewHolder(@NonNull LogbookViewHolder holder, int position) {
         LogbooksItem logbooks = itemList.get(position);
-        holder.textKegiatan.setText(logbooks.getProgress());
+        holder.progress.setText(logbooks.getProgress());
 
-        Logbook logbook = this.listLogbook.get(position);
-        if (logbook.getStatus() == 1) {
-            holder.imageStatus.setImageResource(R.drawable.ic_check_circle_outline_green);
-        }else{
-            holder.imageStatus.setImageResource(R.drawable.ic_access_time_red);
-        }
-        holder.textHariTanggal.setText(logbook.getHariTanggal());
-        holder.textKegiatan.setText(logbook.getKegiatan());
+        // Komentar = kode lama
+//        Logbook logbook = this.listLogbook.get(position);
+//        if (logbook.getStatus() == 1) {
+//            holder.imageStatus.setImageResource(R.drawable.ic_check_circle_outline_green);
+//        }else{
+//            holder.imageStatus.setImageResource(R.drawable.ic_access_time_red);
+//        }
+//        holder.textHariTanggal.setText(logbook.getHariTanggal());
+//        holder.textKegiatan.setText(logbook.getKegiatan());
     }
 
     @Override
@@ -72,28 +73,29 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
         return itemList.size();
     }
 
-    public interface ItemLogbookClickListener{
-        void onItemLogbookClick(Logbook logbook);
-    }
+    // Komentar = kode lama
+//    public interface ItemLogbookClickListener{
+//        void onItemLogbookClick(Logbook logbook);
+//    }
 
-    public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-
+    // Komentar = kode lama
+//    public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class LogbookViewHolder extends RecyclerView.ViewHolder{
+        public TextView progress;
         public ImageView imageStatus;
-        public TextView id, textHariTanggal, textKegiatan;
 
         public LogbookViewHolder(@NonNull View itemView) {
             super(itemView);
+            progress = itemView.findViewById(R.id.progress);
             imageStatus = itemView.findViewById(R.id.imageStatus);
-            textHariTanggal = itemView.findViewById(R.id.date);
-            textKegiatan = itemView.findViewById(R.id.progress);
-
-            itemView.setOnClickListener(this);
+//            itemView.setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View view) {
-            Logbook logbook = listLogbook.get(getAdapterPosition());
-            listener.onItemLogbookClick(logbook);
-        }
+        // Komentar = kode lama
+//        @Override
+//        public void onClick(View view) {
+//            Logbook logbook = listLogbook.get(getAdapterPosition());
+//            listener.onItemLogbookClick(logbook);
+//        }
     }
 }

@@ -26,9 +26,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListLogbookActivity extends AppCompatActivity implements LogbookAdapter.ItemLogbookClickListener{
-
+//public class ListLogbookActivity extends AppCompatActivity implements LogbookAdapter.ItemLogbookClickListener{
+public class ListLogbookActivity extends AppCompatActivity{
     private RecyclerView rvLogbook;
+    private LogbookAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +41,9 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
         Log.d("ListLogbook-Debug", token);
 
         rvLogbook = findViewById(R.id.rv_logbook);
+        rvLogbook.setLayoutManager(new LinearLayoutManager(this));
 
-        LogbookAdapter adapter = new LogbookAdapter(getLogbook());
-        adapter.setListener(this);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-
-        rvLogbook.setLayoutManager(layoutManager);
+        adapter = new LogbookAdapter();
         rvLogbook.setAdapter(adapter);
 
         // Minta data ke server
@@ -59,7 +57,7 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
 
         InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
 
-        Call<GetLogbookResponse> call = dosen.getListLogbook();
+        Call<GetLogbookResponse> call = dosen.getListLogbook("Bearer " + token);
         call.enqueue(new Callback<GetLogbookResponse>() {
             @Override
             public void onResponse(Call<GetLogbookResponse> call, Response<GetLogbookResponse> response) {
@@ -67,6 +65,7 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
                 GetLogbookResponse getLogbookResponse = response.body();
                 if(getLogbookResponse != null){
                     List<LogbooksItem> logbooks = getLogbookResponse.getLogbooks();
+                    Log.d("ListLogbook-Debug", String.valueOf(logbooks.size()));
                     adapter.setItemList(logbooks);
                 }
             }
@@ -78,35 +77,20 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
         });
     }
 
+//    @Override
+//    public void onItemLogbookClick(Logbook logbook) {
+//        Intent detailIntent = new Intent(this, DetailLogbookActivity.class);
+//        detailIntent.putExtra("HARI_TANGGAL", logbook.getHariTanggal());
+//        detailIntent.putExtra("KEGIATAN", logbook.getKegiatan());
+//        detailIntent.putExtra("STATUS", logbook.getStatus());
+//        startActivity(detailIntent);
+//    }
+
     public void buttonBackDetailTugasAkhir(View view) {
         Intent DetailTugasAkhirIntent = new Intent(this, DetailTugasAkhirActivity.class);
         DetailTugasAkhirIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(DetailTugasAkhirIntent);
         finish();
-    }
-
-    public ArrayList<Logbook> getLogbook(){
-        ArrayList<Logbook> logbook = new ArrayList<>();
-        logbook.add(new Logbook(
-                "Jumat, 6 Mei 2022",
-                "Menentukan judul",
-                1
-        ));
-        logbook.add(new Logbook(
-                "Sabtu, 7 Mei 2022",
-                "Membuat latar belakang",
-                0
-        ));
-        return logbook;
-    }
-
-    @Override
-    public void onItemLogbookClick(Logbook logbook) {
-        Intent detailIntent = new Intent(this, DetailLogbookActivity.class);
-        detailIntent.putExtra("HARI_TANGGAL", logbook.getHariTanggal());
-        detailIntent.putExtra("KEGIATAN", logbook.getKegiatan());
-        detailIntent.putExtra("STATUS", logbook.getStatus());
-        startActivity(detailIntent);
     }
 
     @Override
