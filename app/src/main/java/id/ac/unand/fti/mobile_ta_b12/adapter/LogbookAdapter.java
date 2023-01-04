@@ -25,24 +25,20 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
     }
     // Komentar = kode lama
 //    ArrayList<Logbook> listLogbook = new ArrayList<>();
-//    ItemLogbookClickListener listener;
-//
-//    public LogbookAdapter(ArrayList<Logbook> listLogbook) {
-//        this.listLogbook = listLogbook;
-//    }
-//
-//    public LogbookAdapter(ArrayList<Logbook> listLogbook, ItemLogbookClickListener listener) {
-//        this.listLogbook = listLogbook;
+    ItemLogbookClickListener listener;
+
+//    public LogbookAdapter(List<LogbooksItem> itemList, ItemLogbookClickListener listener) {
+//        this.itemList = itemList;
 //        this.listener = listener;
 //    }
 //
-//    public void setListLogbook(ArrayList<Logbook> listLogbook) {
-//        this.listLogbook = listLogbook;
+//    public void setListLogbook(List<LogbooksItem> itemList) {
+//        this.itemList = itemList;
 //    }
 //
-//    public void setListener(ItemLogbookClickListener listener) {
-//        this.listener = listener;
-//    }
+    public void setListener(ItemLogbookClickListener listener) {
+        this.listener = listener;
+    }
 
     @NonNull
     @Override
@@ -78,12 +74,12 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
     }
 
     // Komentar = kode lama
-//    public interface ItemLogbookClickListener{
-//        void onItemLogbookClick(Logbook logbook);
-//    }
+    public interface ItemLogbookClickListener{
+        void onItemLogbookClick(LogbooksItem logbooks);
+    }
 
     // Komentar = kode lama
-    public class LogbookViewHolder extends RecyclerView.ViewHolder /*implements View.OnClickListener*/{
+    public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView id, date, progress, file_progress, problem;
 //        public ImageView imageStatus;
 
@@ -95,14 +91,14 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
             file_progress = itemView.findViewById(R.id.file_progress);
             problem = itemView.findViewById(R.id.problem);
 //            imageStatus = itemView.findViewById(R.id.imageStatus);
-//            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         // Komentar = kode lama
-//        @Override
-//        public void onClick(View view) {
-//            Logbook logbook = listLogbook.get(getAdapterPosition());
-//            listener.onItemLogbookClick(logbook);
-//        }
+        @Override
+        public void onClick(View view) {
+            LogbooksItem logbooks = itemList.get(getAdapterPosition());
+            listener.onItemLogbookClick(logbooks);
+        }
     }
 }

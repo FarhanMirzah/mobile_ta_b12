@@ -26,8 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-//public class ListLogbookActivity extends AppCompatActivity implements LogbookAdapter.ItemLogbookClickListener{
-public class ListLogbookActivity extends AppCompatActivity{
+public class ListLogbookActivity extends AppCompatActivity implements LogbookAdapter.ItemLogbookClickListener{
     private RecyclerView rvLogbook;
     private LogbookAdapter adapter;
 
@@ -44,6 +43,7 @@ public class ListLogbookActivity extends AppCompatActivity{
         rvLogbook.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new LogbookAdapter();
+        adapter.setListener(this);
         rvLogbook.setAdapter(adapter);
 
         // Minta data ke server
@@ -77,14 +77,14 @@ public class ListLogbookActivity extends AppCompatActivity{
         });
     }
 
-//    @Override
-//    public void onItemLogbookClick(Logbook logbook) {
-//        Intent detailIntent = new Intent(this, DetailLogbookActivity.class);
-//        detailIntent.putExtra("HARI_TANGGAL", logbook.getHariTanggal());
-//        detailIntent.putExtra("KEGIATAN", logbook.getKegiatan());
-//        detailIntent.putExtra("STATUS", logbook.getStatus());
-//        startActivity(detailIntent);
-//    }
+    @Override
+    public void onItemLogbookClick(LogbooksItem logbooks) {
+        Intent detailIntent = new Intent(this, DetailLogbookActivity.class);
+        detailIntent.putExtra("DATE", logbooks.getDate());
+        detailIntent.putExtra("PROGRESS", logbooks.getProgress());
+        detailIntent.putExtra("STATUS", logbooks.getStatus());
+        startActivity(detailIntent);
+    }
 
     public void buttonBackDetailTugasAkhir(View view) {
         Intent DetailTugasAkhirIntent = new Intent(this, DetailTugasAkhirActivity.class);

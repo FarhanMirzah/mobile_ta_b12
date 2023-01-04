@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:background="#1400FF"
-        app:layout_constraintBottom_toBottomOf="@+id/file_progress2"
-        app:layout_constraintStart_toEndOf="@+id/file_progress2"
-        app:layout_constraintTop_toTopOf="@+id/file_progress2"
+        app:layout_constraintBottom_toBottomOf="@+id/file_progressDetail"
+        app:layout_constraintStart_toEndOf="@+id/file_progressDetail"
+        app:layout_constraintTop_toTopOf="@+id/file_progressDetail"
         app:srcCompat="@android:drawable/stat_sys_download" />
 
     <View
@@ -25,11 +25,11 @@
         android:layout_marginEnd="50dp"
         android:background="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textDetailKegiatan"
-        app:layout_constraintTop_toBottomOf="@+id/textDetailKegiatan" />
+        app:layout_constraintStart_toStartOf="@+id/progressDetail"
+        app:layout_constraintTop_toBottomOf="@+id/progressDetail" />
 
     <TextView
-        android:id="@+id/file_progress2"
+        android:id="@+id/file_progressDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -37,11 +37,11 @@
         android:textColor="#1400FF"
         android:textSize="16sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@+id/textDetailKegiatan"
+        app:layout_constraintStart_toStartOf="@+id/progressDetail"
         app:layout_constraintTop_toBottomOf="@+id/line" />
 
     <TextView
-        android:id="@+id/textProblem2"
+        android:id="@+id/textProblemDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -49,22 +49,22 @@
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/file_progress2"
-        app:layout_constraintTop_toBottomOf="@+id/file_progress2" />
+        app:layout_constraintStart_toStartOf="@+id/file_progressDetail"
+        app:layout_constraintTop_toBottomOf="@+id/file_progressDetail" />
 
     <TextView
-        android:id="@+id/problem2"
+        android:id="@+id/problemDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Isi Masalah (jika ada)"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/textProblem2"
-        app:layout_constraintTop_toBottomOf="@+id/textProblem2" />
+        app:layout_constraintStart_toStartOf="@+id/textProblemDetail"
+        app:layout_constraintTop_toBottomOf="@+id/textProblemDetail" />
 
     <TextView
-        android:id="@+id/id2"
+        android:id="@+id/idDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="@+id/textDetailLogbook" />
 
     <TextView
-        android:id="@+id/textDetailHariTanggal"
+        android:id="@+id/dateDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textDetailLogbook" />
 
     <TextView
-        android:id="@+id/textDetailKegiatan"
+        android:id="@+id/progressDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -96,17 +96,17 @@
         android:text="@string/kegiatan"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/textDetailHariTanggal"
-        app:layout_constraintTop_toBottomOf="@+id/textDetailHariTanggal" />
+        app:layout_constraintStart_toStartOf="@+id/dateDetail"
+        app:layout_constraintTop_toBottomOf="@+id/dateDetail" />
 
     <ImageView
         android:id="@+id/imageStatusLogbook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textDetailHariTanggal"
+        app:layout_constraintBottom_toBottomOf="@+id/dateDetail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textDetailHariTanggal"
+        app:layout_constraintTop_toTopOf="@+id/dateDetail"
         app:srcCompat="@drawable/ic_check_circle_outline_green" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -143,8 +143,8 @@
         android:layout_marginTop="32dp"
         app:hintTextAppearance="@style/TextAppearance.AppCompat.Small"
         app:layout_constraintEnd_toEndOf="@+id/imageStatusLogbook"
-        app:layout_constraintStart_toStartOf="@+id/textDetailHariTanggal"
-        app:layout_constraintTop_toBottomOf="@+id/problem2">
+        app:layout_constraintStart_toStartOf="@+id/dateDetail"
+        app:layout_constraintTop_toBottomOf="@+id/problemDetail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

@@ -13,11 +13,10 @@ public class DetailLogbookActivity extends AppCompatActivity {
 
     private RecyclerView rvLogbook;
 
-    String hariTanggal;
-    String kegiatan;
+    String date, progress;
     int status;
-    TextView textDetailHariTanggal;
-    TextView textDetailKegiatan;
+    TextView dateDetail;
+    TextView progressDetail;
     ImageView imageStatusLogbook;
 
 
@@ -28,21 +27,21 @@ public class DetailLogbookActivity extends AppCompatActivity {
 
         Intent detailIntent = getIntent();
         if(detailIntent != null){
-            hariTanggal = detailIntent.getStringExtra("HARI_TANGGAL");
-            kegiatan = detailIntent.getStringExtra("KEGIATAN");
+            date = detailIntent.getStringExtra("DATE");
+            progress = detailIntent.getStringExtra("PROGRESS");
             status = detailIntent.getIntExtra("STATUS", 0);
         }
-        textDetailHariTanggal = findViewById(R.id.textDetailHariTanggal);
-        if(hariTanggal == null){
-            hariTanggal = "Hari, Tanggal"; //Assign default string
+        dateDetail = findViewById(R.id.dateDetail);
+        if(date == null){
+            date = "Hari, Tanggal"; //Assign default string
         }
-        textDetailHariTanggal.setText(hariTanggal);
+        dateDetail.setText(date);
 
-        textDetailKegiatan = findViewById(R.id.textDetailKegiatan);
-        if(kegiatan == null){
-            kegiatan = "Kegiatan"; //Assign default string
+        progressDetail = findViewById(R.id.progressDetail);
+        if(progress == null){
+            progress = "Kegiatan"; //Assign default string
         }
-        textDetailKegiatan.setText(kegiatan);
+        progressDetail.setText(progress);
 
         imageStatusLogbook = findViewById(R.id.imageStatusLogbook);
         if(status == 1){
