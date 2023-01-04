@@ -55,7 +55,11 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
     @Override
     public void onBindViewHolder(@NonNull LogbookViewHolder holder, int position) {
         LogbooksItem logbooks = itemList.get(position);
+        holder.id.setText(String.valueOf(logbooks.getId()));
+        holder.date.setText(logbooks.getDate());
         holder.progress.setText(logbooks.getProgress());
+        holder.file_progress.setText(logbooks.getFileProgress());
+        holder.problem.setText(logbooks.getProblem());
 
         // Komentar = kode lama
 //        Logbook logbook = this.listLogbook.get(position);
@@ -79,15 +83,18 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
 //    }
 
     // Komentar = kode lama
-//    public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-    public class LogbookViewHolder extends RecyclerView.ViewHolder{
-        public TextView progress;
-        public ImageView imageStatus;
+    public class LogbookViewHolder extends RecyclerView.ViewHolder /*implements View.OnClickListener*/{
+        public TextView id, date, progress, file_progress, problem;
+//        public ImageView imageStatus;
 
         public LogbookViewHolder(@NonNull View itemView) {
             super(itemView);
+            id = itemView.findViewById(R.id.id);
+            date = itemView.findViewById(R.id.date);
             progress = itemView.findViewById(R.id.progress);
-            imageStatus = itemView.findViewById(R.id.imageStatus);
+            file_progress = itemView.findViewById(R.id.file_progress);
+            problem = itemView.findViewById(R.id.problem);
+//            imageStatus = itemView.findViewById(R.id.imageStatus);
 //            itemView.setOnClickListener(this);
         }
 
