@@ -23,19 +23,9 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
         this.itemList = itemList;
         notifyDataSetChanged();
     }
-    // Komentar = kode lama
-//    ArrayList<Logbook> listLogbook = new ArrayList<>();
+
     ItemLogbookClickListener listener;
 
-//    public LogbookAdapter(List<LogbooksItem> itemList, ItemLogbookClickListener listener) {
-//        this.itemList = itemList;
-//        this.listener = listener;
-//    }
-//
-//    public void setListLogbook(List<LogbooksItem> itemList) {
-//        this.itemList = itemList;
-//    }
-//
     public void setListener(ItemLogbookClickListener listener) {
         this.listener = listener;
     }
@@ -57,15 +47,11 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
         holder.file_progress.setText(logbooks.getFileProgress());
         holder.problem.setText(logbooks.getProblem());
 
-        // Komentar = kode lama
-//        Logbook logbook = this.listLogbook.get(position);
-//        if (logbook.getStatus() == 1) {
-//            holder.imageStatus.setImageResource(R.drawable.ic_check_circle_outline_green);
-//        }else{
-//            holder.imageStatus.setImageResource(R.drawable.ic_access_time_red);
-//        }
-//        holder.textHariTanggal.setText(logbook.getHariTanggal());
-//        holder.textKegiatan.setText(logbook.getKegiatan());
+        if (logbooks.getStatus() == 0) {
+            holder.imageStatus.setImageResource(R.drawable.ic_check_circle_outline_green);
+        }else{
+            holder.imageStatus.setImageResource(R.drawable.ic_access_time_red);
+        }
     }
 
     @Override
@@ -73,15 +59,13 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
         return itemList.size();
     }
 
-    // Komentar = kode lama
     public interface ItemLogbookClickListener{
         void onItemLogbookClick(LogbooksItem logbooks);
     }
 
-    // Komentar = kode lama
     public class LogbookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView id, date, progress, file_progress, problem;
-//        public ImageView imageStatus;
+        public ImageView imageStatus;
 
         public LogbookViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,11 +74,10 @@ public class LogbookAdapter extends RecyclerView.Adapter<LogbookAdapter.LogbookV
             progress = itemView.findViewById(R.id.progress);
             file_progress = itemView.findViewById(R.id.file_progress);
             problem = itemView.findViewById(R.id.problem);
-//            imageStatus = itemView.findViewById(R.id.imageStatus);
+            imageStatus = itemView.findViewById(R.id.imageStatus);
             itemView.setOnClickListener(this);
         }
 
-        // Komentar = kode lama
         @Override
         public void onClick(View view) {
             LogbooksItem logbooks = itemList.get(getAdapterPosition());

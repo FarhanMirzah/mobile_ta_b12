@@ -80,8 +80,11 @@ public class ListLogbookActivity extends AppCompatActivity implements LogbookAda
     @Override
     public void onItemLogbookClick(LogbooksItem logbooks) {
         Intent detailIntent = new Intent(this, DetailLogbookActivity.class);
+        detailIntent.putExtra("ID", logbooks.getId());
         detailIntent.putExtra("DATE", logbooks.getDate());
         detailIntent.putExtra("PROGRESS", logbooks.getProgress());
+        detailIntent.putExtra("FILE_PROGRESS", logbooks.getFileProgress());
+        detailIntent.putExtra("PROBLEM", logbooks.getProblem());
         detailIntent.putExtra("STATUS", logbooks.getStatus());
         startActivity(detailIntent);
     }
