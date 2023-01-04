@@ -1,6 +1,7 @@
 package id.ac.unand.fti.mobile_ta_b12.retrofit;
 
 import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
+import id.ac.unand.fti.mobile_ta_b12.models.ListMahasiswaResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LoginResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LogoutResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.UpdateProfileResponse;
@@ -25,4 +26,7 @@ public interface InterfaceDosen {
 
     @POST("api/logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);
+
+    @GET("api/thesis/advisors")
+    Call<ListMahasiswaResponse> listmahasiswaresponse(@Header("Authorization")String  token);
 }

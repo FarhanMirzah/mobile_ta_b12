@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,7 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import id.ac.unand.fti.mobile_ta_b12.adapter.MahasiswaAdapter;
 import id.ac.unand.fti.mobile_ta_b12.databinding.ActivityListMahasiswaBinding;
 import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
+import id.ac.unand.fti.mobile_ta_b12.models.ListMahasiswaResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.Mahasiswa;
+import id.ac.unand.fti.mobile_ta_b12.models.ThesesItem;
+import id.ac.unand.fti.mobile_ta_b12.retrofit.APIClient;
 import id.ac.unand.fti.mobile_ta_b12.retrofit.InterfaceDosen;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -25,16 +29,18 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class ListMahasiswaActivity extends AppCompatActivity implements  MahasiswaAdapter.ItemMahasiswaClickListener{
+public class ListMahasiswaActivity extends AppCompatActivity {
 
     private boolean isLoggedIn = false;
     // Kode lama (findViewById)
     TextView namaUser;
-
     // Kode baru (View Binding)
     private ActivityListMahasiswaBinding binding;
     private RecyclerView rvlistmhs;
+    private  MahasiswaAdapter adapter;
+    String gettoken, token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,60 +124,84 @@ public class ListMahasiswaActivity extends AppCompatActivity implements  Mahasis
 
         rvlistmhs = findViewById(R.id.rv_listmahasiswa);
 
-        MahasiswaAdapter adapter = new MahasiswaAdapter(getMahasiswa());
-        adapter.setListener(this);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        MahasiswaAdapter adapter = new MahasiswaAdapter(getMahasiswa());
+//        adapter.setListener(this);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
-        rvlistmhs.setLayoutManager(layoutManager);
+        rvlistmhs.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new MahasiswaAdapter();
         rvlistmhs.setAdapter(adapter);
 
+        InterfaceDosen interfaceDosen = APIClient.getService();
+        SharedPreferences sharedPreferences = getSharedPreferences("com.kelompok12.SHARED_KEY",MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("token","");
+
+        Call<ListMahasiswaResponse>call = interfaceDosen.listmahasiswaresponse("Bearer " + token);
+        call.enqueue(new Callback<ListMahasiswaResponse>() {
+            @Override
+            public void onResponse(Call<ListMahasiswaResponse> call, Response<ListMahasiswaResponse> response) {
+                Log.d("ListMahasiswa-Debug", response.toString());
+                ListMahasiswaResponse listMahasiswaResponse1=response.body();
+                if(listMahasiswaResponse1 != null){
+                    List<ThesesItem>theses =listMahasiswaResponse1.getTheses();
+                    adapter.setListMahasiswa((ArrayList<ThesesItem>)theses);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ListMahasiswaResponse> call, Throwable t) {
+
+            }
+        });
+
     }
 
+//
+//    public ArrayList<Mahasiswa> getMahasiswa() {
+//        ArrayList<Mahasiswa> mahasiswa = new ArrayList<>();
+//        mahasiswa.add(new Mahasiswa(
+//                "Thomas Akram Ferdinan",
+//                "2011521014"
+//        ));
+//        mahasiswa.add(new Mahasiswa(
+//                "M Farhan Ananda",
+//                "2011522022"
+//        ));
+//        mahasiswa.add(new Mahasiswa(
+//                "Fathih Alfi",
+//                "2011523002"
+//
+//        ));
+//        mahasiswa.add(new Mahasiswa(
+//                "Ramadya Arya Pratama",
+//                "2003040082"
+//        ));
+//        return mahasiswa;
+//    }
 
-    public ArrayList<Mahasiswa> getMahasiswa() {
-        ArrayList<Mahasiswa> mahasiswa = new ArrayList<>();
-        mahasiswa.add(new Mahasiswa(
-                "Thomas Akram Ferdinan",
-                "2011521014"
-        ));
-        mahasiswa.add(new Mahasiswa(
-                "M Farhan Ananda",
-                "2011522022"
-        ));
-        mahasiswa.add(new Mahasiswa(
-                "Fathih Alfi",
-                "2011523002"
 
-        ));
-        mahasiswa.add(new Mahasiswa(
-                "Ramadya Arya Pratama",
-                "2003040082"
-        ));
-        return mahasiswa;
-    }
-
-
-    @Override
-    public void onItemMahasiswaClick(Mahasiswa mahasiswa){
-        Intent iniintentlistmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
-        iniintentlistmahasiswa.putExtra("Nama Mahasiswa", mahasiswa.getNama_Mahasiswa());
-        startActivity(iniintentlistmahasiswa);
-        }
-
-    public void profile(View view) {
-        Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);
-        startActivity(intent);
-    }
-
-    public void buttonButuhPersetujuan (View view){
-        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
-        startActivity(butuhPersetujuanIntent);
-    }
-
-    public void buttonListJadwal (View view){
-        Intent listJadwalIntent = new Intent(this, ListJadwalSidangActivity.class);
-        startActivity(listJadwalIntent);
-    }
+//    @Override
+//    public void onItemMahasiswaClick(Mahasiswa mahasiswa){
+//        Intent iniintentlistmahasiswa = new Intent(this, DetailTugasAkhirActivity.class);
+//        iniintentlistmahasiswa.putExtra("Nama Mahasiswa", mahasiswa.getNama_Mahasiswa());
+//        startActivity(iniintentlistmahasiswa);
+//        }
+//
+//    public void profile(View view) {
+//        Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void buttonButuhPersetujuan (View view){
+//        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
+//        startActivity(butuhPersetujuanIntent);
+//    }
+//
+//    public void buttonListJadwal (View view){
+//        Intent listJadwalIntent = new Intent(this, ListJadwalSidangActivity.class);
+//        startActivity(listJadwalIntent);
+//    }
 
     @Override
     public void onBackPressed()
