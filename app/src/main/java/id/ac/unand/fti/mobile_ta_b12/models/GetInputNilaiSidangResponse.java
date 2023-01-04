@@ -10,8 +10,6 @@ public class GetInputNilaiSidangResponse {
     @SerializedName("status")
     private String status;
 
-
-
     public String getMessage(){
         return message;
     }

@@ -24,10 +24,11 @@ public interface InterfaceDosen {
     @POST("api/me/update")
     Call<UpdateProfileResponse> updateProfile(@Header("Authorization") String token, @Field("email") String email, @Field("name") String name);
 
-    @GET("api/theses/277/trials/")
-    Call<GetInputNilaiSidangResponse> InputNilaiSidang(@Header("Authorization") String token);
+    @POST("api/theses/277/trials/")
+    Call<GetInputNilaiSidangResponse> InputNilaiSidang(@Header("Authorization") String token) ;
 
     @POST("api/logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);
+
 
 }

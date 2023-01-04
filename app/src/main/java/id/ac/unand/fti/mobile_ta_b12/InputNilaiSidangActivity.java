@@ -26,7 +26,6 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
     String nilai ,token, gettoken;
     EditText InputNilaiSidang;
     Button buttonInput;
-    private Object GetInputNilaiSidangResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +53,9 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
             public void onResponse(Call<GetInputNilaiSidangResponse> call, Response<GetInputNilaiSidangResponse> response) {
                 Log.d("InputNilaiSidang-Debug", response.toString());
                 GetInputNilaiSidangResponse getInputNilaiSidangResponse = response.body();
-                if (GetInputNilaiSidangResponse != null) {
+                if (getInputNilaiSidangResponse != null) {
                     String nilai = getInputNilaiSidangResponse.getStatus();
-                    Log.d("InputNilaiSidang-Debug", "nilai diinput " + nilai);
+                    Log.d("InputNilaiSidang-Debug", " : " + nilai);
 
                     InputNilaiSidang = (EditText) findViewById(R.id.InputNilaiSidang);
                     InputNilaiSidang.setText(nilai);
@@ -70,44 +69,46 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
         });
     }
 
-    public void InputNilaiSidang(View view) {
-        InputNilaiSidang = findViewById(R.id.InputNilaiSidang);
-        buttonInput = findViewById(R.id.buttonInput);
+    public void InputNilaiSidang (View view) {
+        {
+            InputNilaiSidang = findViewById(R.id.InputNilaiSidang);
+            buttonInput = findViewById(R.id.buttonInput);
 
-        String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/api/";
-        nilai = InputNilaiSidang.getText().toString();
-        Log.d("InputNilaiSidang-Debug", "nilai diinputkan " + nilai);
+            String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/api/";
+            nilai = InputNilaiSidang.getText().toString();
+            Log.d("InputNilaiSidang-Debug", " : " + nilai);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API_BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create() )
-                .client(new OkHttpClient.Builder().build())
-                .build();
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(API_BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create() )
+                    .client(new OkHttpClient.Builder().build())
+                    .build();
 
-        InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
-        SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        gettoken = sharedPref.getString("TOKEN","");
-        String token = "Bearer " + gettoken;
+            InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
+            SharedPreferences sharedPref = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+            gettoken = sharedPref.getString("TOKEN","");
+            String token = "Bearer " + gettoken;
 
-        Call<GetInputNilaiSidangResponse> call = dosen.InputNilaiSidang(token);
-        call.enqueue(new Callback<GetInputNilaiSidangResponse>() {
-            @Override
-            public void onResponse(Call<GetInputNilaiSidangResponse> call, Response<GetInputNilaiSidangResponse> response) {
-                Log.d("InputNilaiSidang-Debug", response.toString());
-                Toast.makeText(InputNilaiSidangActivity.this, "Data berhasil di input", Toast.LENGTH_SHORT).show();
-                Intent InputNilaiSidangIntent = new Intent(InputNilaiSidangActivity.this, InputNilaiSidangActivity.class);
-                InputNilaiSidangIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(InputNilaiSidangIntent);
-                finish();
-            }
+            Call<GetInputNilaiSidangResponse> call = dosen.InputNilaiSidang(token);
+            call.enqueue(new Callback<GetInputNilaiSidangResponse>() {
+                @Override
+                public void onResponse(Call<GetInputNilaiSidangResponse> call, Response<GetInputNilaiSidangResponse> response) {
+                    Log.d("InputNilaiSidang-Debug", response.toString());
+                    Toast.makeText(InputNilaiSidangActivity.this, "Data berhasil di input", Toast.LENGTH_SHORT).show();
+                    Intent InputNilaiSidangIntent = new Intent(InputNilaiSidangActivity.this, InputNilaiSidangActivity.class);
+                    InputNilaiSidangIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(InputNilaiSidangIntent);
+                    finish();
+                }
 
-            @Override
-            public void onFailure(Call<GetInputNilaiSidangResponse> call, Throwable t) {
-                Log.d("InputNilaiSidang-Debug", t.toString());
-                Toast.makeText(InputNilaiSidangActivity.this, "error", Toast.LENGTH_SHORT).show();
-            }
-        });
-    };
+                @Override
+                public void onFailure(Call<GetInputNilaiSidangResponse> call, Throwable t) {
+                    Log.d("InputNilaiSidang-Debug", t.toString());
+                    Toast.makeText(InputNilaiSidangActivity.this, "error", Toast.LENGTH_SHORT).show();
+                }
+            });
+        };
+    }
 
     public void buttonBackListJadwalSidang(View view) {
         Intent ListJadwalSidangIntent = new Intent(this, ListJadwalSidangActivity.class);
