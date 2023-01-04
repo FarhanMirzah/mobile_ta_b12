@@ -1,8 +1,9 @@
 package id.ac.unand.fti.mobile_ta_b12.models;
 
+import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class ThesesItem{
+public class DetailMahasiswaResponse{
 
     @SerializedName("student")
     private Student student;
@@ -17,19 +18,25 @@ public class ThesesItem{
     private String createdAt;
 
     @SerializedName("abstract")
-    private Object jsonMemberAbstract;
+    private String jsonMemberAbstract;
 
     @SerializedName("title")
-    private Object title;
+    private String title;
 
     @SerializedName("start_at")
     private String startAt;
 
     @SerializedName("created_by")
-    private Object createdBy;
+    private int createdBy;
 
     @SerializedName("updated_at")
     private String updatedAt;
+
+    @SerializedName("trials")
+    private List<TrialsItem> trials;
+
+    @SerializedName("seminars")
+    private List<SeminarsItem> seminars;
 
     @SerializedName("grade")
     private Object grade;
@@ -42,6 +49,9 @@ public class ThesesItem{
 
     @SerializedName("status")
     private int status;
+
+    @SerializedName("supervisors")
+    private List<SupervisorsItem> supervisors;
 
     public Student getStudent(){
         return student;
@@ -59,11 +69,11 @@ public class ThesesItem{
         return createdAt;
     }
 
-    public Object getJsonMemberAbstract(){
+    public String getJsonMemberAbstract(){
         return jsonMemberAbstract;
     }
 
-    public Object getTitle(){
+    public String getTitle(){
         return title;
     }
 
@@ -71,12 +81,20 @@ public class ThesesItem{
         return startAt;
     }
 
-    public Object getCreatedBy(){
+    public int getCreatedBy(){
         return createdBy;
     }
 
     public String getUpdatedAt(){
         return updatedAt;
+    }
+
+    public List<TrialsItem> getTrials(){
+        return trials;
+    }
+
+    public List<SeminarsItem> getSeminars(){
+        return seminars;
     }
 
     public Object getGrade(){
@@ -94,23 +112,8 @@ public class ThesesItem{
     public int getStatus(){
         return status;
     }
+
+    public List<SupervisorsItem> getSupervisors(){
+        return supervisors;
+    }
 }
-//    @Override
-//    public String toString() {
-//        return "ThesesItem{" +
-//                "student=" + student +
-//                ", studentId=" + studentId +
-//                ", gradeBy=" + gradeBy +
-//                ", createdAt='" + createdAt + '\'' +
-//                ", jsonMemberAbstract=" + jsonMemberAbstract +
-//                ", title=" + title +
-//                ", startAt='" + startAt + '\'' +
-//                ", createdBy=" + createdBy +
-//                ", updatedAt='" + updatedAt + '\'' +
-//                ", grade=" + grade +
-//                ", id=" + id +
-//                ", topicId=" + topicId +
-//                ", status=" + status +
-//                '}';
-//    }
-//}

@@ -1,5 +1,6 @@
 package id.ac.unand.fti.mobile_ta_b12.retrofit;
 
+import id.ac.unand.fti.mobile_ta_b12.models.DetailMahasiswaResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.ListMahasiswaResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LoginResponse;
@@ -11,6 +12,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface InterfaceDosen {
     @FormUrlEncoded
@@ -29,4 +31,7 @@ public interface InterfaceDosen {
 
     @GET("api/thesis/advisors")
     Call<ListMahasiswaResponse> listmahasiswaresponse(@Header("Authorization")String  token);
+
+    @GET("api/theses/277/trials/")
+    Call<DetailMahasiswaResponse> detailmahasiswaresponse (@Header("Authorization") String token, @Path("id")int id);
 }

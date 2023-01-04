@@ -157,6 +157,7 @@ public class ListMahasiswaActivity extends AppCompatActivity {
 
     }
 
+
 //
 //    public ArrayList<Mahasiswa> getMahasiswa() {
 //        ArrayList<Mahasiswa> mahasiswa = new ArrayList<>();
@@ -187,21 +188,21 @@ public class ListMahasiswaActivity extends AppCompatActivity {
 //        iniintentlistmahasiswa.putExtra("Nama Mahasiswa", mahasiswa.getNama_Mahasiswa());
 //        startActivity(iniintentlistmahasiswa);
 //        }
+
+    public void profile(View view) {
+        Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);
+        startActivity(intent);
+    }
 //
-//    public void profile(View view) {
-//        Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);
-//        startActivity(intent);
-//    }
-//
-//    public void buttonButuhPersetujuan (View view){
-//        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
-//        startActivity(butuhPersetujuanIntent);
-//    }
-//
-//    public void buttonListJadwal (View view){
-//        Intent listJadwalIntent = new Intent(this, ListJadwalSidangActivity.class);
-//        startActivity(listJadwalIntent);
-//    }
+    public void buttonButuhPersetujuan (View view){
+        Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
+        startActivity(butuhPersetujuanIntent);
+    }
+
+    public void buttonListJadwal (View view){
+        Intent listJadwalIntent = new Intent(this, ListJadwalSidangActivity.class);
+        startActivity(listJadwalIntent);
+    }
 
     @Override
     public void onBackPressed()
