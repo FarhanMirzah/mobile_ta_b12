@@ -31,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListMahasiswaActivity extends AppCompatActivity {
+public class ListMahasiswaActivity extends AppCompatActivity implements MahasiswaAdapter.ItemMahasiswaClickListener {
 
     private boolean isLoggedIn = false;
     // Kode lama (findViewById)
@@ -156,7 +156,13 @@ public class ListMahasiswaActivity extends AppCompatActivity {
         });
 
     }
-
+    @Override
+    public void onItemMahasiswaClick(ThesesItem thesesItem){
+        Intent listmahasiswa = new Intent(this, DetailMahasiswaActivity.class);
+        listmahasiswa.putExtra("nama", thesesItem.getStudent().getName());
+        listmahasiswa.putExtra("Id", thesesItem.getId());
+        startActivity(listmahasiswa);
+}
 
 //
 //    public ArrayList<Mahasiswa> getMahasiswa() {
@@ -188,6 +194,8 @@ public class ListMahasiswaActivity extends AppCompatActivity {
 //        iniintentlistmahasiswa.putExtra("Nama Mahasiswa", mahasiswa.getNama_Mahasiswa());
 //        startActivity(iniintentlistmahasiswa);
 //        }
+
+
 
     public void profile(View view) {
         Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);

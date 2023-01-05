@@ -1,6 +1,7 @@
 package id.ac.unand.fti.mobile_ta_b12.retrofit;
 
 import id.ac.unand.fti.mobile_ta_b12.models.DetailMahasiswaResponse;
+import id.ac.unand.fti.mobile_ta_b12.models.DetailTAMahasiswaResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.ListMahasiswaResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LoginResponse;
@@ -34,4 +35,7 @@ public interface InterfaceDosen {
 
     @GET("api/theses/277/trials/")
     Call<DetailMahasiswaResponse> detailmahasiswaresponse (@Header("Authorization") String token, @Path("id")int id);
+
+    @GET("api/theses/{id}")
+    Call<DetailTAMahasiswaResponse> detailtaresponse (@Header("Authorization") String token, @Path("id") int id   );
 }
