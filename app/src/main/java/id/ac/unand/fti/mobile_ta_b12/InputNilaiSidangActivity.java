@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class InputNilaiSidangActivity extends AppCompatActivity {
 
     String nilai ,token, gettoken;
-    EditText InputNilaiSidang;
+    EditText inputNilai;
     Button buttonInput;
 
     @Override
@@ -37,7 +37,7 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
         Log.d("InputNilaiSidang-Debug", token);
 
         // Minta data ke server
-        String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/api/";
+        String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
@@ -49,16 +49,14 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
 
         Call<GetInputNilaiSidangResponse> login = dosen.InputNilaiSidang("Bearer " + token);
         login.enqueue(new Callback<GetInputNilaiSidangResponse>() {
+
             @Override
             public void onResponse(Call<GetInputNilaiSidangResponse> call, Response<GetInputNilaiSidangResponse> response) {
                 Log.d("InputNilaiSidang-Debug", response.toString());
                 GetInputNilaiSidangResponse getInputNilaiSidangResponse = response.body();
                 if (getInputNilaiSidangResponse != null) {
-                    String nilai = getInputNilaiSidangResponse.getStatus();
-                    Log.d("InputNilaiSidang-Debug", " : " + nilai);
-
-                    InputNilaiSidang = (EditText) findViewById(R.id.InputNilaiSidang);
-                    InputNilaiSidang.setText(nilai);
+                    inputNilai = (EditText) findViewById(R.id.inputNilai);
+                    inputNilai.setText(nilai);
                 }
             }
 
@@ -71,11 +69,11 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
 
     public void InputNilaiSidang (View view) {
         {
-            InputNilaiSidang = findViewById(R.id.InputNilaiSidang);
+            inputNilai = findViewById(R.id.inputNilai);
             buttonInput = findViewById(R.id.buttonInput);
 
-            String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/api/";
-            nilai = InputNilaiSidang.getText().toString();
+            String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
+            nilai = inputNilai.getText().toString();
             Log.d("InputNilaiSidang-Debug", " : " + nilai);
 
             Retrofit retrofit = new Retrofit.Builder()
@@ -90,12 +88,13 @@ public class InputNilaiSidangActivity extends AppCompatActivity {
             String token = "Bearer " + gettoken;
 
             Call<GetInputNilaiSidangResponse> call = dosen.InputNilaiSidang(token);
-            call.enqueue(new Callback<GetInputNilaiSidangResponse>() {
+            call.enqueue(new Callback<GetInputNilaiSidangResponse>()
+            {
                 @Override
                 public void onResponse(Call<GetInputNilaiSidangResponse> call, Response<GetInputNilaiSidangResponse> response) {
                     Log.d("InputNilaiSidang-Debug", response.toString());
-                    Toast.makeText(InputNilaiSidangActivity.this, "Data berhasil di input", Toast.LENGTH_SHORT).show();
-                    Intent InputNilaiSidangIntent = new Intent(InputNilaiSidangActivity.this, InputNilaiSidangActivity.class);
+                    Toast.makeText(InputNilaiSidangActivity.this,"Data berhasil di input", Toast.LENGTH_SHORT).show();
+                    Intent InputNilaiSidangIntent = new Intent(InputNilaiSidangActivity.this, ListJadwalSidangActivity.class);
                     InputNilaiSidangIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(InputNilaiSidangIntent);
                     finish();
