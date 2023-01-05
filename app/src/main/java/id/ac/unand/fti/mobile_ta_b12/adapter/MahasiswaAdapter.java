@@ -19,37 +19,19 @@ import java.util.List;
 
 
 public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder> {
-    private ArrayList<ThesesItem> listMahasiswa = new ArrayList<>();
+    private List<ThesesItem> listMahasiswa = new ArrayList<>();
     ItemMahasiswaClickListener listenerMahasiswa;
 
-    public void setListMahasiswa(ArrayList<ThesesItem> listMahasiswa) {
+    public void setListMahasiswa(List<ThesesItem> listMahasiswa) {
         this.listMahasiswa = listMahasiswa;
         notifyDataSetChanged();
     }
 
-    public MahasiswaAdapter() {
+    ItemMahasiswaClickListener listener;
 
+    public void setListener(ItemMahasiswaClickListener listener) {
+        this.listener = listener;
     }
-    //ItemMahasiswaClickListener listenermahasiswa;
-
-    /*public MahasiswaAdapter(ArrayList<Mahasiswa> listMahasiswa){this.listMahasiswa = listMahasiswa;}
-
-    public MahasiswaAdapter(ArrayList<Mahasiswa>listMahasiswa, ItemMahasiswaClickListener listenermahasiswa){
-        this.listMahasiswa = listMahasiswa;
-        this.listenermahasiswa = listenermahasiswa;
-    }
-
-     */
-
-//    public void setListMahasiswa(List<ThesesItem> listMahasiswa){
-//        this.listMahasiswa = listMahasiswa;
-//        notifyDataSetChanged();
-//    }
-//    /*public void setListener(ItemMahasiswaClickListener listenermahasiswa){ this.listenermahasiswa = listenermahasiswa; }*/
-//
-//    public MahasiswaAdapter() {
-//
-//    }
 
     @NonNull
     @Override
@@ -74,9 +56,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
         void onItemMahasiswaClick(ThesesItem mahasiswa);
     }
 
-    public class MahasiswaViewHolder extends RecyclerView.ViewHolder /*implements View.OnClickListener*/ {
-
-
+    public class MahasiswaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView namaMahasiswa, nimMahasiswa;
 
         public MahasiswaViewHolder(@NonNull View itemView){
@@ -84,44 +64,13 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
             namaMahasiswa = itemView.findViewById(R.id.namaMahasiswa);
             nimMahasiswa  = itemView.findViewById(R.id.nimMahasiswa);
 
-            itemView.setOnClickListener(new View.OnClickListener()
-
-            {
-                @Override
-                public void onClick (View view){
-                    ThesesItem mahasiswa = listMahasiswa.get((getAdapterPosition()));
-                    listenerMahasiswa.onItemMahasiswaClick(mahasiswa);
-                }
-            });
+            itemView.setOnClickListener(this);
         }
-
-
-//        public TextView nama_mahasiswa;
-//        public TextView nim_mahasiswa;
-//
-//
-//
-//        public MahasiswaViewHolder(View view) {
-//            super(view);
-//
-//            nama_mahasiswa = itemView.findViewById(R.id.namaMahasiswa);
-//            nim_mahasiswa = itemView.findViewById(R.id.nimMahasiswa);
-//        }
-
-       /* public MahasiswaViewHolder(@NonNull View itemView) {
-            super(itemView);
-            nama_mahasiswa = itemView.findViewById(R.id.namaMahasiswa);
-            nim_mahasiswa = itemView.findViewById(R.id.nimMahasiswa);
-            */
-
-          /*  itemView.setOnClickListener(new View.OnClickListener(){
 
         @Override
-        public void onClick(View view) {
-            ThesesItem listpeserta = listMahasiswa.get(getAdapterPosition());
-            listenermahasiswa.onItemMahasiswaClick(listpeserta);
+        public void onClick (View view){
+            ThesesItem mahasiswa = listMahasiswa.get(getAdapterPosition());
+            listener.onItemMahasiswaClick(mahasiswa);
         }
-
-           */
     }
 }

@@ -62,6 +62,13 @@ public class ListMahasiswaActivity extends AppCompatActivity implements Mahasisw
         editor.putString("TOKEN", token);
         editor.apply();
 
+        rvlistmhs = findViewById(R.id.rv_listmahasiswa);
+        rvlistmhs.setLayoutManager(new LinearLayoutManager(this));
+
+        adapter = new MahasiswaAdapter();
+        adapter.setListener(this);
+        rvlistmhs.setAdapter(adapter);
+
         // Minta data ke server
         String API_BASE_URL = "http://ptb-api.husnilkamil.my.id/";
 
@@ -70,67 +77,6 @@ public class ListMahasiswaActivity extends AppCompatActivity implements Mahasisw
                 .addConverterFactory(GsonConverterFactory.create() )
                 .client(new OkHttpClient.Builder().build())
                 .build();
-
-        InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
-
-        Call<GetProfileResponse> login = dosen.getProfile("Bearer " + token);
-        login.enqueue(new Callback<GetProfileResponse>() {
-            @Override
-            public void onResponse(Call<GetProfileResponse> call, Response<GetProfileResponse> response) {
-                Log.d("ProfileAct-Debug", response.toString());
-                GetProfileResponse getProfileResponse = response.body();
-                if(getProfileResponse != null){
-                    String nip = getProfileResponse.getUsername();
-                    String name = getProfileResponse.getName();
-                    String email = getProfileResponse.getEmail();
-
-                    Log.d("ProfileAct-Debug", nip + " : " + name + " : " + email);
-
-                    namaUser = (TextView) findViewById(R.id.namaUser);
-                    namaUser.setText(name);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<GetProfileResponse> call, Throwable t) {
-
-            }
-        });
-
-        Intent mainIntent = getIntent();
-
-        // Tidak dipakai lagi
-//        String name = mainIntent.getStringExtra("NAME");
-//        if(name == null){
-//            name = "Name"; //Assign default string
-//        }
-
-        // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
-        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
-
-        if(!isLoggedIn){
-            Intent loginIntent = new Intent(this, LoginActivity.class);
-            startActivity(loginIntent);
-            finish();
-        }
-
-
-        // Kode lama (findViewById)
-//        namaUser = (TextView) findViewById(R.id.namaUser);
-//        namaUser.setText(name);
-
-        // Kode baru (View Binding) - Tidak dipakai lagi
-//        binding.namaUser.setText(name);
-
-        rvlistmhs = findViewById(R.id.rv_listmahasiswa);
-
-//        MahasiswaAdapter adapter = new MahasiswaAdapter(getMahasiswa());
-//        adapter.setListener(this);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-
-        rvlistmhs.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MahasiswaAdapter();
-        rvlistmhs.setAdapter(adapter);
 
         InterfaceDosen interfaceDosen = APIClient.getService();
         SharedPreferences sharedPreferences = getSharedPreferences("com.kelompok12.SHARED_KEY",MODE_PRIVATE);
@@ -155,6 +101,32 @@ public class ListMahasiswaActivity extends AppCompatActivity implements Mahasisw
             }
         });
 
+        Intent mainIntent = getIntent();
+        // Ganti defaultValue ke true jika ingin langsung ke List Mahasiswa tanpa Login
+        isLoggedIn = mainIntent.getBooleanExtra("IS_LOGGED_IN", false);
+
+        if(!isLoggedIn){
+            Intent loginIntent = new Intent(this, LoginActivity.class);
+            startActivity(loginIntent);
+            finish();
+        }
+
+        // Tidak dipakai lagi
+//        String name = mainIntent.getStringExtra("NAME");
+//        if(name == null){
+//            name = "Name"; //Assign default string
+//        }
+
+        // Kode lama (findViewById)
+//        namaUser = (TextView) findViewById(R.id.namaUser);
+//        namaUser.setText(name);
+
+        // Kode baru (View Binding) - Tidak dipakai lagi
+//        binding.namaUser.setText(name);
+
+//        MahasiswaAdapter adapter = new MahasiswaAdapter(getMahasiswa());
+//        adapter.setListener(this);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
     }
     @Override
     public void onItemMahasiswaClick(ThesesItem thesesItem){
@@ -162,7 +134,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements Mahasisw
         listmahasiswa.putExtra("namaMahasiswa", thesesItem.getStudent().getName());
         listmahasiswa.putExtra("nimMahasiswa", thesesItem.getStudent().getNim());
         startActivity(listmahasiswa);
-}
+    }
 
 //
 //    public ArrayList<Mahasiswa> getMahasiswa() {
@@ -201,7 +173,7 @@ public class ListMahasiswaActivity extends AppCompatActivity implements Mahasisw
         Intent intent = new Intent(ListMahasiswaActivity.this, ProfileActivity.class);
         startActivity(intent);
     }
-//
+    //
     public void buttonButuhPersetujuan (View view){
         Intent butuhPersetujuanIntent = new Intent(this, ListPersetujuanActivity.class);
         startActivity(butuhPersetujuanIntent);
