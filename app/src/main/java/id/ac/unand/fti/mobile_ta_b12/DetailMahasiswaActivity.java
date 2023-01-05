@@ -33,70 +33,74 @@ public class DetailMahasiswaActivity extends AppCompatActivity {
     Student student;
     ThesesItem thesesItem;
     Intent detailIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_mahasiswa);
-//        getDetailMahasiswa();
-////        jan dihapus
+
         detailIntent = getIntent();
         if (detailIntent != null) {
 
             namaMahasiswa = detailIntent.getStringExtra("nama");
-            nimMahasiswa = detailIntent.getStringExtra("nim");
+            nimMahasiswa = detailIntent.getStringExtra("id");
 //            tanggallhr = detailIntent.getStringExtra("tanggal lahir");
 //            tempatlhr = detailIntent.getStringExtra("tempat lahir");
-
-
-
-            InterfaceDosen mainInterface = APIClient.getService();
-            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.kelompok_15.tb_ptb.SHARED_KEY", MODE_PRIVATE);
-            gettoken = sharedPreferences.getString("token", "");
-            token = "Bearer " + gettoken;
-            Toast.makeText(DetailMahasiswaActivity.this, token, Toast.LENGTH_SHORT).show();
-            Log.e("Token" ,token );
-            int idstudent = detailIntent.getIntExtra("ID", 0);
-            Call<DetailMahasiswaResponse> call = mainInterface.detailmahasiswaresponse(token, idstudent);
-            call.enqueue(new Callback<DetailMahasiswaResponse>() {
-                @Override
-                public void onResponse(Call<DetailMahasiswaResponse> call, Response<DetailMahasiswaResponse> response) {
-                    Log.e("Suc", response.toString());
-                    DetailMahasiswaResponse detailMahasiswa1Response = response.body();
-
-                    TextView castnama = findViewById(R.id.namaDetailMahasiswa);
-                    TextView castNim = findViewById(R.id.nimDetailMahasiswa);
-                    TextView casttnggl = findViewById(R.id.email2DetailMahasiswa);
-                    TextView casttempat = findViewById(R.id.tepattanggallahir2DetailMahasiswa);
-                    TextView castnohp = findViewById(R.id.noHP2DetailMahasiswa);
-
-                    String nama = detailMahasiswa1Response.getStudent().getName();
-                    String nim = detailMahasiswa1Response.getStudent().getNim();
-                    String tanggl = detailMahasiswa1Response.getStudent().getBirthday();
-                    String tempat = detailMahasiswa1Response.getStudent().getBirthplace();
-                    String nohp = detailMahasiswa1Response.getStudent().getPhone();
-                    castnama.setText(nama);
-                    castNim.setText(nim);
-                    casttnggl.setText(tanggl);
-                    casttempat.setText(tempat);
-                    castnohp.setText(nohp);
-                }
-                @Override
-                public void onFailure(Call<DetailMahasiswaResponse> call, Throwable t) {
-                    Log.e("error", t.getLocalizedMessage());
-                }
-            });
-            button = findViewById(R.id.DetailTADetailMahasiswa);
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int idmahasiswa = idstudent;
-                    Intent intentExtra = new Intent(DetailMahasiswaActivity.this, DetailTugasAkhirActivity.class);
-                    intentExtra.putExtra("id", idmahasiswa);
-                    startActivity(intentExtra);
-                }
-            });
-//
         }
+        nama2 = findViewById(R.id.namaMahasiswa);
+        nama2.setText(String.valueOf(namaMahasiswa));
 
+        nim2 = findViewById(R.id.nimMahasiswa);
+
+
+        InterfaceDosen mainInterface = APIClient.getService();
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.kelompok_15.tb_ptb.SHARED_KEY", MODE_PRIVATE);
+        gettoken = sharedPreferences.getString("token", "");
+        token = "Bearer " + gettoken;
+        Toast.makeText(DetailMahasiswaActivity.this, token, Toast.LENGTH_SHORT).show();
+        Log.e("Token", token);
+        int idstudent = detailIntent.getIntExtra("ID", 0);
+        Call<DetailMahasiswaResponse> call = mainInterface.detailmahasiswaresponse(token, idstudent);
+        call.enqueue(new Callback<DetailMahasiswaResponse>() {
+            @Override
+            public void onResponse(Call<DetailMahasiswaResponse> call, Response<DetailMahasiswaResponse> response) {
+                Log.e("Suc", response.toString());
+                DetailMahasiswaResponse detailMahasiswaResponse = response.body();
+
+                TextView castnama = findViewById(R.id.namaDetailMahasiswa);
+                TextView castNim = findViewById(R.id.nimDetailMahasiswa);
+                TextView casttnggl = findViewById(R.id.email2DetailMahasiswa);
+                TextView casttempat = findViewById(R.id.tepattanggallahir2DetailMahasiswa);
+                TextView castnohp = findViewById(R.id.noHP2DetailMahasiswa);
+
+                String nama = detailMahasiswaResponse.getStudent().getName();
+                String nim = detailMahasiswaResponse.getStudent().getNim();
+                String tanggl = detailMahasiswaResponse.getStudent().getBirthday();
+                String tempat = detailMahasiswaResponse.getStudent().getBirthplace();
+                String nohp = detailMahasiswaResponse.getStudent().getPhone();
+                castnama.setText(nama);
+                castNim.setText(nim);
+                casttnggl.setText(tanggl);
+                casttempat.setText(tempat);
+                castnohp.setText(nohp);
+            }
+
+            @Override
+            public void onFailure(Call<DetailMahasiswaResponse> call, Throwable t) {
+                Log.e("error", t.getLocalizedMessage());
+            }
+        });
+        button = findViewById(R.id.DetailTADetailMahasiswa);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int idmahasiswa = idstudent;
+                Intent intentExtra = new Intent(DetailMahasiswaActivity.this, DetailTugasAkhirActivity.class);
+                intentExtra.putExtra("id", idmahasiswa);
+                startActivity(intentExtra);
+            }
+        });
+//
     }
+
 }
