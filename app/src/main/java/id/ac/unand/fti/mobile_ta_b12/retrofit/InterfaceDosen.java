@@ -29,7 +29,7 @@ public interface InterfaceDosen {
     Call<GetInputNilaiSidangResponse> InputNilaiSidang(@Header("Authorization") String token) ;
 
     @GET("api/theses/277/trials/")
-    Call<ListPermintaanReviewerPersetujuan> getListPersetujuan(String s);
+    Call<ListPermintaanReviewerPersetujuan> getListPersetujuan(@Header("Authorization") String token);
 
     @POST("api/logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);

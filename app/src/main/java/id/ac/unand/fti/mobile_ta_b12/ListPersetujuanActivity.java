@@ -39,10 +39,6 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
         String token = sharedPref.getString("TOKEN", "");
         Log.d("ListPersetujuan-Debug", token);
 
-        PersetujuanAdapter adapter = new PersetujuanAdapter(getPersetujuan());
-        adapter.setListener(this);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-
         rvPersetujuan = findViewById(R.id.rv_Persetujuan);
         rvPersetujuan.setLayoutManager(new LinearLayoutManager(this));
 
@@ -61,7 +57,6 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
         InterfaceDosen dosen = retrofit.create(InterfaceDosen.class);
 
         Call<ListPermintaanReviewerPersetujuan> call = dosen.getListPersetujuan("Bearer " + token);
-        PersetujuanAdapter finalAdapter = adapter;
         call.enqueue(new Callback<ListPermintaanReviewerPersetujuan>() {
             @Override
             public void onResponse(Call<ListPermintaanReviewerPersetujuan> call, Response<ListPermintaanReviewerPersetujuan> response) {
@@ -70,7 +65,7 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
                 if(getPersetujuanResponse != null){
                     List<ExaminersItem> persetujuan = getPersetujuanResponse.getExaminers();
                     Log.d("ListPersetujuan-Debug", String.valueOf(persetujuan.size()));
-                    finalAdapter.setItemList(persetujuan);
+                    adapter.setItemList(persetujuan);
                 }
             }
 
@@ -78,10 +73,6 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
             public void onFailure(Call<ListPermintaanReviewerPersetujuan> call, Throwable t) {
             }
         });
-    }
-
-    private Object getPersetujuan() {
-        return null;
     }
 
 
@@ -103,13 +94,21 @@ public class ListPersetujuanActivity extends AppCompatActivity implements Perset
         finish();
     }
 
+
+    @Override
+    public void onItemPersetujuanClick(ExaminersItem persetujuan) {
+        Intent detailIntent = new Intent(this, DetailPersetujuanActivity.class);
+        detailIntent.putExtra("id", persetujuan.getId());
+        detailIntent.putExtra("nama", persetujuan.getName());
+        detailIntent.putExtra("nip", persetujuan.getNip());
+        startActivity(detailIntent);
+
+
+    }
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    @Override
-    public void onItemPersetujuanClick(ExaminersItem persetujuan) {
 
-    }
 }

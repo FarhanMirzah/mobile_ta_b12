@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import id.ac.unand.fti.mobile_ta_b12.R;
@@ -15,15 +16,7 @@ import id.ac.unand.fti.mobile_ta_b12.models.ExaminersItem;
 
 public class PersetujuanAdapter extends RecyclerView.Adapter<PersetujuanAdapter.PersetujuanViewHolder> {
 
-    private List<ExaminersItem> itemList;
-
-    public PersetujuanAdapter(Object persetujuan) {
-
-    }
-
-    public PersetujuanAdapter() {
-
-    }
+    private List<ExaminersItem> itemList = new ArrayList<>();
 
     public void setItemList(List<ExaminersItem> itemList) {
         this.itemList = itemList;
@@ -48,10 +41,10 @@ public class PersetujuanAdapter extends RecyclerView.Adapter<PersetujuanAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull PersetujuanViewHolder holder, int position) {
-        ExaminersItem logbooks = itemList.get(position);
-        holder.id.setText(String.valueOf(logbooks.getId()));
-        holder.nama.setText(logbooks.getName());
-        holder.nip.setText(logbooks.getNip());
+        ExaminersItem persetujuan = itemList.get(position);
+        holder.id.setText(String.valueOf(persetujuan.getId()));
+        holder.nama.setText(persetujuan.getName());
+        holder.nip.setText(persetujuan.getNip());
     }
 
 
