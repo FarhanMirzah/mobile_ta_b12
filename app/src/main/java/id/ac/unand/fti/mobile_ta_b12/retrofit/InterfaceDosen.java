@@ -2,6 +2,7 @@ package id.ac.unand.fti.mobile_ta_b12.retrofit;
 
 import id.ac.unand.fti.mobile_ta_b12.models.GetInputNilaiSidangResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.GetProfileResponse;
+import id.ac.unand.fti.mobile_ta_b12.models.ListPermintaanReviewerPersetujuan;
 import id.ac.unand.fti.mobile_ta_b12.models.LoginResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.LogoutResponse;
 import id.ac.unand.fti.mobile_ta_b12.models.UpdateProfileResponse;
@@ -27,8 +28,12 @@ public interface InterfaceDosen {
     @POST("api/theses/277/trials/")
     Call<GetInputNilaiSidangResponse> InputNilaiSidang(@Header("Authorization") String token) ;
 
+    @GET("api/theses/277/trials/")
+    Call<ListPermintaanReviewerPersetujuan> getListPersetujuan(String s);
+
     @POST("api/logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);
+
 
 
 }

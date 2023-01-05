@@ -3,78 +3,85 @@ package id.ac.unand.fti.mobile_ta_b12.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import id.ac.unand.fti.mobile_ta_b12.R;
-import id.ac.unand.fti.mobile_ta_b12.models.Persetujuan;
+import java.util.List;
 
-import java.util.ArrayList;
+import id.ac.unand.fti.mobile_ta_b12.R;
+import id.ac.unand.fti.mobile_ta_b12.models.ExaminersItem;
 
 public class PersetujuanAdapter extends RecyclerView.Adapter<PersetujuanAdapter.PersetujuanViewHolder> {
 
-    ArrayList<Persetujuan> listPersetujuan = new ArrayList<>();
-    ItemPersetujuanClickListener listenerpersetujuan;
+    private List<ExaminersItem> itemList;
 
-    public  PersetujuanAdapter(ArrayList<Persetujuan> listPersetujuan){this.listPersetujuan = listPersetujuan;}
+    public PersetujuanAdapter(Object persetujuan) {
 
-    public  PersetujuanAdapter(ArrayList<Persetujuan> listPersetujuan, ItemPersetujuanClickListener listenerpersetujuan){
-        this.listPersetujuan = listPersetujuan;
-        this.listenerpersetujuan = listenerpersetujuan;
     }
 
-    public void setListPersetujuan(ArrayList<Persetujuan>listPersetujuan) {this.listPersetujuan = listPersetujuan;}
-    public void setListener(ItemPersetujuanClickListener listenerpersetujuan) {this.listenerpersetujuan = listenerpersetujuan;}
+    public PersetujuanAdapter() {
+
+    }
+
+    public void setItemList(List<ExaminersItem> itemList) {
+        this.itemList = itemList;
+        notifyDataSetChanged();
+    }
+
+    ItemPersetujuanClickListener listener;
+
+    public void setListener(ItemPersetujuanClickListener listener) {
+        this.listener = listener;
+    }
+
+
     @NonNull
     @Override
-
-    public PersetujuanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int ViewType){
+    public PersetujuanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_butuh_persetujuan, parent, false);
-        return  new PersetujuanViewHolder(view);
+        return new PersetujuanViewHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull PersetujuanViewHolder holder, int position) {
-        Persetujuan persetujuan = this.listPersetujuan.get(position);
-        holder.imageprofile.setImageResource(R.drawable.default_profile);
-        holder.imagedetail.setImageResource(R.drawable.ic_detail_mahasiswa);
-        holder.textnama.setText(persetujuan.getNamaMhsP());
-        holder.textnim.setText(persetujuan.getNimMhsP());
+        ExaminersItem logbooks = itemList.get(position);
+        holder.id.setText(String.valueOf(logbooks.getId()));
+        holder.nama.setText(logbooks.getName());
+        holder.nip.setText(logbooks.getNip());
     }
+
 
     @Override
-    public int getItemCount(){return listPersetujuan.size();}
-
-    public interface ItemPersetujuanClickListener{
-        void onItemPersetujuanClick(Persetujuan persetujuan);
+    public int getItemCount() {
+        return itemList.size();
     }
-    public  class  PersetujuanViewHolder extends RecyclerView.ViewHolder implements  View.OnClickListener{
 
-        public TextView textnim,textnama;
-        ImageView imageprofile, imagedetail;
+    public interface ItemPersetujuanClickListener {
+        void onItemPersetujuanClick(ExaminersItem persetujuan);
+    }
 
-        public PersetujuanViewHolder(@NonNull View itemView){
-            super(itemView);
-            imageprofile = itemView.findViewById(R.id.imageProfile);
-            imagedetail = itemView.findViewById(R.id.imagedetail);
-            textnama = itemView.findViewById(R.id.textnama);
-            textnim = itemView.findViewById(R.id.textnim);
 
-            itemView.setOnClickListener(this);
+        public class PersetujuanViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+            public TextView id, nama, nip;
 
+            public PersetujuanViewHolder(@NonNull View itemView) {
+                super(itemView);
+                id = itemView.findViewById(R.id.idPersetujuan);
+                nama = itemView.findViewById(R.id.namaPersetujuan);
+                nip = itemView.findViewById(R.id.nipPersetujuan);
+                itemView.setOnClickListener(this);
+            }
+
+            @Override
+            public void onClick(View view) {
+                ExaminersItem persetujuan = itemList.get(getAdapterPosition());
+                listener.onItemPersetujuanClick(persetujuan);
+            }
         }
-
-        @Override
-        public void onClick(View view) {
-            Persetujuan persetujuan = listPersetujuan.get(getAdapterPosition());
-            listenerpersetujuan.onItemPersetujuanClick(persetujuan);
-        }
-    }
-        {
-
-    }
 }
+
+

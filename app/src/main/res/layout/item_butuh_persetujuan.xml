@@ -28,23 +28,13 @@
             tools:ignore="ImageContrastCheck" />
 
         <TextView
-            android:id="@+id/textnama"
+            android:id="@+id/idPersetujuan"
             android:layout_width="200dp"
             android:layout_height="30dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/nama_mahasiswa"
+            android:layout_marginStart="32dp"
+            android:text="@string/id"
             app:layout_constraintStart_toEndOf="@+id/imageProfile"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textnim"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:text="@string/nim_mahasiswa"
-            app:layout_constraintEnd_toEndOf="@+id/textnama"
-            app:layout_constraintStart_toStartOf="@+id/textnama"
-            app:layout_constraintTop_toBottomOf="@+id/textnama" />
 
         <ImageView
             android:id="@+id/imagedetail"
@@ -58,6 +48,23 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.509" />
 
+        <TextView
+            android:id="@+id/namaPersetujuan"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:text="@string/nama"
+            app:layout_constraintStart_toStartOf="@+id/idPersetujuan"
+            app:layout_constraintTop_toBottomOf="@+id/idPersetujuan" />
+
+        <TextView
+            android:id="@+id/nipPersetujuan"
+            android:layout_width="72dp"
+            android:layout_height="26dp"
+            android:text="nip"
+            app:layout_constraintStart_toStartOf="@+id/namaPersetujuan"
+            app:layout_constraintTop_toBottomOf="@+id/namaPersetujuan" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>
