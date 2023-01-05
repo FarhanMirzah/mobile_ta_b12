@@ -159,8 +159,8 @@ public class ListMahasiswaActivity extends AppCompatActivity implements Mahasisw
     @Override
     public void onItemMahasiswaClick(ThesesItem thesesItem){
         Intent listmahasiswa = new Intent(this, DetailMahasiswaActivity.class);
-        listmahasiswa.putExtra("nama", thesesItem.getStudent().getName());
-        listmahasiswa.putExtra("Id", thesesItem.getId());
+        listmahasiswa.putExtra("namaMahasiswa", thesesItem.getStudent().getName());
+        listmahasiswa.putExtra("nimMahasiswa", thesesItem.getStudent().getNim());
         startActivity(listmahasiswa);
 }
 

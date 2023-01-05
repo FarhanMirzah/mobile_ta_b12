@@ -33,6 +33,7 @@ public interface InterfaceDosen {
     @GET("api/thesis/advisors")
     Call<ListMahasiswaResponse> listmahasiswaresponse(@Header("Authorization")String  token);
 
+    @FormUrlEncoded
     @GET("api/theses/277/trials/")
     Call<DetailMahasiswaResponse> detailmahasiswaresponse (@Header("Authorization") String token, @Path("id")int id);
 

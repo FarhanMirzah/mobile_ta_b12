@@ -79,7 +79,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         <TextView
-            android:id="@+id/tepattanggallahir2DetailMahasiswa"
+            android:id="@+id/tempattanggallahir2DetailMahasiswa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tempattaggallahirDetailMahasiswa" />
 
         <TextView
-            android:id="@+id/emailDetailMahasiswa"
+            android:id="@+id/tanggalDetailMahasiswa"
             android:layout_width="134dp"
             android:layout_height="30dp"
             android:layout_marginTop="88dp"
@@ -111,8 +111,8 @@
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/emailDetailMahasiswa"
-            app:layout_constraintTop_toBottomOf="@+id/emailDetailMahasiswa" />
+            app:layout_constraintStart_toStartOf="@+id/tanggalDetailMahasiswa"
+            app:layout_constraintTop_toBottomOf="@+id/tanggalDetailMahasiswa" />
         <TextView
             android:id="@+id/noHPDetailMahasiswa"
             android:layout_width="wrap_content"
@@ -121,10 +121,10 @@
             android:text="Nomor HP"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/emailDetailMahasiswa"
+            app:layout_constraintEnd_toEndOf="@+id/tanggalDetailMahasiswa"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/emailDetailMahasiswa"
-            app:layout_constraintTop_toBottomOf="@+id/emailDetailMahasiswa" />
+            app:layout_constraintStart_toStartOf="@+id/tanggalDetailMahasiswa"
+            app:layout_constraintTop_toBottomOf="@+id/tanggalDetailMahasiswa" />
         <TextView
             android:id="@+id/noHP2DetailMahasiswa"
             android:layout_width="wrap_content"
